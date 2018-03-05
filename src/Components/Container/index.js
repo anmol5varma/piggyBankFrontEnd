@@ -1,11 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import initstore from '../../redux/stores';
-// import {}
+import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 class Container extends React.Component {
-  render{
+  render() {
     const dummySentences = [
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
       'Donec hendrerit tempor tellus.',
@@ -17,7 +14,7 @@ class Container extends React.Component {
       'Nullam tristique diam non turpis.',
       'Cras placerat accumsan nulla.',
       'Nullam rutrum.',
-      'Nam vestibulum accumsan nisl.'
+      'Nam vestibulum accumsan nisl.',
     ];
 
     const gridInstance = (
@@ -46,7 +43,53 @@ class Container extends React.Component {
         </Row>
       </Grid>
     );
-    return(gridInstance());
+
+    const tableInstance = (
+      <Table responsive>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+            <th>Table heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+        </tbody>
+      </Table>
+    );
+    // return (gridInstance);
+    return (tableInstance);
   }
 }
 
