@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import initstore from '../../redux/stores';
 import Header from '../Header';
 import Footer from '../Footer';
-import Container from '../Container';
+import Signup from '../Signup';
 
 class Main extends React.Component {
   render() {
     return (
       <div>
         <Header />
-        <Container />
+        <Signup />
         <Footer />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Provider store={initstore()}><Main /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
