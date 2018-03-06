@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../Header';
 import Footer from '../Footer';
-import HomePage from '../HomePage';
+import HomePage from '../SignupPage';
 import './Render.css';
 
 
