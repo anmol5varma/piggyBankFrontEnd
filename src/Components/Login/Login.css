@@ -1,0 +1,48 @@
+.Login-fields{
+  padding: 5px;
+}
+
+.Login-Container{
+  margin: auto;
+  border-radius: 3%;
+  display: flex;
+  border: 1px solid black;
+}
+
+.Login-box{
+  padding: 10px;
+}
+
+.Login-heading{
+  text-align: center;
+}
+
+.Login-fields{
+  margin-top: 10%;
+}
+
+.Login-input-field{
+  font-size: 17px;
+  outline: none;
+  padding: 5px;
+  border: 0px;
+  border-bottom: 2px solid rgb(31, 31, 31);
+}
+
+.Login-input-field:focus{
+  border-bottom: 2px solid rgb(150, 150, 150)
+}
+
+.Login-button{
+  background-color: rgb(45, 45, 45);
+  padding: 10px;
+  margin: auto;
+  width:100%;
+  outline: none;
+}
+
+.Login-button-label{
+  color:rgb(240, 240, 240);
+  margin: 15px;
+  font-size: 15px;
+}
