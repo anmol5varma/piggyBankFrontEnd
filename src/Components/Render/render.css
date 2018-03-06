@@ -1,0 +1,18 @@
+#root{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 80%;
+}
+
+.Main-render{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+body{
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}

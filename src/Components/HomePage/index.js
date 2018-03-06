@@ -6,7 +6,7 @@ import Login from '../Login';
 const HomePage = props => (
   <div className="HomePage-Container">
     <div className="HomePage-signup"><Signup /></div>
-    <div className="HomePage-divide">b</div>
+    <div className="HomePage-divide" />
     <div className="HomePage-login"><Login /></div>
   </div>
 );
