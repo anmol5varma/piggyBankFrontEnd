@@ -1,12 +1,16 @@
 import React from 'react';
-import { Grid, Table, Row, Col, FormControl, Button, Form, FormGroup, ControlLabel, Jumbotron } from 'react-bootstrap';
+import { Grid, Table, Row, Col, FormControl, Button, Form, FormGroup, ControlLabel } from 'react-bootstrap';
 import './Signup.css';
+
+const axios = require('axios');
 
 class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
       noOfComponent: 1,
+      aadhaarNo: '',
+      aadhaarClass: '',
     };
   }
   render() {
@@ -14,18 +18,53 @@ class Signup extends React.Component {
       <div className="paadingTop">
         <Row className="show-grid Signup-row">
           <Col mdOffset={3} md={4}>
-            <FormControl
-              type="text"
-              placeholder="Enter aadhaar number"
-              onChange={this.handleChange}
-            />
+            <FormGroup controlId="formValidationSuccess1" validationState={this.state.aadhaarClass}>
+              <ControlLabel>Registered aadhaar number</ControlLabel>
+              <FormControl
+                type="text"
+                placeholder="Enter 12 digit aadhaar number"
+                onChange={(event) => {
+                  if (!event.target.value.match(/^[0-9]*$/)) {
+                    event.target.value = this.state.aadhaarNo;
+                  } else if (event.target.value.length > 12) {
+                    event.target.value = event.target.value.slice(0, 12);
+                  } else {
+                    this.setState({
+                      aadhaarNo: event.target.value,
+                    });
+                  }
+                }}
+              />
+            </FormGroup>
           </Col>
           <Col md={4}>
             <Button
               onClick={() => {
-              this.setState({
-                noOfComponent: 2,
-              });
+                axios.post('http://localhost:8080/otpToken', {
+                  aadhaarNo: this.state.aadhaarNo,
+                }).then((response) => {
+                  if (response.statusCode === 200) {
+                    this.setState({
+                      noOfComponent: 2,
+                      aadhaarClass: 'success',
+                    });
+                  } else if (response.statusCode === 400) {
+                    this.setState({
+                      noOfComponent: 1,
+                      aadhaarClass: 'error',
+                    });
+                  } else {
+                    this.setState({
+                      noOfComponent: 1,
+                      aadhaarClass: 'error',
+                    });
+                  }
+                }).catch(() => {
+                  this.setState({
+                    noOfComponent: 1,
+                    aadhaarClass: 'error',
+                  });
+                });
             }}
               bsStyle="primary"
             >Send OTP
@@ -110,7 +149,7 @@ class Signup extends React.Component {
       <Form className="Signup-row paddingTop" horizontal>
         <FormGroup className="Signup-row" controlId="formHorizontalEmail">
           <Col componentClass={ControlLabel} md={4}>
-      Username
+          Username
           </Col>
           <Col md={4}>
             <FormControl type="email" placeholder="Email" />
@@ -119,7 +158,7 @@ class Signup extends React.Component {
 
         <FormGroup controlId="formHorizontalPassword">
           <Col componentClass={ControlLabel} md={4}>
-      Password
+          Password
           </Col>
           <Col md={4}>
             <FormControl type="password" placeholder="Password" />
