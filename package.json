@@ -13,7 +13,8 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "sequelize": "^4.33.4",
-    "sequelize-cli": "^4.0.0"
+    "sequelize-cli": "^4.0.0",
+    "strftime": "^0.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,9 +30,9 @@
     "eslint-plugin-react": "^7.6.1"
   },
   "proxy": {
-  	"/*": {
-  		"target": "http://localhost:8080",
-  		"secure": false
-  	}
+    "/*": {
+      "target": "http://localhost:8080",
+      "secure": false
+    }
   }
 }

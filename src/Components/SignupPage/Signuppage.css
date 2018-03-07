@@ -19,6 +19,7 @@
 .Signup-box-field{
   margin-top: 10px;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -49,8 +50,28 @@
   outline: none;
 }
 
+.Error-message{
+  color: red;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
 .Signup-page-label{
   color:rgb(240, 240, 240);
   font-size: 16px;
   margin: auto;
+}
+
+.inputFieldError{
+  border: 1px solid red;
 }
