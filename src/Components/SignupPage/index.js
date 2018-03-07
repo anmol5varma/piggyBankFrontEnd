@@ -1,5 +1,6 @@
 import React from 'react';
 import './Signuppage.css';
+import Login from '../Login';
 
 const axios = require('axios');
 const strftime = require('strftime');
@@ -8,7 +9,7 @@ class SignUpPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      noOfComponent: 1,
+      noOfComponent: 0,
       aadhaarNo: '',
       otp: '',
       aadhaarError: '',
@@ -22,6 +23,19 @@ class SignUpPage extends React.Component {
     };
   }
   render() {
+    const userRegistered = () => (
+      <div className="Signup-aadhaar-box Signup-Component-box">
+        <div className="Signup-fields-wrapper">
+          <div className="Signup-page-title Signup-box-field">
+            <div className="Signup-login-box">
+            See how easy it was.<br />Login to enjoy our services.
+            </div>
+          </div>
+          <Login />
+        </div>
+      </div>
+    );
+
     const aadhaarField = (
       <div className="Signup-aadhaar-box Signup-Component-box">
         <div className="Signup-fields-wrapper">
@@ -275,6 +289,7 @@ class SignUpPage extends React.Component {
                   this.setState({
                     usernameError: '',
                     passwordError: '',
+                    noOfComponent: 0,
                   });
                   console.log(`Account created${response.data}`);
                 } else if (response.data.statusCode === 400) {
@@ -327,14 +342,20 @@ class SignUpPage extends React.Component {
           {otpField}
           {showDetails()}
         </div>);
+    } else if (this.state.noOfComponent === 4) {
+      return (
+        <div className="Signup-wrapper">
+          {aadhaarField}
+          {otpField}
+          {showDetails()}
+          {signupField()}
+        </div>);
     }
     return (
       <div className="Signup-wrapper">
-        {aadhaarField}
-        {otpField}
-        {showDetails()}
-        {signupField()}
-      </div>);
+        {userRegistered()}
+      </div>
+    );
   }
 }
 
