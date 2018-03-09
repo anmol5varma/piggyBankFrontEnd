@@ -9,7 +9,7 @@ class SignUpPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      noOfComponent: 0,
+      noOfComponent: 1,
       aadhaarNo: '',
       otp: '',
       aadhaarError: '',
@@ -332,22 +332,19 @@ class SignUpPage extends React.Component {
     } else if (this.state.noOfComponent === 2) {
       return (
         <div>
-          {aadhaarField}
+
           {otpField}
         </div>);
     } else if (this.state.noOfComponent === 3) {
       return (
         <div>
-          {aadhaarField}
-          {otpField}
+
           {showDetails()}
         </div>);
     } else if (this.state.noOfComponent === 4) {
       return (
         <div className="Signup-wrapper">
-          {aadhaarField}
-          {otpField}
-          {showDetails()}
+
           {signupField()}
         </div>);
     }

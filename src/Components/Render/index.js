@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 import HomePage from '../SignupPage';
-import './Render.css';
+import './render.css';
 
 
 class Main extends React.Component {
