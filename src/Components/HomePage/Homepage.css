@@ -1,24 +1,33 @@
 .HomePage-Container{
   display: flex;
   flex-grow: 1;
-  border: 2px solid black;
+  min-height: 100vh;
 }
 
 .HomePage-signup{
   display: flex;
-  flex-grow: 1;
-  border: 1px solid black;
+  flex: 3;
 }
 
 .HomePage-login{
   display: flex;
-  flex-grow: 1;
-  border: 1px solid black;
+  flex: 2;
 }
 
-.HomePage-divide{
-  display: flex;
-  width: 5px;
-  border: 1px solid black;
-  background: rgb(0, 0, 0);
+@media only screen and (max-width: 800px) {
+  .HomePage-Container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .HomePage-signup{
+    display: flex;
+    flex: 1;
+  }
+
+  .HomePage-login{
+    display: flex;
+    flex: 1;
+  }
 }

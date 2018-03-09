@@ -1,13 +1,13 @@
 import React from 'react';
 import './Homepage.css';
-import Signup from '../Signup';
-import Login from '../Login';
+import SignupSide from '../SignupSide';
+import LoginSide from '../LoginSide';
 
-const HomePage = props => (
+
+const HomePage = () => (
   <div className="HomePage-Container">
-    <div className="HomePage-signup"><Signup /></div>
-    <div className="HomePage-divide" />
-    <div className="HomePage-login"><Login /></div>
+    <div className="HomePage-signup"><SignupSide /></div>
+    <div className="HomePage-login"><LoginSide /></div>
   </div>
 );
 
