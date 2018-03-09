@@ -1,11 +1,31 @@
 import React from 'react';
-import './Homepage.css';
+import './Loginside.css';
 
-const HomePage = props => (
-  <div className="HomePage-Container">
-    <div className="HomePage-signup"><SignupSide /></div>
-    <div className="HomePage-login"><LoginSide /></div>
+const form = () => (
+  <div>
+    <input type="text" placeholder="Username" className="Login-input-field" />
+    <input type="password" placeholder="Password" className="Login-input-field" />
   </div>
 );
 
-export default HomePage;
+const LoginSide = () => (
+  <div className="Loginside-container">
+    <div className="Loginside-box">
+      <div className="Loginside-welcome-message">
+        <div className="Loginside-heading">or login into your account</div>
+        <div className="Loginside-content">
+          {form()}
+        </div>
+        <div className="Loginside-button-wrapper">
+          <button className="Loginside-button">
+            <span className="Loginside-button-label">
+          open account
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default LoginSide;

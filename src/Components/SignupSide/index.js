@@ -1,10 +1,10 @@
 import React from 'react';
 import './Signupside.css';
 
-const HomePage = () => (
+const SignUpSide = () => (
   <div className="Signupside-container">
     <div className="Signupside-box">
-      <div className="Signupside-logo">Piggy bank</div>
+      <div className="Signupside-logo">Piggy Bank</div>
       <div className="Signupside-welcome-message">
         <div className="Signupside-heading">Welcome</div>
         <div className="Signupside-subbheading">Register in four easy steps</div>
@@ -32,4 +32,4 @@ const HomePage = () => (
   </div>
 );
 
-export default HomePage;
+export default SignUpSide;
