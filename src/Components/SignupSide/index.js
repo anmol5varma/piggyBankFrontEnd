@@ -3,12 +3,13 @@ import './Signupside.css';
 
 const SignUpSide = () => (
   <div className="Signupside-container">
-    <div className="Signupside-box">
-      <div className="Signupside-logo">Piggy Bank</div>
-      <div className="Signupside-welcome-message">
-        <div className="Signupside-heading">Welcome</div>
-        <div className="Signupside-subbheading">Register in four easy steps</div>
-        <div className="Signupside-content">
+    <div className="Signupside-color-div">
+      <div className="Signupside-box">
+        <div className="Signupside-logo">Piggy Bank</div>
+        <div className="Signupside-welcome-message">
+          <div className="Signupside-heading">Welcome</div>
+          <div className="Signupside-subbheading">Register in four easy steps</div>
+          <div className="Signupside-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Neque convallis a cras semper. Sollicitudin ac orci
@@ -19,13 +20,14 @@ const SignUpSide = () => (
         odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium.
         Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum
         nibh tellus molestie nunc.
-        </div>
-        <div className="Signupside-button-wrapper">
-          <button className="Signupside-button">
-            <span className="Signupside-button-label">
+          </div>
+          <div className="Signupside-button-wrapper">
+            <button className="Signupside-button">
+              <span className="Signupside-button-label">
           open account
-            </span>
-          </button>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

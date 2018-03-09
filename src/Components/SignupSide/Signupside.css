@@ -2,13 +2,22 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  background-color: rgb(22, 26, 34);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-image: url('/images/signup.jpg');
+}
+
+.Signupside-color-div{
+  background-color: rgba(22, 26, 34, 0.8);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
 }
 
 .Signupside-box{
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 70px;
   flex-grow: 1;
 }
 
@@ -21,7 +30,7 @@
 .Signupside-heading{
   display: flex;
   flex-grow: 1;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 300;
   color: rgb(240, 240, 240);
   font-family: 'Roboto', sans-serif;
@@ -41,17 +50,17 @@
   margin-top: 15px;
   font-weight: 100;
   font-size: 30px;
-  color: rgb(160, 160, 160);
+  color: rgb(200, 200, 200);
   font-family: 'Roboto', sans-serif;
 }
 
 .Signupside-content{
   display: flex;
-  line-height: 20px;
+  line-height: 30px;
   flex-grow: 1;
   font-weight: 400;
-  font-size: 15px;
-  color: rgb(160, 160, 160);
+  font-size: 17px;
+  color: rgb(200, 200, 200);
   margin: 30px 0px;
   font-family: 'Roboto', sans-serif;
 }
@@ -61,14 +70,14 @@
   padding: 25px;
   outline: none;
   border-radius: 2px;
-  background-color: #47A579;
+  background-color: rgb(40, 185, 133);
 }
 
 .Signupside-button-label{
   margin: 15px;
   font-size: 13px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
   font-family: 'Roboto', sans-serif;
   color:rgb(240, 240, 240)
 }
