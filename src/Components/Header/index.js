@@ -1,13 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import ReactDOM from 'react-dom';
 import './header.css';
 
 const Header = props => (
-  <header><p>{props.value}</p></header>
+  <div className="Header-main">
+    <div className="Header-logo">Piggy Bank</div>
+    <div className="Header-user">
+      <div className="Header-options">
+        <div className="Header-logout">Logout</div>
+      </div>
+      <div className="Header-options">
+        <div className="Header-change-password">Change password</div>
+      </div>
+      <div className="Header-options">
+        <div className="Header-hello-user">Hello Anmol{props.username}</div>
+      </div>
+    </div>
+  </div>
 );
 
 Header.propTypes = {
-  value: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };
+
 export default Header;
