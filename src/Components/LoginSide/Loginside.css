@@ -78,8 +78,9 @@
 }
 
 .Loginside-button{
-  border: 0px;
-  padding: 25px;
+  border: 2px solid rgb(240, 240, 240);
+  padding: 20px;
+  transition: background-color 0.5s ease;
   outline: none;
   border-radius: 2px;
   background-color: rgb(240,240,240);
@@ -88,8 +89,19 @@
 .Loginside-button-label{
   margin: 15px;
   font-size: 13px;
+  transition: background-color 0.5s ease;
   text-transform: uppercase;
   font-weight: 500;
+  background-color: rgb(240, 240, 240);
   font-family: 'Roboto', sans-serif;
   color:rgb(40, 185, 133)
+}
+
+.Loginside-button:hover{
+  background-color: rgb(40, 185, 133);
+}
+
+.Loginside-button:hover .Loginside-button-label{
+  background-color: rgb(40, 185, 133);
+  color:rgb(240, 240, 240);
 }
