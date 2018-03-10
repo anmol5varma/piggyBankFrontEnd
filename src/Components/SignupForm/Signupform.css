@@ -57,9 +57,29 @@
   flex-direction: column;
 }
 
+.Signupform-progressbar-dot-unfilled{
+  border-radius: 50%;
+  width: 15px;
+  box-sizing: border-box;
+  height: 15px;
+  margin: 15px;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar-unfilled{
+  border-radius: 50px;
+  margin: 10px 18px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  border: 2px solid rgb(240, 240, 240);
+}
+
 .Signupform-progressbar-dot{
   border-radius: 50%;
   width: 15px;
+  box-sizing: border-box;
   height: 15px;
   margin: 15px;
   background-color: rgb(240, 240, 240);
@@ -90,7 +110,7 @@
 .Signupform-heading{
   display: flex;
   flex-grow: 1;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 100;
   color: rgb(240, 240, 240);
   font-family: 'Roboto', sans-serif;

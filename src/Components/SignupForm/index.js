@@ -26,6 +26,21 @@ const progressBar = () => (
     <div className="Signupform-progressbar-bar" />
   </div>
 );
+
+const progressBarHalf = () => (
+  <div className="Signupform-progressbar">
+    <div className="Signupform-progressbar-dot" />
+    <div className="Signupform-progressbar-bar-unfilled" />
+  </div>
+);
+
+const progressBarUnfilled = () => (
+  <div className="Signupform-progressbar">
+    <div className="Signupform-progressbar-dot-unfilled" />
+    <div className="Signupform-progressbar-bar-unfilled" />
+  </div>
+);
+
 const sendOTP = () => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">Enter your aadhaar number</div>
@@ -259,15 +274,15 @@ class LoginSide extends React.Component {
             {sendOTP()}
           </div>
           <div className="Signupform-component">
-            {progressBar()}
+            {progressBarUnfilled()}
             {verifyOTP()}
           </div>
           <div className="Signupform-component">
-            {progressBar()}
+            {progressBarHalf()}
             {getDetails()}
           </div>
           <div className="Signupform-component">
-            {progressBar()}
+            {progressBarUnfilled()}
             {userRegister()}
           </div>
         </div>
