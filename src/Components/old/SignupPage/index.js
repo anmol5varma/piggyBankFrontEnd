@@ -332,19 +332,22 @@ class SignUpPage extends React.Component {
     } else if (this.state.noOfComponent === 2) {
       return (
         <div>
-
+          {aadhaarField}
           {otpField}
         </div>);
     } else if (this.state.noOfComponent === 3) {
       return (
         <div>
-
+          {aadhaarField}
+          {otpField}
           {showDetails()}
         </div>);
     } else if (this.state.noOfComponent === 4) {
       return (
         <div className="Signup-wrapper">
-
+          {aadhaarField}
+          {otpField}
+          {showDetails()}
           {signupField()}
         </div>);
     }

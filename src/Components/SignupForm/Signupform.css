@@ -1,6 +1,7 @@
-.Loginside-container{
+.Signupform-container{
   display: flex;
-  flex-grow: 1;
+  flex: 1;
+  overflow-y: scroll;
   flex-direction: column;
   background-color: rgb(40, 185, 133);
 }
@@ -29,7 +30,7 @@
   border: 0px;
   border-bottom: 2px solid rgb(200, 200, 200);
   padding-bottom: 7px;
-  margin-top: 50px;
+  margin-top: 10px;
   color: rgb(240,240,240);
   font-size: 17px;
 }
@@ -38,20 +39,21 @@
   border-bottom: 2px solid rgb(240, 240, 240);
 }
 
-.Loginside-box{
+.Signupform-box{
   display: flex;
+  overflow-y: scroll;
   flex-direction: column;
   margin: 70px;
   flex-grow: 1;
 }
 
-.Loginside-welcome-message{
-  margin: auto;
+.Signupform-welcome-message{
+  margin: 15px;
   display: flex;
   flex-direction: column;
 }
 
-.Loginside-heading{
+.Signupform-heading{
   display: flex;
   flex-grow: 1;
   font-size: 40px;
@@ -60,7 +62,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.Loginside-logo{
+.Signupform-logo{
   color: rgb(240, 240, 240);
   display: flex;
   flex-direction: row;
@@ -69,27 +71,64 @@
 }
 
 
-.Loginside-content{
+.Signupform-content{
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  margin: 50px 0px;
+  margin: 20px 0px;
   font-family: 'Roboto', sans-serif;
 }
 
-.Loginside-button{
+.Signupform-button-wrapper{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Signupform-button{
+  transition: background-color 0.5s ease;
   border: 0px;
-  padding: 25px;
+  display: flex;
+  justify-content: center;
+  flex: 1;
   outline: none;
   border-radius: 2px;
+  border: 2px solid rgb(40, 185, 133);
   background-color: rgb(240,240,240);
 }
 
-.Loginside-button-label{
+.Signupform-button:hover{
+  background-color: rgb(40, 185, 133);
+  border: 2px solid white;
+}
+
+.Signupform-button:hover .Signupform-button-label{
+  background-color: rgb(40, 185, 133);
+  color:rgb(240, 240, 240);
+}
+
+.Signupform-button-label{
   margin: 15px;
+  background-color: rgb(240,240,240);
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
-  color:rgb(40, 185, 133)
+  color:rgb(40, 185, 133);
+  transition: background-color 0.5s ease;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr{
+
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-right: 1px solid rgb(240,240,240);
+    word-wrap: break-word;
 }

@@ -1,32 +1,32 @@
-.HomePage-Container{
+.Signuppage-Container{
   display: flex;
   flex-grow: 1;
   min-height: 100vh;
 }
 
-.HomePage-signup{
+.Signuppage-signup{
   display: flex;
   flex: 3;
 }
 
-.HomePage-login{
+.Signuppage-login{
   display: flex;
   flex: 2;
 }
 
 @media only screen and (max-width: 800px) {
-  .HomePage-Container{
+  .Signuppage-Container{
     display: flex;
     flex-grow: 1;
     flex-direction: column;
   }
 
-  .HomePage-signup{
+  .Signuppage-signup{
     display: flex;
     flex: 1;
   }
 
-  .HomePage-login{
+  .Signuppage-login{
     display: flex;
     flex: 1;
   }
