@@ -41,14 +41,19 @@ const progressBarUnfilled = () => (
   </div>
 );
 
-const sendOTP = () => (
+const sendOTP = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">Enter your aadhaar number</div>
     <div className="Signupform-content">
       {getAadhaarForm()}
     </div>
     <div className="Signupform-button-wrapper">
-      <button className="Signupform-button">
+      <button
+        onClick={() => {
+          state.sendOTPButtonClicked();
+        }}
+        className="Signupform-button"
+      >
         <span className="Signupform-button-label">
       Send otp
         </span>
@@ -57,7 +62,7 @@ const sendOTP = () => (
   </div>
 );
 
-const verifyOTP = () => (
+const verifyOTP = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">
     An otp has been sent on your registered mobile number
@@ -71,7 +76,12 @@ const verifyOTP = () => (
       Resend otp
         </span>
       </button>
-      <button className="Signupform-button">
+      <button
+        onClick={() => {
+        state.verifyOTPButtonClicked();
+      }}
+        className="Signupform-button"
+      >
         <span className="Signupform-button-label">
       Verify otp
         </span>
@@ -80,7 +90,7 @@ const verifyOTP = () => (
   </div>
 );
 
-const getDetails = () => (
+const getDetails = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">
     Verify your details
@@ -236,19 +246,25 @@ const getDetails = () => (
     <div className="Signupform-button-wrapper">
       <button className="Signupform-button">
         <span className="Signupform-button-label">
+    This is someone else
+        </span>
+      </button>
+      <button
+        onClick={() => {
+        state.detailsVerifiedButtonClicked();
+      }}
+        className="Signupform-button"
+      >
+        <span className="Signupform-button-label">
       This is me
         </span>
       </button>
-      <button className="Signupform-button">
-        <span className="Signupform-button-label">
-      This is someone else
-        </span>
-      </button>
+
     </div>
   </div>
 );
 
-const userRegister = () => (
+const userRegister = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">Set username and password</div>
     <div className="Signupform-content">
@@ -265,25 +281,95 @@ const userRegister = () => (
 );
 
 class LoginSide extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      noOfComponent: 1,
+    };
+  }
+
+  verifyOTPButtonClicked() {
+    this.setState({
+      noOfComponent: 3,
+    });
+  }
+
+  detailsVerifiedButtonClicked() {
+    this.setState({
+      noOfComponent: 4,
+    });
+  }
+
+  sendOTPButtonClicked() {
+    this.setState({
+      noOfComponent: 2,
+    });
+  }
   render() {
+    if (this.state.noOfComponent === 1) {
+      return (
+        <div className="Signupform-container">
+          <div className="Signupform-box">
+            <div className="Signupform-component">
+              {progressBarHalf()}
+              {sendOTP(this)}
+            </div>
+          </div>
+        </div>
+      );
+    } else if (this.state.noOfComponent === 2) {
+      return (
+        <div className="Signupform-container">
+          <div className="Signupform-box">
+            <div className="Signupform-component">
+              {progressBar()}
+              {sendOTP(this)}
+            </div>
+            <div className="Signupform-component">
+              {progressBarHalf()}
+              {verifyOTP(this)}
+            </div>
+          </div>
+        </div>
+      );
+    } else if (this.state.noOfComponent === 3) {
+      return (
+        <div className="Signupform-container">
+          <div className="Signupform-box">
+            <div className="Signupform-component">
+              {progressBar()}
+              {sendOTP(this)}
+            </div>
+            <div className="Signupform-component">
+              {progressBar()}
+              {verifyOTP(this)}
+            </div>
+            <div className="Signupform-component">
+              {progressBarHalf()}
+              {getDetails(this)}
+            </div>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="Signupform-container">
         <div className="Signupform-box">
           <div className="Signupform-component">
             {progressBar()}
-            {sendOTP()}
+            {sendOTP(this)}
+          </div>
+          <div className="Signupform-component">
+            {progressBar()}
+            {verifyOTP(this)}
+          </div>
+          <div className="Signupform-component">
+            {progressBar()}
+            {getDetails(this)}
           </div>
           <div className="Signupform-component">
             {progressBarUnfilled()}
-            {verifyOTP()}
-          </div>
-          <div className="Signupform-component">
-            {progressBarHalf()}
-            {getDetails()}
-          </div>
-          <div className="Signupform-component">
-            {progressBarUnfilled()}
-            {userRegister()}
+            {userRegister(this)}
           </div>
         </div>
       </div>

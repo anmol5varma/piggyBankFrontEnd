@@ -48,7 +48,6 @@
   overflow-y: scroll;
   flex-direction: column;
   margin: 70px;
-  flex-grow: 1;
 }
 
 .Signupform-progressbar{
@@ -97,7 +96,7 @@
 
 .Signupform-component{
   display: flex;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .Signupform-welcome-message{
@@ -175,8 +174,6 @@
   display: flex;
   flex-grow: 1;
 }
-
-.
 
 .Signupform-verify-details{
   display: flex;
