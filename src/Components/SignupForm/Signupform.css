@@ -35,6 +35,10 @@
   font-size: 17px;
 }
 
+.Signup-field{
+  margin-top: 30px;
+}
+
 .Login-input-field:focus{
   border-bottom: 2px solid rgb(240, 240, 240);
 }
@@ -47,16 +51,46 @@
   flex-grow: 1;
 }
 
+.Signupform-progressbar{
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Signupform-progressbar-dot{
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 15px;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar{
+  border-radius: 50px;
+  margin: 10px 20px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  background-color: rgb(240,240,240);
+}
+
+.Signupform-component{
+  display: flex;
+  flex: 1;
+}
+
 .Signupform-welcome-message{
   margin: 15px;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
 }
 
 .Signupform-heading{
   display: flex;
   flex-grow: 1;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 100;
   color: rgb(240, 240, 240);
   font-family: 'Roboto', sans-serif;
@@ -117,18 +151,30 @@
   transition: background-color 0.5s ease;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+.Signupform-each-entry{
+  display: flex;
+  flex-grow: 1;
 }
 
-tr{
+.
 
+.Signupform-verify-details{
+  display: flex;
+  flex-direction: column;
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-    border-right: 1px solid rgb(240,240,240);
-    word-wrap: break-word;
+.Signupform-table-text{
+  margin: 10px;
+}
+
+.Signupform-table-value{
+  display: flex;
+  flex: 2;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-table-label{
+  display: flex;
+  flex: 1;
+  background-color: rgb(230, 230, 230);
 }
