@@ -284,14 +284,12 @@ class SignUpPage extends React.Component {
                 userName: this.state.username,
                 password: this.state.password,
               }).then((response) => {
-                console.log(response);
                 if (response.data.statusCode === 200) {
                   this.setState({
                     usernameError: '',
                     passwordError: '',
                     noOfComponent: 0,
                   });
-                  console.log(`Account created${response.data}`);
                 } else if (response.data.statusCode === 400) {
                   this.setState({
                     usernameError: 'Username is already taken. Try some other username',
