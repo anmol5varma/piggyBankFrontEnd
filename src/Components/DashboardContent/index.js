@@ -38,6 +38,7 @@ const amountField = () => (
     <input type="number" placeholder="Amount" className="Dashboardcontent-header-input-field" />
   </div>
 );
+
 const DashboardContent = props => (
   <div className="Dashboardcontent-container">
     <div className="Dashboardcontent-playcard">
@@ -64,7 +65,9 @@ const DashboardContent = props => (
             {miniStatementButton()}
           </div>
         </div>
-
+      </div>
+      <div className="Dashboardcontent-body">
+        <div className="Dashboardcontent-body-transfer-form">Anmol</div>
       </div>
     </div>
   </div>

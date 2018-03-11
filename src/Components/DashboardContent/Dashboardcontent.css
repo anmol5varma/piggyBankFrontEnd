@@ -130,28 +130,35 @@
   background-color: rgb(40, 185, 133);
 }
 
-.Dashboardcontent-header-transfer-button:hover{
-  background-color: rgb(22, 26, 34);
-  border: 2px solid white;
-}
-
 .Dashboardcontent-header-transfer-button:hover .Dashboardcontent-header-transfer-button-label{
-  background-color: rgb(22, 26, 34);
-  color:rgb(240, 240, 240);
+  border-bottom: 2px solid white;
 }
 
 .Dashboardcontent-header-transfer-button-label{
   margin: 15px;
   background-color: rgb(40, 185, 133);
-  font-size: 13px;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 4px;
   text-transform: uppercase;
   font-weight: 500;
+  border-bottom: 2px solid rgb(40, 185, 133);
   font-family: 'Roboto', sans-serif;
   color: white;
-  transition: background-color 0.5s ease;
+  transition: border-bottom 0.5s ease-in-out;
 }
 
 .Dashboardcontent-header-transfer-button-container{
   display: flex;
   flex-grow: 1;
+}
+
+.Dashboardcontent-body-transfer-form{
+  display: flex;
+  margin: auto;
+}
+
+.Dashboardcontent-body{
+  display: flex;
 }
