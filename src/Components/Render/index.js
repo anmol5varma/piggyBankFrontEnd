@@ -1,61 +1,63 @@
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HomePage from '../HomePage';
 import './render.css';
 import SignupPage from '../SignupPage';
-import Transfer from '../Transfer';
+import Dashboard from '../Dashboard';
+// import history from '../../history';
+
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      screen: 1,
-      isToken:false,
+      isToken: false,
     };
   }
-  setScreen=(screen)=>{
-    this.setState({
-      screen,
-    })
-  }
-  componentDidMount(){
+  componentDidMount() {
     localStorage.clear();
-    const token = JSON.parse(localStorage.getItem('token'))
-   // console.log("Hello",token.token);
-    if(token){
+    const token = JSON.parse(localStorage.getItem('token'));
+    // console.log("Hello",token.token);
+    if (token) {
       this.setState({
-        isToken:true,
-      })
+        isToken: true,
+      });
     }
   }
   render() {
-    if(this.state.isToken===true){
-      return(
-        <div>
-        <Transfer/>
-        </div>
-      )
+    if (this.state.isToken === false) {
+      return (
+        <main>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/user" component={Dashboard} />
+          </Switch>
+        </main>
+      );
     }
-      if (this.state.screen === 1) {
-        return (
-    <div className="Main-render">
-      <HomePage setScreen={this.setScreen}/>
-    </div>
-  );return (
-    <div className="Main-render">
-      <SignupPage setScreen={this.setScreen}/>
-    </div>
-  );
-      }
-    }
-} 
+    return (
+      <main>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/signup" component={SignupPage} />
+          <Route path="/user" component={Dashboard} />
+        </Switch>
+      </main>
+    );
+  }
+}
 
+const App = () => (
+  <div className="Main-render">
 
-
-ReactDOM.render(<Main />, document.getElementById('root'));
-// ReactDOM.render(
-//   (
-//     <BrowserRouter>
-//       <Main />
-//     </BrowserRouter>
-//   ), document.getElementById('root'),
-// );
+    <Main />
+  </div>
+);
+ReactDOM.render(
+  (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  ), document.getElementById('root'),
+);

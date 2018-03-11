@@ -7,8 +7,8 @@ class SignupPage extends React.Component {
   render() {
     return (
       <div className="Signuppage-Container">
-        <div className="Signuppage-signup"><SignupContent setScreen={this.props.setScreen} /></div>
-        <div className="Signuppage-login"><SignupForm setScreen={this.props.setScreen} /></div>
+        <div className="Signuppage-signup"><SignupContent /></div>
+        <div className="Signuppage-login"><SignupForm /></div>
       </div>
     );
   }

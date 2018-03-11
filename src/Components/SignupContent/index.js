@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Signupcontent.css';
+
 
 class SignupContent extends React.Component {
   render() {
@@ -26,11 +28,14 @@ class SignupContent extends React.Component {
         nibh tellus molestie nunc.
               </div>
               <div className="SignupContent-button-wrapper">
-                <button className="SignupContent-button" onClick={() => this.props.setScreen(1)}>
-                  <span className="SignupContent-button-label">
+                <Link to="/">
+                  <button className="SignupContent-button">
+
+                    <span className="SignupContent-button-label">
           I already have an account
-                  </span>
-                </button>
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

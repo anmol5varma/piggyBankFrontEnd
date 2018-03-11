@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Signupside.css';
+
 
 class SignUpSide extends React.Component {
   render() {
@@ -24,11 +26,14 @@ class SignUpSide extends React.Component {
           nibh tellus molestie nunc.
               </div>
               <div className="Signupside-button-wrapper">
-                <button className="Signupside-button" onClick={() => this.props.setScreen(2)}>
+
+                <Link to="/signup"><button className="Signupside-button" >
+
                   <span className="Signupside-button-label">
             open account
                   </span>
-                </button>
+                                   </button>
+                </Link>
               </div>
             </div>
           </div>

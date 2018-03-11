@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Loginside.css';
 import Transfer from '../Transfer';
@@ -80,11 +81,13 @@ class LoginSide extends React.Component {
               )}
             </div>
             <div className="Loginside-button-wrapper">
-              <button className="Loginside-button" onClick={() => makeLoginRequest()}>
-                <span className="Loginside-button-label">
+              <Link to="/user">
+                <button className="Loginside-button" onClick={() => makeLoginRequest()}>
+                  <span className="Loginside-button-label">
           login
-                </span>
-              </button>
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
