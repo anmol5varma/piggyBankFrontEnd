@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Dashboardcontent.css';
 import DashboardContentBody from '../DashboardContentBody';
+import MiniStatement from '../MiniStatement';
 
 const usernameField = () => (
   <div className="Dashboardcontent-header-field">
@@ -85,7 +86,7 @@ const DashboardContent = props => (
           </div>
         </div>
       </div>
-      <DashboardContentBody />
+      <MiniStatement />
     </div>
   </div>
 );

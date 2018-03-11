@@ -1,0 +1,42 @@
+.Ministatement-container{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.Ministatement-table-wrapper{
+  display: flex;
+}
+
+.Ministatement-content{
+  display: flex;
+  flex-grow: 1;
+  margin: 20px 50px;
+}
+
+.Ministatement-allRecords{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.Ministatement-each-row{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Ministatement-allRecord-heading{
+  background-color: rgb(40, 185, 133);
+  color: white;
+}
+
+.Ministatement-record-value,.Ministatement-record-heading{
+  display: flex;
+  flex: 1;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.Ministatement-record-head{
+  margin: 10px;
+}
