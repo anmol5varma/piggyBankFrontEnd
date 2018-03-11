@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Dashboardcontent.css';
-
+import DashboardContentBody from '../DashboardContentBody';
 
 const usernameField = () => (
   <div className="Dashboardcontent-header-field">
@@ -85,24 +85,7 @@ const DashboardContent = props => (
           </div>
         </div>
       </div>
-      <div className="Dashboardcontent-body">
-        <div className="Dashboardcontent-body-transfer-form">
-          <div className="Dashboardcontent-body-form-transfer-form">
-            <div className="Dashboardcontent-body-form-heading">
-              <div className="Dashboardcontent-body-form-heading-label">Send money instantly</div>
-            </div>
-            <div className="Dashboardcontent-body-form-username">
-              {usernameField()}
-            </div>
-            <div className="Dashboardcontent-body-form-amount">
-              {amountField()}
-            </div>
-            <div className="Dashboardcontent-body-form-button">
-              {sendMoneyButtonInBody()}
-            </div>
-          </div>
-        </div>
-      </div>
+      <DashboardContentBody />
     </div>
   </div>
 );
