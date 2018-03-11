@@ -116,7 +116,6 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  margin: 5px;
 }
 
 .Dashboardcontent-header-transfer-button{
@@ -126,8 +125,8 @@
   justify-content: center;
   flex: 1;
   outline: none;
-  border-radius: 2px;
   border: 2px solid rgb(40, 185, 133);
+  border-top: 2px solid white;
   background-color: rgb(40, 185, 133);
 }
 
@@ -154,4 +153,5 @@
 
 .Dashboardcontent-header-transfer-button-container{
   display: flex;
+  flex-grow: 1;
 }

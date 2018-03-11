@@ -15,11 +15,24 @@ const sendMoneyButton = () => (
       className="Dashboardcontent-header-transfer-button"
     >
       <span className="Dashboardcontent-header-transfer-button-label">
-    Send money
+    Transfer money
       </span>
     </button>
   </div>
 );
+
+const miniStatementButton = () => (
+  <div className="Dashboardcontent-header-transfer-button-wrapper">
+    <button
+      className="Dashboardcontent-header-transfer-button"
+    >
+      <span className="Dashboardcontent-header-transfer-button-label">
+    Account summary
+      </span>
+    </button>
+  </div>
+);
+
 const amountField = () => (
   <div className="Dashboardcontent-header-field">
     <input type="number" placeholder="Amount" className="Dashboardcontent-header-input-field" />
@@ -41,30 +54,14 @@ const DashboardContent = props => (
         </div>
 
         <div className="Dashboardcontent-header-wrapper">
-          <div className="Dashboardcontent-header-transfer-form">
-            <div className="Dashboardcontent-header-username">
-              {usernameField()}
-            </div>
-            <div className="Dashboardcontent-header-amount">
-              {amountField()}
-            </div>
-          </div>
           <div className="Dashboardcontent-header-transfer-button-container">
             {sendMoneyButton()}
           </div>
         </div>
 
         <div className="Dashboardcontent-header-wrapper">
-          <div className="Dashboardcontent-header-transfer-form">
-            <div className="Dashboardcontent-header-username">
-              {usernameField()}
-            </div>
-            <div className="Dashboardcontent-header-amount">
-              {amountField()}
-            </div>
-          </div>
           <div className="Dashboardcontent-header-transfer-button-container">
-            {sendMoneyButton()}
+            {miniStatementButton()}
           </div>
         </div>
 
