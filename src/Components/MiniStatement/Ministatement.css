@@ -11,6 +11,7 @@
 .Ministatement-content{
   display: flex;
   flex-grow: 1;
+  flex-direction: column;
   margin: 50px;
 }
 
@@ -23,6 +24,13 @@
 .Ministatement-each-row{
   display: flex;
   flex-grow: 1;
+}
+
+.Ministatement-tooltip{
+  margin: auto;
+  font-size: 30px;
+  margin-top: 30px;
+  color: rgb(22, 26, 34);
 }
 
 .Ministatement-allRecord-heading{
@@ -72,6 +80,10 @@
 }
 
 .Ministatement-record-name{
+  flex: 3;
+}
+
+.Ministatement-record-date{
   flex: 3;
 }
 

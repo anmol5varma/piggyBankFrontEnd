@@ -20,7 +20,10 @@ const eachRecord = () => (
       </div>
     </div>
     <div className="Ministatement-record-value Ministatement-record-type">
-      <div className="Ministatement-record-entry">e</div>
+      <div className="Ministatement-record-entry">credit</div>
+    </div>
+    <div className="Ministatement-record-value Ministatement-record-date">
+      <div className="Ministatement-record-entry">Date(use strtime)</div>
     </div>
   </div>
 );
@@ -41,6 +44,9 @@ const recordHeading = () => (
     </div>
     <div className="Ministatement-record-heading Ministatement-record-type">
       <div className="Ministatement-record-head">Type</div>
+    </div>
+    <div className="Ministatement-record-heading Ministatement-record-date">
+      <div className="Ministatement-record-head">Date</div>
     </div>
   </div>
 );
@@ -65,6 +71,9 @@ const MiniStatement = () => (
     <div className="Ministatement-table-wrapper">
       <div className="Ministatement-content">
         {allRecords()}
+        <div className="Ministatement-tooltip">
+          &quot;Credit is what comes in and Debit is what goes out&quot;
+        </div>
       </div>
     </div>
   </div>
