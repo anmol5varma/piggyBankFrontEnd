@@ -11,7 +11,7 @@
 .Ministatement-content{
   display: flex;
   flex-grow: 1;
-  margin: 20px 50px;
+  margin: 50px;
 }
 
 .Ministatement-allRecords{
@@ -33,10 +33,56 @@
 .Ministatement-record-value,.Ministatement-record-heading{
   display: flex;
   flex: 1;
+}
+
+.Ministatement-record-heading{
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
 
+.Ministatement-record-value{
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.Ministatement-record-sno{
+  border-left: 0px;
+}
+
+.Ministatement-record-type{
+  border-right: 0px;
+}
+
 .Ministatement-record-head{
   margin: 10px;
+}
+
+.Ministatement-record-entry{
+  margin: 10px;
+}
+
+.Ministatement-allRecord-entry{
+  background-color: rgb(240, 240, 240);
+  color: rgb(22, 26, 34);
+  border-bottom: 2px solid white;
+}
+
+.Ministatement-record-sno{
+  flex: 1;
+}
+
+.Ministatement-record-name{
+  flex: 3;
+}
+
+.Ministatement-record-amount{
+  flex: 3;
+}
+
+.Ministatement-record-balance{
+  flex: 3;
+}
+
+.Ministatement-record-type{
+  flex: 3;
 }
