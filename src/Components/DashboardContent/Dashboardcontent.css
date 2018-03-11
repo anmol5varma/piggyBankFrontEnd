@@ -192,6 +192,8 @@
 
 .Dashboardcontent-body-transfer-button-wrapper{
   display: flex;
+  flex: 1;
+  margin: 5px;
   margin-top: 30px;
   flex-direction: column;
 }
@@ -225,6 +227,11 @@
 .Dashboardcontent-body-transfer-button:hover .Dashboardcontent-body-transfer-button-label{
   color: rgb(40, 185, 133);
   background-color: white;
+}
+
+.Dashboardcontent-body-form-button{
+  display: flex;
+  flex-grow: 1;
 }
 
 .Dashboardcontent-body-transfer-button-label{

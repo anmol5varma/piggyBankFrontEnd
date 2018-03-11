@@ -12,6 +12,18 @@ const sendMoneyButtonInBody = () => (
   </div>
 );
 
+const resetButtonInBody = () => (
+  <div className="Dashboardcontent-body-transfer-button-wrapper">
+    <button
+      className="Dashboardcontent-body-transfer-button"
+    >
+      <span className="Dashboardcontent-body-transfer-button-label">
+    Reset
+      </span>
+    </button>
+  </div>
+);
+
 const amountField = () => (
   <div className="Dashboardcontent-header-field">
     <input type="number" placeholder="Amount" className="Dashboardcontent-header-input-field" />
@@ -38,6 +50,7 @@ const DashboardContentBody = () => (
           {amountField()}
         </div>
         <div className="Dashboardcontent-body-form-button">
+          {resetButtonInBody()}
           {sendMoneyButtonInBody()}
         </div>
       </div>
