@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import './Loginside.css';
-
+import Transfer from '../Transfer';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
   <div>
@@ -25,6 +25,7 @@ class LoginSide extends React.Component {
       password: '',
       incorrectPasswordError: '',
       incorrectUsernameError: '',
+
     };
   }
   render() {
@@ -33,7 +34,9 @@ class LoginSide extends React.Component {
         userName: this.state.username,
         password: this.state.password,
       }).then((response) => {
-        console.log(response);
+        if (window.localStorage) {
+          localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
+        }
       }).catch((err) => {
         if (err.response.data.message === 'Please check password') {
           this.setState({
