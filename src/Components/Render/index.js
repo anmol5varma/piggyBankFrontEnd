@@ -15,7 +15,6 @@ class Main extends React.Component {
     };
   }
   componentDidMount() {
-    localStorage.clear();
     const token = JSON.parse(localStorage.getItem('token'));
     // console.log("Hello",token.token);
     if (token) {
