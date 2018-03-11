@@ -50,8 +50,8 @@ const DashboardContentBody = () => (
           {amountField()}
         </div>
         <div className="Dashboardcontent-body-form-button">
-          {resetButtonInBody()}
           {sendMoneyButtonInBody()}
+          {resetButtonInBody()}
         </div>
       </div>
     </div>
