@@ -13,7 +13,7 @@ const Header = props => (
         <div className="Header-change-password">Change password</div>
       </div>
       <div className="Header-options">
-        <div className="Header-hello-user">Hello Anmol{props.username}</div>
+        <div className="Header-hello-user">Hello {props.username}</div>
       </div>
     </div>
   </div>
