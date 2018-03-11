@@ -58,6 +58,13 @@ const DashboardContent = props => (
 
         <div className="Dashboardcontent-header-wrapper">
           <div className="Dashboardcontent-header-balance">
+            <div className="Dashboardcontent-header-wallet">
+              <i className="material-icons Dashboardcontent-header-wallet-icon">
+          account_balance_wallet
+              </i>
+            </div>
+          </div>
+          <div className="Dashboardcontent-header-balance">
             <div className="Dashboardcontent-header-balance-line">Your balance is</div>
             <div className="Dashboardcontent-header-balance-value">
               <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon" />

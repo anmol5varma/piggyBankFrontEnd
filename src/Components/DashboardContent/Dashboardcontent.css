@@ -92,7 +92,7 @@
   color: rgb(22, 26, 34);
   width: 100%;
   outline: none;
-  transition: border-bottom 0.3s ease;
+  transition: border-bottom 0.5s ease;
   font-size: 17px;
   margin-top: 25px;
   border-bottom: 1px solid rgb(22, 26, 34);
@@ -110,6 +110,18 @@
 .Dashboardcontent-header-input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: rgb(100, 100, 100);
     opacity: 1; /* Firefox */
+}
+
+.Dashboardcontent-header-wallet{
+  margin: auto;
+  border: 2px solid rgb(40, 185, 133);
+  border-radius: 50%;
+}
+
+.Dashboardcontent-header-wallet-icon{
+    font-size: 30px;
+    margin: 10px;
+    color: white;
 }
 
 .Dashboardcontent-header-input-field::-ms-input-placeholder { /* Microsoft Edge */
@@ -175,7 +187,7 @@
 
 .Dashboardcontent-body{
   display: flex;
-  background-image: url('/images/notes.png');
+  /* background-image: url('/images/notes2.png'); */
 }
 
 .Dashboardcontent-body-transfer-button-wrapper{
