@@ -1,6 +1,7 @@
+
 import axios from 'axios';
 import React from 'react';
-import './Loginside.css';
+import './LoginSideAfterRegister.css';
 
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
@@ -28,17 +29,13 @@ class LoginSide extends React.Component {
     };
   }
   render() {
-    console.log('Hello', this.state.incorrectPasswordError);
-    console.log(this.state.incorrectUsernameError);
     const makeLoginRequest = () => {
       axios.post('/login', {
         userName: this.state.username,
         password: this.state.password,
       }).then((response) => {
-        console.log('LOGIN');
         console.log(response);
       }).catch((err) => {
-        console.log('SUrabhi');
         if (err.response.data.message === 'Please check password') {
           this.setState({
             incorrectPasswordError: 'Please enter correct password',
@@ -48,7 +45,6 @@ class LoginSide extends React.Component {
         } else {
           this.setState({ incorrectUsernameError: 'Invaid Username' });
         }
-        console.log(this.state.incorrectPasswordError, this.state.incorrectUsernameError);
       });
     };
     const updateUsername = (event) => {
@@ -72,7 +68,7 @@ class LoginSide extends React.Component {
       <div className="Loginside-container">
         <div className="Loginside-box">
           <div className="Loginside-welcome-message">
-            <div className="Loginside-heading">Or login into your account</div>
+            <div className="Loginside-heading1">Please, login to use your money safely.</div>
             <div className="Loginside-content">
               {form(
                updateUsername,

@@ -129,7 +129,7 @@ class SignUpPage extends React.Component {
                   aadhaarNo: this.state.aadhaarNo,
                   otp: this.state.otp,
                 }).then((response) => {
-                  // console.log(response);
+                   console.log(response.data.statusCode);
                   if (response.data.statusCode === 200) {
                     this.setState({
                       noOfComponent: 3,

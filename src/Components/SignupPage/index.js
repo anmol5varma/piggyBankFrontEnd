@@ -3,12 +3,15 @@ import './Signuppage.css';
 import SignupContent from '../SignupContent';
 import SignupForm from '../SignupForm';
 
-
-const SignupPage = () => (
-  <div className="Signuppage-Container">
-    <div className="Signuppage-signup"><SignupContent /></div>
-    <div className="Signuppage-login"><SignupForm /></div>
-  </div>
-);
+class SignupPage extends React.Component {
+  render() {
+    return (
+      <div className="Signuppage-Container">
+        <div className="Signuppage-signup"><SignupContent setScreen={this.props.setScreen} /></div>
+        <div className="Signuppage-login"><SignupForm setScreen={this.props.setScreen} /></div>
+      </div>
+    );
+  }
+}
 
 export default SignupPage;

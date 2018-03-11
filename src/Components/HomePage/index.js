@@ -1,14 +1,17 @@
 import React from 'react';
-import './Homepage.css';
-import SignupSide from '../SignupSide';
+import './HomePage.css';
 import LoginSide from '../LoginSide';
-
-
-const HomePage = () => (
-  <div className="HomePage-Container">
-    <div className="HomePage-signup"><SignupSide /></div>
-    <div className="HomePage-login"><LoginSide /></div>
-  </div>
-);
+import SignupSide from '../SignupSide';
+// import propTypes from prop-types;
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div className="HomePage-Container">
+        <div className="HomePage-signup"><SignupSide setScreen={this.props.setScreen} /></div>
+        <div className="HomePage-login"><LoginSide /></div>
+      </div>
+    );
+  }
+}
 
 export default HomePage;

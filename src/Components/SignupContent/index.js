@@ -1,17 +1,19 @@
 import React from 'react';
 import './Signupcontent.css';
 
-const SignUpSide = () => (
-  <div className="Signupside-container">
-    <div className="Signupside-color-div">
-      <div className="Signupside-box">
-        <div className="Signupside-logo">Piggy Bank</div>
-        <div className="Signupside-welcome-message">
-          <div className="Signupside-heading">Register</div>
-          <div className="Signupside-subbheading">
+class SignupContent extends React.Component {
+  render() {
+    return (
+      <div className="SignupContent-container">
+        <div className="SignupContent-color-div">
+          <div className="SignupContent-box">
+            <div className="SignupContent-logo">Piggy Bank</div>
+            <div className="SignupContent-welcome-message">
+              <div className="SignupContent-heading">Register</div>
+              <div className="SignupContent-subbheading">
           No need to go to the bank. We will come to you
-          </div>
-          <div className="Signupside-content">
+              </div>
+              <div className="SignupContent-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Neque convallis a cras semper. Sollicitudin ac orci
@@ -22,18 +24,19 @@ const SignUpSide = () => (
         odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium.
         Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum
         nibh tellus molestie nunc.
-          </div>
-          <div className="Signupside-button-wrapper">
-            <button className="Signupside-button">
-              <span className="Signupside-button-label">
+              </div>
+              <div className="SignupContent-button-wrapper">
+                <button className="SignupContent-button" onClick={() => this.props.setScreen(1)}>
+                  <span className="SignupContent-button-label">
           I already have an account
-              </span>
-            </button>
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-);
-
-export default SignUpSide;
+    );
+  }
+}
+export default SignupContent;
