@@ -35,7 +35,7 @@ class DashboardContentBody extends React.Component {
       </div>
     );
 
-    const transferMoney = () => {
+    const transferMoney = (props) => {
       const data = {
         amount: this.state.amount,
         touserId: this.state.username,
@@ -54,6 +54,7 @@ class DashboardContentBody extends React.Component {
           console.log(response);
           if (response.data.status_code === 201) {
             alert('Transfer done successfully');
+            props.updateBalance(response.data.balance);
             this.setState({
               screen: 1,
               username: '',
@@ -75,12 +76,12 @@ class DashboardContentBody extends React.Component {
         });
     };
 
-    const sendPasswordInBody = () => (
+    const sendPasswordInBody = props => (
       <div className="Dashboardcontent-body-transfer-button-wrapper">
         <button
           className="Dashboardcontent-body-transfer-button"
           onClick={() => {
-            transferMoney();
+            transferMoney(props);
           }}
         >
           <span className="Dashboardcontent-body-transfer-button-label">
@@ -172,7 +173,7 @@ class DashboardContentBody extends React.Component {
                 {passwordField(this.updatePassword, this)}
               </div>
               <div className="Dashboardcontent-body-form-button">
-                {sendPasswordInBody(this)}
+                {sendPasswordInBody(this.props)}
               </div>
               <div />
             </div>

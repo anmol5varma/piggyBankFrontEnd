@@ -29,10 +29,11 @@ import MiniStatement from '../MiniStatement';
 // );
 
 class DashboardContent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showComponent: 2,
+      balance: props.balance,
     };
   }
   render() {
@@ -53,6 +54,11 @@ class DashboardContent extends React.Component {
       </div>
     );
 
+    const changeBalance = (value) => {
+      this.setState({
+        balance: value,
+      });
+    };
     const miniStatementButton = () => (
       <div className="Dashboardcontent-header-transfer-button-wrapper">
         <button
@@ -84,7 +90,7 @@ class DashboardContent extends React.Component {
             <div className="Dashboardcontent-header-balance-line">Your balance is</div>
             <div className="Dashboardcontent-header-balance-value">
               <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon" />
-              <span className=" Dashboardcontent-header-balance-amount">{props.balance}</span>
+              <span className=" Dashboardcontent-header-balance-amount">{this.state.balance}</span>
             </div>
           </div>
         </div>
@@ -114,7 +120,7 @@ class DashboardContent extends React.Component {
       <div className="Dashboardcontent-container">
         <div className="Dashboardcontent-playcard">
           {header(this.props)}
-          <DashboardContentBody />
+          <DashboardContentBody updateBalance={changeBalance} />
         </div>
       </div>
     );
