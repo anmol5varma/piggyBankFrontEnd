@@ -26,17 +26,36 @@
 }
 
 .Header-logout{
-  margin: 15px 10px;
+
 }
 
 .Header-change-password{
+  border-left: 2px solid rgb(210, 210, 210);
+  border-right: 2px solid rgb(210, 210, 210);
+}
+
+.Header-options{
   margin: 15px 10px;
 }
 
 .Header-hello-user{
-  margin: 15px 10px;
+
 }
 
-.Header-options{
-  border-right: 2px solid rgb(210,210,210);
+.header-options-button{
+  border: 0px;
+  background-color: rgb(40, 185, 133);
+  display: flex;
+  flex-grow: 1;
+  outline: none;
+}
+
+.Header-button:focus{
+  color: rgb(22, 26, 34);
+}
+
+.Header-options-button-label{
+  color: white;
+  font-size: 17px;
+
 }
