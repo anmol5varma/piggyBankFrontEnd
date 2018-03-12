@@ -2,7 +2,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Loginside.css';
-import Transfer from '../Transfer';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
   <div>
