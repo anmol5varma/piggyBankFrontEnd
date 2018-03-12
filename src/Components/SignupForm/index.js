@@ -501,6 +501,7 @@ class SignupForm extends React.Component {
       }
     });
   }
+
   render() {
     if (this.state.noOfComponent === 0) {
       return (
@@ -582,7 +583,7 @@ class SignupForm extends React.Component {
             {getDetails(this)}
           </div>
           <div className="Signupform-component">
-            {progressBarUnfilled()}
+            {progressBarHalf()}
             {userRegister(this)}
           </div>
         </div>
