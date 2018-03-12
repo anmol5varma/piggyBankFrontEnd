@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3002/ -->
+<html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link href="./React App_files/css" rel="stylesheet">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3002/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3002/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">.HomePage-Container{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  min-height: 100vh;
+}
+
+.HomePage-signup{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 3 1;
+      flex: 3 1;
+}
+
+.HomePage-login{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 2 1;
+      flex: 2 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .HomePage-Container{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+
+  .HomePage-signup{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1;
+        flex: 1 1;
+  }
+
+  .HomePage-login{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1;
+        flex: 1 1;
+  }
+}
+</style><style type="text/css">.Loginside-container{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background-color: rgb(40, 185, 133);
+}
+
+.Login-input-field::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field{
+  -webkit-transition: all 0.50s ease-in-out;
+  -moz-transition: all 0.50s ease-in-out;
+  -ms-transition: all 0.50s ease-in-out;
+  -o-transition: all 0.50s ease-in-out;
+  outline: none;
+  width: 100%;
+  background-color: rgb(40, 185, 133);
+  border: 0px;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  padding-bottom: 7px;
+  margin-top: 50px;
+  color: rgb(240,240,240);
+  font-size: 17px;
+}
+
+.Login-input-field:focus{
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+.Loginside-box{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 70px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Loginside-welcome-message{
+  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Loginside-heading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-size: 40px;
+  font-weight: 100;
+  color: rgb(240, 240, 240);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Loginside-logo{
+  color: rgb(240, 240, 240);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.Loginside-content{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 50px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Loginside-button{
+  border: 0px;
+  padding: 25px;
+  outline: none;
+  border-radius: 2px;
+  background-color: rgb(240,240,240);
+}
+
+.Loginside-button-label{
+  margin: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(40, 185, 133)
+}
+</style><style type="text/css">.Signupside-container{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-image: url('/images/signup2.jpg');
+}
+
+.Signupside-color-div{
+  background-color: rgba(22, 26, 34, 0.8);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Signupside-box{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 70px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Signupside-welcome-message{
+  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Signupside-heading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-size: 60px;
+  font-weight: 300;
+  color: rgb(240, 240, 240);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupside-logo{
+  color: rgb(240, 240, 240);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupside-subbheading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  margin-top: 15px;
+  font-weight: 100;
+  font-size: 30px;
+  color: rgb(200, 200, 200);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupside-content{
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 30px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(200, 200, 200);
+  margin: 30px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupside-button{
+  border: 0px;
+  padding: 25px;
+  outline: none;
+  border-radius: 2px;
+  background-color: rgb(40, 185, 133);
+}
+
+.Signupside-button-label{
+  margin: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(240, 240, 240)
+}
+</style><style type="text/css">#root{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Main-render{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+body{
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+}
+</style><style type="text/css">.Signuppage-Container{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  min-height: 100vh;
+}
+
+.Signuppage-signup{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 3 1;
+      flex: 3 1;
+}
+
+.Signuppage-login{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 2 1;
+      flex: 2 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .Signuppage-Container{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+
+  .Signuppage-signup{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1;
+        flex: 1 1;
+  }
+
+  .Signuppage-login{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1;
+        flex: 1 1;
+  }
+}
+</style><style type="text/css">.SignupContent-container{
+  width: 60%;
+  position: fixed;
+  height: 100vh;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-image: url('/images/signupPage.jpg');
+}
+
+.SignupContent-color-div{
+  background-color: rgba(22, 26, 34, 0.8);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.SignupContent-box{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 70px;
+  height: 100vh;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.SignupContent-welcome-message{
+  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.SignupContent-heading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-size: 60px;
+  font-weight: 300;
+  color: rgb(240, 240, 240);
+  font-family: 'Roboto', sans-serif;
+}
+
+.SignupContent-logo{
+  color: rgb(240, 240, 240);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.SignupContent-subbheading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  margin-top: 15px;
+  font-weight: 100;
+  font-size: 30px;
+  color: rgb(200, 200, 200);
+  font-family: 'Roboto', sans-serif;
+}
+
+.SignupContent-content{
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 30px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(200, 200, 200);
+  margin: 30px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.SignupContent-button{
+  border: 0px;
+  padding: 25px;
+  outline: none;
+  border-radius: 2px;
+  background-color: rgb(40, 185, 133);
+}
+
+.SignupContent-button-label{
+  margin: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(240, 240, 240)
+}
+</style><style type="text/css">.Signupform-container{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1;
+      flex: 1 1;
+  overflow-y: scroll;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background-color: rgb(40, 185, 133);
+}
+
+.Login-input-field1::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field1:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field1::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field1::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field1{
+  -webkit-transition: all 0.50s ease-in-out;
+  -moz-transition: all 0.50s ease-in-out;
+  -ms-transition: all 0.50s ease-in-out;
+  -o-transition: all 0.50s ease-in-out;
+  outline: none;
+  width: 100%;
+  background-color: rgb(40, 185, 133);
+  border: 0px;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  padding-bottom: 7px;
+  margin-top: 10px;
+  color: rgb(240,240,240);
+  font-size: 17px;
+}
+
+.Signup-field{
+  margin-top: 30px;
+}
+
+.Login-input-field1:focus{
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-box{
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: scroll;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 70px;
+}
+
+.Signupform-progressbar{
+  margin: 15px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Signupform-progressbar-dot-unfilled{
+  border-radius: 50%;
+  width: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 15px;
+  margin: 15px;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar-unfilled{
+  border-radius: 50px;
+  margin: 10px 18px;
+  margin-bottom: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-dot{
+  border-radius: 50%;
+  width: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 15px;
+  margin: 15px;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar{
+  border-radius: 50px;
+  margin: 10px 20px;
+  margin-bottom: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  background-color: rgb(240,240,240);
+}
+
+.Signupform-component{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Signupform-welcome-message{
+  margin: 15px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Signupform-heading{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  font-size: 30px;
+  font-weight: 100;
+  color: rgb(240, 240, 240);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupform-logo{
+  color: rgb(240, 240, 240);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.Signupform-content{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 20px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupform-button-wrapper{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Signupform-button{
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex: 1 1;
+      flex: 1 1;
+  outline: none;
+  border-radius: 2px;
+  border: 2px solid rgb(40, 185, 133);
+  background-color: rgb(240,240,240);
+}
+
+.Signupform-button:hover{
+  background-color: rgb(40, 185, 133);
+  border: 2px solid white;
+}
+
+.Signupform-button:hover .Signupform-button-label{
+  background-color: rgb(40, 185, 133);
+  color:rgb(240, 240, 240);
+}
+
+.Signupform-button-label{
+  margin: 15px;
+  background-color: rgb(240,240,240);
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(40, 185, 133);
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.Signupform-each-entry{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.Signupform-verify-details{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.Signupform-table-text{
+  margin: 10px;
+}
+
+.Signupform-table-value{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 2 1;
+      flex: 2 1;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-table-label{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1;
+      flex: 1 1;
+  background-color: rgb(230, 230, 230);
+}
+</style></head>
+  <body data-gr-c-s-loaded="true">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div class="Main-render"><div class="HomePage-Container"><div class="HomePage-signup"><div class="Signupside-container"><div class="Signupside-color-div"><div class="Signupside-box"><div class="Signupside-logo">Piggy Bank</div><div class="Signupside-welcome-message"><div class="Signupside-heading">Welcome</div><div class="Signupside-subbheading">Register in four easy steps</div><div class="Signupside-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque convallis a cras semper. Sollicitudin ac orci phasellus egestas tellus. Vel facilisis volutpat est velit egestas dui id ornare arcu. Adipiscing tristique risus nec feugiat in. Platea dictumst quisque sagittis purus sit amet. Nulla facilisi etiam dignissim diam quis. Quam viverra orci sagittis eu volutpat odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium. Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum nibh tellus molestie nunc.</div><div class="Signupside-button-wrapper"><button class="Signupside-button"><span class="Signupside-button-label">open account</span></button></div></div></div></div></div></div><div class="HomePage-login"><div class="Loginside-container"><div class="Loginside-box"><div class="Loginside-welcome-message"><div class="Loginside-heading">Or login into your account</div><div class="Loginside-content"><div><input type="text" placeholder="Username" class="Login-input-field"><input type="password" placeholder="Password" class="Login-input-field"></div></div><div class="Loginside-button-wrapper"><button class="Loginside-button"><span class="Loginside-button-label">login</span></button></div></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="./React App_files/bundle.js"></script>
+
+</body></html>

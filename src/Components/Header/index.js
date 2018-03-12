@@ -1,16 +1,22 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './header.css';
 
 const headerButton = headerTitle => (
   <div className="Header-options">
-    <button
-      className="header-options-button"
-    >
-      <span className="Header-options-button-label">
-        {headerTitle}
-      </span>
-    </button>
+    <Link to="/login">
+      <button
+        onClick={() => {
+         localStorage.clear();
+      }}
+        className="header-options-button"
+      >
+        <span className="Header-options-button-label">
+          {headerTitle}
+        </span>
+      </button>
+    </Link>
   </div>
 );
 

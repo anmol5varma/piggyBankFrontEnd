@@ -6,20 +6,20 @@
   background-color: rgb(40, 185, 133);
 }
 
-.Login-input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.Login-input-field1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: rgb(210, 210, 210);
     opacity: 1; /* Firefox */
 }
 
-.Login-input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.Login-input-field1:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: rgb(240, 240, 240);
 }
 
-.Login-input-field::-ms-input-placeholder { /* Microsoft Edge */
+.Login-input-field1::-ms-input-placeholder { /* Microsoft Edge */
     color: rgb(240, 240, 240);
 }
 
-.Login-input-field{
+.Login-input-field1{
   -webkit-transition: all 0.50s ease-in-out;
   -moz-transition: all 0.50s ease-in-out;
   -ms-transition: all 0.50s ease-in-out;
@@ -39,7 +39,7 @@
   margin-top: 30px;
 }
 
-.Login-input-field:focus{
+.Login-input-field1:focus{
   border-bottom: 2px solid rgb(240, 240, 240);
 }
 
