@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import './Loginside.css';
-
+import './LoginSideAfterRegister.css';
+import { Link } from 'react-router-dom';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
   <div>
@@ -25,20 +25,32 @@ class LoginSide extends React.Component {
       password: '',
       incorrectPasswordError: '',
       incorrectUsernameError: '',
+      balance: '',
     };
   }
   render() {
-    console.log('Hello', this.state.incorrectPasswordError);
-    console.log(this.state.incorrectUsernameError);
     const makeLoginRequest = () => {
+      console.log(this.state.username);
+      console.log(this.state.password);
+      console.log(this.props.history);
+
+
       axios.post('/login', {
         userName: this.state.username,
         password: this.state.password,
       }).then((response) => {
-        console.log('LOGIN');
         console.log(response);
+        if (window.localStorage) {
+          localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
+        }
+        console.log('Hello', response.data.data);
+        // this.setState({
+        //   balance: response.data.data,
+        // });
+        this.props.history.push(`/user?balance=${response.data.data}&username=${this.state.username}`);
       }).catch((err) => {
-        console.log('SUrabhi');
+        console.log(err);
+
         if (err.response.data.message === 'Please check password') {
           this.setState({
             incorrectPasswordError: 'Please enter correct password',
@@ -48,7 +60,6 @@ class LoginSide extends React.Component {
         } else {
           this.setState({ incorrectUsernameError: 'Invaid Username' });
         }
-        console.log(this.state.incorrectPasswordError, this.state.incorrectUsernameError);
       });
     };
     const updateUsername = (event) => {
@@ -72,21 +83,23 @@ class LoginSide extends React.Component {
       <div className="Loginside-container">
         <div className="Loginside-box">
           <div className="Loginside-welcome-message">
-            <div className="Loginside-heading">Or login into your account</div>
+            <div className="Loginside-heading1">Please, login to use your money safely.</div>
             <div className="Loginside-content">
               {form(
-               updateUsername,
-                updatePassword,
-                this.state.incorrectPasswordError,
-                this.state.incorrectUsernameError,
-              )}
+              updateUsername,
+               updatePassword,
+               this.state.incorrectPasswordError,
+               this.state.incorrectUsernameError,
+             )}
             </div>
             <div className="Loginside-button-wrapper">
+              {/* <Link to={{ pathname: '/user', search: `?balance=${this.state.balance}` }}> */}
               <button className="Loginside-button" onClick={() => makeLoginRequest()}>
                 <span className="Loginside-button-label">
-          login
+         login
                 </span>
               </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>

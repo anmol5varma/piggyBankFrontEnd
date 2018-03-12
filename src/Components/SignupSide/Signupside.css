@@ -2,9 +2,9 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-image: url('/images/signup2.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-image: url('/images/signupResized.jpg');
 }
 
 .Signupside-color-div{
@@ -66,7 +66,8 @@
 }
 
 .Signupside-button{
-  border: 0px;
+  transition: background-color 0.5s ease;
+  border: 2px solid rgb(40, 185, 133);
   padding: 25px;
   outline: none;
   border-radius: 2px;
@@ -75,9 +76,20 @@
 
 .Signupside-button-label{
   margin: 15px;
+  transition: background-color 0.5s ease;
+  background-color: rgb(40, 185, 133);
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
   color:rgb(240, 240, 240)
+}
+
+.Signupside-button:hover{
+  background-color: rgb(22, 26, 34);
+}
+
+.Signupside-button:hover .Signupside-button-label{
+  background-color: rgb(22, 26, 34);
+  color:rgb(40, 185, 133);
 }
