@@ -1,4 +1,4 @@
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, HashRouter, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HomePage from '../HomePage';
@@ -16,7 +16,6 @@ class Main extends React.Component {
   }
   componentDidMount() {
     const token = JSON.parse(localStorage.getItem('token'));
-    // console.log("Hello",token.token);
     if (token) {
       this.setState({
         isToken: true,
@@ -31,6 +30,7 @@ class Main extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/user" component={Dashboard} />
+            <Route path="/login" component={HomePage} />
           </Switch>
         </main>
       );
@@ -41,22 +41,25 @@ class Main extends React.Component {
           <Route exact path="/" component={Dashboard} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/user" component={Dashboard} />
+          <Route path="/login" component={HomePage} />
         </Switch>
       </main>
     );
   }
 }
 
-const App = () => (
+const App = (props, context) => (
   <div className="Main-render">
-
     <Main />
   </div>
 );
 ReactDOM.render(
   (
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
+  // <BrowserRouter>
+  //   <App />
+  // </BrowserRouter>
   ), document.getElementById('root'),
 );

@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import './Signupform.css';
-import Transfer from '../Transfer';
-import LoginSideAfterRegister from '../LoginSideAfterRegister';
+import LoginSide from '../LoginSide';
 
 const strftime = require('strftime');
 
@@ -381,8 +380,8 @@ class SignupForm extends React.Component {
       username: '',
       password: '',
       isVerified: false,
-      usernameError: '',
-      passwordError: '',
+      usernameError: ' ',
+      passwordError: ' ',
       notmydetailsOTPError: '',
     };
   }
@@ -397,8 +396,8 @@ class SignupForm extends React.Component {
       console.log(response);
       if (response.data.statusCode === 200) {
         this.setState({
-          usernameError: '',
-          passwordError: '',
+          usernameError: ' ',
+          passwordError: ' ',
           noOfComponent: 0,
         });
         console.log(`Account created${response.data}`);
@@ -437,7 +436,6 @@ class SignupForm extends React.Component {
         this.setState({
           noOfComponent: 3,
           eKYCResponse: response.data.response,
-          otpError: '',
         }, () => {
           console.log('Hello', this.state.eKYCResponse);
         });
@@ -514,7 +512,7 @@ class SignupForm extends React.Component {
                 You are successfully registered!!!
                 </div>
                 <div className="Signupform-content">
-                  <LoginSideAfterRegister />
+                  <LoginSide history={this.props.history} />
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ class LoginSide extends React.Component {
       password: '',
       incorrectPasswordError: '',
       incorrectUsernameError: '',
-
+      balance: 0,
     };
   }
   render() {
@@ -38,6 +38,11 @@ class LoginSide extends React.Component {
         if (window.localStorage) {
           localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
         }
+        console.log('Hello', response.data.data);
+        // this.setState({
+        //   balance: response.data.data,
+        // });
+        this.props.history.push(`/user?balance=${response.data.data}`);
       }).catch((err) => {
         if (err.response.data.message === 'Please check password') {
           this.setState({
@@ -81,13 +86,13 @@ class LoginSide extends React.Component {
               )}
             </div>
             <div className="Loginside-button-wrapper">
-              <Link to="/user">
-                <button className="Loginside-button" onClick={() => makeLoginRequest()}>
-                  <span className="Loginside-button-label">
+              {/* <Link to={{ pathname: '/user', search: `?balance=${this.state.balance}` }}> */}
+              <button className="Loginside-button" onClick={() => makeLoginRequest()}>
+                <span className="Loginside-button-label">
           login
-                  </span>
-                </button>
-              </Link>
+                </span>
+              </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>

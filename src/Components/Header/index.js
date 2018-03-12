@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './header.css';
-import { Link } from 'react-router-dom';
+
 
 const Header = props => (
   <div className="Header-main">
@@ -9,24 +10,33 @@ const Header = props => (
     <div className="Header-user">
       <div className="Header-options">
         <div className="Header-logout">
-          <div className="Loginside-button-wrapper">
-            <Link to="/user">
-              {/* onClick={() => makeLoginRequest()} */}
-              <button className="Header-button" >
-                <span className="Header-button-label">
+          <Link to="/login">
+            <button
+              className="Loginside-button"
+              onClick={() => {
+             localStorage.clear();
+          }}
+            >
+              <span className="Loginside-button-label">
           logout
+              </span>
+            </button>
+          </Link>
+        </div>
+        <div className="Header-options">
+          <div className="Header-change-password">
+            <Link to="/login">
+              <button className="Loginside-button">
+                <span className="Loginside-button-label">
+          Change password
                 </span>
               </button>
             </Link>
           </div>
         </div>
-      </div>
-
-      <div className="Header-options">
-        <div className="Header-change-password">Change password</div>
-      </div>
-      <div className="Header-options">
-        <div className="Header-hello-user">Hello {props.username}</div>
+        <div className="Header-options">
+          <div className="Header-hello-user">Welcome, {props.username} !</div>
+        </div>
       </div>
     </div>
   </div>

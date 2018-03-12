@@ -39,8 +39,9 @@
 
 .Header-options{
   border-right: 2px solid rgb(210,210,210);
+  flex-direction:row;
 }
-
+/* 
 .Header-button{
   border: 0px;
   padding: 25px;
@@ -56,4 +57,4 @@
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
   color:rgb(40, 185, 133)
-}
+} */
