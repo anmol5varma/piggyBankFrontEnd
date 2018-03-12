@@ -11,7 +11,7 @@ const Dashboard = (props, context) => {
   console.log(props);
   return (
     <div className="Dashboard-container">
-      <Header username="Anmol" />
+      <Header username={params.username} />
       <DashboardContent balance={params.balance} />
     </div>
   );

@@ -65,6 +65,7 @@ const sendPasswordInBody = (state) => (
           username: '',
           amount: '',
         })
+        state.transferMoney(state.state.amount,state.state.username,state.state.password)
       }}
     >
       <span className="Dashboardcontent-body-transfer-button-label">
@@ -107,9 +108,11 @@ class DashboardContent extends React.Component {
       incorrectPasswordError:'',
       incorrectUsernameError:'',
       incorrectAmountError:'',
+      transactionError:'',
       screen:1,
     };
   }
+  
   updateUsername = (event) => {
     if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
       this.setState({
@@ -120,11 +123,58 @@ class DashboardContent extends React.Component {
     }
   };
 
+
+  transferMoney = (amount,reciepentName,password) => {
+    console.log("Hello",amount,"Hello",reciepentName,password);
+    const data = {
+      amount,
+      touserId:reciepentName,
+      password,
+    };
+    const token = JSON.parse(localStorage.getItem('token'));
+    console.log(token.token);
+    const axiosConfig = {
+      headers: {
+        Authorization:token.token,
+      },
+    };
+    axios.post('/transfer', data, axiosConfig)
+      .then((response) => {
+        console.log();
+        if(response.data.status_code===201){
+          alert("Transfer done successfully");
+          this.setState({
+            screen:1,
+            username: '',
+            amount: '',
+          })
+        } else if(response.status_code===500){
+          this.setState({transactionError:'Transaction failed due to some internal server error'})
+        }  else{
+          this.setState({transactionError:'Transaction failed! Enter correct details or session has expired'})
+          alert(this.state.transactionError);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  setPassword = (password)=>{
+    this.setState({
+      password,
+    })
+    console.log(password);
+  }  
  updatePassword = (event) => {
     this.setState({
       password: event.target.value,
       incorrectPasswordError: '',
       incorrectUsernameError: '',
+    });
+  };
+  updateAmount = (event) => {
+    this.setState({
+      amount: event.target.value,
     });
   };
   render() {
@@ -178,6 +228,7 @@ class DashboardContent extends React.Component {
                   <div className="Dashboardcontent-body-form-button">
                     {sendPasswordInBody(this)}
                   </div>
+                  <div></div>
                 </div>
               </div>
             </div>

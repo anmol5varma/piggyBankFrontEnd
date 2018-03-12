@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import './Signupform.css';
-import LoginSide from '../LoginSide';
+import LoginSideAfterRegister from '../LoginSideAfterRegister';
 
 const strftime = require('strftime');
 
@@ -512,7 +512,7 @@ class SignupForm extends React.Component {
                 You are successfully registered!!!
                 </div>
                 <div className="Signupform-content">
-                  <LoginSide history={this.props.history} />
+                  <LoginSideAfterRegister history={this.props.history} />
                 </div>
               </div>
             </div>
