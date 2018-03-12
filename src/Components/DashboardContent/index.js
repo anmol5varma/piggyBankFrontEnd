@@ -32,7 +32,7 @@ class DashboardContent extends React.Component {
   constructor() {
     super();
     this.state = {
-      showComponent: 1,
+      showComponent: 2,
     };
   }
   render() {
