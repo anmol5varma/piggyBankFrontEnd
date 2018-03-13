@@ -25,16 +25,18 @@ class DashboardContent extends React.Component {
           <div className="Dashboardcontent-username">Hello Anmol</div>
           <div className="Dashboardcontent-header">
             <div className="Dashboardcontent-header-balance">
-              <div>
-                <i className="material-icons Dashboardcontent-header-wallet-icon">
+              <div className="Dashboardcontent-header-wallet-circle">
+                <div className="Dashboardcontent-header-wallet">
+                  <i className="material-icons Dashboardcontent-header-wallet-icon">
         account_balance_wallet
-                </i>
+                  </i>
+                </div>
               </div>
               <div className="Dashboardcontent-header-balance-label">
                 <div className="Dashboardcontent-header-balance-title">Balance</div>
                 <div className="Dashboardcontent-header-balance-value">
                   <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon" />
-                  <span className=" Dashboardcontent-header-balance-amount">
+                  <span className="Dashboardcontent-header-balance-amount">
                     {this.state.balance}
                   </span>
                 </div>
@@ -47,6 +49,15 @@ class DashboardContent extends React.Component {
                   {inputField(null, 'text', 'Username')}
                   {inputField(null, 'number', 'Amount')}
                 </div>
+              </div>
+            </div>
+            <div className="Dashboardcontent-header-transfer-button-container">
+              <div className="Dashboardcontent-header-transfer-button-wrapper">
+                <button className="Dashboardcontent-header-transfer-button">
+                  <span className="Dashboardcontent-header-transfer-button-title">
+                  Transfer money
+                  </span>
+                </button>
               </div>
             </div>
           </div>
