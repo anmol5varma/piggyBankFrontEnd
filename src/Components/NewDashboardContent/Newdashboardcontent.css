@@ -1,0 +1,95 @@
+.Dashboardcontent-container{
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.Dashboardcontent-wrapper{
+  display: flex;
+  margin: 50px;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.Dashboardcontent-username{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Dashboardcontent-header{
+  display: flex;
+  color: white;
+  background-color: rgb(50, 50, 50);
+}
+
+.Dashboardcontent-statement{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Dashboardcontent-header-balance{
+  display: flex;
+  border-right: 1px solid rgb(240,240,240);
+}
+
+.Dashboardcontent-header-transfer{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Dashboardcontent-header-balance-label{
+  margin: 30px;
+}
+
+.Dashboardcontent-header-balance-title{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.Dashboardcontent-header-balance-icon{
+  margin-right: 5px;
+}
+
+.Dashboardcontent-header-transfer-box{
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.Dashboardcontent-header-transfer-box-title{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.Dashboardcontent-header-transfer-box-inputs{
+  display: flex;
+}
+.Dashboardcontent-header-transfer-box-inputfield{
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+.Dashboardcontent-header-transfer-box-inputfield > input{
+  background-color: rgb(50, 50, 50);
+  font-size: 17px;
+  margin: 5px;
+  padding-bottom: 5px;
+  border: 0px;
+  color: white;
+  outline: none;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.Dashboardcontent-header-input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(240, 240, 240);
+    opacity: 1; /* Firefox */
+}
+
+.Dashboardcontent-header-input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(240, 240, 240);
+    opacity: 1; /* Firefox */
+}
