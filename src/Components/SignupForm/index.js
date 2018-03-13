@@ -330,7 +330,7 @@ const getDetails = state => (
       }}
       >
         <span className="Signupform-button-label">
-    These are my wrong details
+   This is not me
         </span>
       </button>
 
