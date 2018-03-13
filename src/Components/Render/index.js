@@ -23,34 +23,34 @@ class Main extends React.Component {
   //   }
   // }
   render() {
+    // return (
+    //   // <main>
+    //   //   <Switch>
+    //   //     <Route exact path="/" component={Dashboard} />
+    //   //   </Switch>
+    //   // </main>);
+    if (this.state.isToken === false) {
+      return (
+        <main>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/user" component={Dashboard} />
+            <Route path="/login" component={HomePage} />
+          </Switch>
+        </main>
+      );
+    }
     return (
       <main>
-          <Switch>
-            <Route exact path="/" component={Dashboard} />
-          </Switch>
-        </main>);
-    // if (this.state.isToken === false) {
-    //   return (
-    //     <main>
-    //       <Switch>
-    //         <Route exact path="/" component={HomePage} />
-    //         <Route path="/signup" component={SignupPage} />
-    //         <Route path="/user" component={Dashboard} />
-    //         <Route path="/login" component={HomePage} />
-    //       </Switch>
-    //     </main>
-    //   );
-    // }
-    // return (
-    //   <main>
-    //     <Switch>
-    //       <Route exact path="/" component={Dashboard} />
-    //       <Route path="/signup" component={SignupPage} />
-    //       <Route path="/user" component={Dashboard} />
-    //       <Route path="/login" component={HomePage} />
-    //     </Switch>
-    //   </main>
-    // );
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/signup" component={SignupPage} />
+          <Route path="/user" component={Dashboard} />
+          <Route path="/login" component={HomePage} />
+        </Switch>
+      </main>
+    );
   }
 }
 

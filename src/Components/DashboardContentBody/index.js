@@ -60,17 +60,32 @@ class DashboardContentBody extends React.Component {
               username: '',
               amount: '',
             });
+          } else if (response.data.message === 'Cannot transfer to your own account') {
+            alert('Sorry,you cannot transfer to your own account');
+            this.setState({
+              transactionError: 'Sorry,you cannot transfer to your own account', screen: 1, username: '', amount: '',
+            });
           } else if (response.data.status_code === 500) {
-            this.setState({ transactionError: 'Transaction failed due to some internal server error', screen: 1 });
+            this.setState({
+              transactionError: 'Transaction failed due to some internal server error', screen: 1, username: '', amount: '',
+            });
             alert(this.state.transactionError);
           } else if (response.data.status_code === 404) {
-            this.setState({ transactionError: 'Transaction failed! Enter correct details or session has expired', screen: 1 });
+            this.setState({
+              transactionError: 'Incorrect password', screen: 1, username: '', amount: '',
+            });
             alert('Incorrect password');
           } else {
+            this.setState({
+              transactionError: 'Please check the input fields again', screen: 1, username: '', amount: '',
+            });
             alert('Please check the input fields again');
           }
         })
         .catch((error) => {
+          this.setState({
+            transactionError: 'Please check the input fields again', screen: 1, username: '', amount: '',
+          });
           alert('Please check the input fields again');
           console.log(error);
         });

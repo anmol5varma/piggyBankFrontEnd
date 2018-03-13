@@ -6,48 +6,25 @@ import MiniStatement from '../MiniStatement';
 
 const axios = require('axios');
 
-// const usernameField = () => (
-//   <div className="Dashboardcontent-header-field">
-//     <input type="text" placeholder="Username" className="Dashboardcontent-header-input-field" />
-//   </div>
-// );
-
-// const sendMoneyButtonInBody = () => (
-//   <div className="Dashboardcontent-body-transfer-button-wrapper">
-//     <button
-//       className="Dashboardcontent-body-transfer-button"
-//     >
-//       <span className="Dashboardcontent-body-transfer-button-label">
-//     Transfer money
-//       </span>
-//     </button>
-//   </div>
-// );
-//
-// const amountField = () => (
-//   <div className="Dashboardcontent-header-field">
-//     <input type="number" placeholder="Amount" className="Dashboardcontent-header-input-field" />
-//   </div>
-// );
-
 class DashboardContent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showComponent: 2,
       balance: '',
+      MiniStatement: [],
     };
   }
   componentDidMount() {
     const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token.token, '>>>>>>>>>>>>>>>>>>>>');
     const axiosConfig = {
       headers: {
         Authorization: token.token,
       },
     };
+    console.log(token.token);
     axios.post('/user/balance', null, axiosConfig).then(response => this.setState({
-      balance: response.data.balance,
+      balance: response.data.currentBalance,
     })).then(() => {
       console.log(this.state.balance, '%%%%%%%%%%%');
     }).catch((err) => {
@@ -55,7 +32,40 @@ class DashboardContent extends React.Component {
     });
   }
 
+
   render() {
+    const getTransactionDetails = () => {
+      const token = JSON.parse(localStorage.getItem('token'));
+      console.log(token.token);
+      const axiosConfig = {
+        headers: {
+          Authorization: token.token,
+        },
+      };
+      axios.get('/user/miniStatement', axiosConfig)
+        .then((response) => {
+          console.log(response);
+          if (response.data.length === 0) {
+            this.setState({
+              showComponent: 1,
+            });
+          } else {
+            this.setState({
+              miniStatement: response.data,
+              showComponent: 1,
+            });
+          }
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    };
+    const setMiniStatement = (response) => {
+      console.log('Setting data');
+      this.setState({
+        miniStatement: response.data,
+      });
+    };
     const sendMoneyButton = () => (
       <div className="Dashboardcontent-header-transfer-button-wrapper">
         <button
@@ -83,9 +93,7 @@ class DashboardContent extends React.Component {
       <div className="Dashboardcontent-header-transfer-button-wrapper">
         <button
           onClick={() => {
-            this.setState({
-              showComponent: 1,
-            });
+            getTransactionDetails();
           }}
           className="Dashboardcontent-header-transfer-button"
         >
@@ -132,7 +140,16 @@ class DashboardContent extends React.Component {
         <div className="Dashboardcontent-container">
           <div className="Dashboardcontent-playcard">
             {header(this.props)}
-            <MiniStatement />
+            <MiniStatement miniStatement={this.state.miniStatement} />
+          </div>
+        </div>
+      );
+    } else if (this.state.showComponent === 3) {
+      return (
+        <div className="Dashboardcontent-container">
+          <div className="Dashboardcontent-playcard">
+            {header(this.props)}
+            <span> You have no transactions yet! Make one transaction now!</span>
           </div>
         </div>
       );
