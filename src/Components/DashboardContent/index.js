@@ -4,6 +4,8 @@ import './Dashboardcontent.css';
 import DashboardContentBody from '../DashboardContentBody';
 import MiniStatement from '../MiniStatement';
 
+const axios = require('axios');
+
 // const usernameField = () => (
 //   <div className="Dashboardcontent-header-field">
 //     <input type="text" placeholder="Username" className="Dashboardcontent-header-input-field" />
@@ -33,9 +35,26 @@ class DashboardContent extends React.Component {
     super(props);
     this.state = {
       showComponent: 2,
-      balance: props.balance,
+      balance: '',
     };
   }
+  componentDidMount() {
+    const token = JSON.parse(localStorage.getItem('token'));
+    console.log(token.token, '>>>>>>>>>>>>>>>>>>>>');
+    const axiosConfig = {
+      headers: {
+        Authorization: token.token,
+      },
+    };
+    axios.post('/user/balance', null, axiosConfig).then(response => this.setState({
+      balance: response.data.balance,
+    })).then(() => {
+      console.log(this.state.balance, '%%%%%%%%%%%');
+    }).catch((err) => {
+      console.log(err, '?????????????');
+    });
+  }
+
   render() {
     const sendMoneyButton = () => (
       <div className="Dashboardcontent-header-transfer-button-wrapper">
@@ -59,6 +78,7 @@ class DashboardContent extends React.Component {
         balance: value,
       });
     };
+
     const miniStatementButton = () => (
       <div className="Dashboardcontent-header-transfer-button-wrapper">
         <button
@@ -76,7 +96,7 @@ class DashboardContent extends React.Component {
       </div>
     );
 
-    const header = props => (
+    const header = () => (
       <div className="Dashboardcontent-header">
         <div className="Dashboardcontent-header-wrapper">
           <div className="Dashboardcontent-header-balance">
@@ -106,6 +126,7 @@ class DashboardContent extends React.Component {
         </div>
       </div>
     );
+
     if (this.state.showComponent === 1) {
       return (
         <div className="Dashboardcontent-container">
