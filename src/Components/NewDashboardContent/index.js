@@ -1,4 +1,5 @@
 import React from 'react';
+import MiniStatement from '../NewMiniStatement';
 import './Newdashboardcontent.css';
 
 class DashboardContent extends React.Component {
@@ -61,7 +62,9 @@ class DashboardContent extends React.Component {
               </div>
             </div>
           </div>
-          <div className="Dashboardcontent-statement">Minisatetement</div>
+          <div className="Dashboardcontent-statement">
+            <MiniStatement />
+          </div>
         </div>
       </div>
     );

@@ -135,6 +135,7 @@
 .Dashboardcontent-header-transfer-button{
   background-color: rgb(40, 185, 133);
   border: 0px;
+  outline: none;
   margin: 20px 40px;
   display: flex;
 }
