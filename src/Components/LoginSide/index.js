@@ -38,10 +38,7 @@ class LoginSide extends React.Component {
           localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
         }
         console.log('Hello', response.data.data);
-        // this.setState({
-        //   balance: response.data.data,
-        // });
-        this.props.history.push(`/user?balance=${response.data.data}&username=${this.state.username}`);
+        this.props.history.push(`/user?username=${this.state.username}`);
       }).catch((err) => {
         if (err.response.data.message === 'Please check password') {
           this.setState({

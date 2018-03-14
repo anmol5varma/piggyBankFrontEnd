@@ -8,7 +8,7 @@ class HomePage extends React.Component {
     const { history } = this.props;
     return (
       <div className="HomePage-Container">
-        <div className="HomePage-signup"><SignupSide history={history} setScreen={this.props.setScreen} /></div>
+        <div className="HomePage-signup"><SignupSide history={history}/></div>
         <div className="HomePage-login"><LoginSide history={history} /></div>
       </div>
     );
@@ -16,3 +16,6 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
+HomePage.propTypes ={
+  history:PropTypes.string.required(),
+}

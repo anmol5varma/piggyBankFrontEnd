@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import './Signupform.css';
 import LoginSideAfterRegister from '../LoginSideAfterRegister';
-
 const strftime = require('strftime');
 
 const getAadhaarForm = state => (
@@ -57,10 +56,6 @@ const userRegisterForm = state => (
         state.setState({
           username: event.target.value,
           usernameError: '',
-        });
-      } else {
-        this.setState({
-
         });
       }
     }}

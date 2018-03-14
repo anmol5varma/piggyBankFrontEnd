@@ -1,4 +1,4 @@
-import { Route, BrowserRouter, HashRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HomePage from '../HomePage';
@@ -14,21 +14,7 @@ class Main extends React.Component {
       isToken: false,
     };
   }
-  // componentDidMount() {
-  //   const token = JSON.parse(localStorage.getItem('token'));
-  //   if (token) {
-  //     this.setState({
-  //       isToken: true,
-  //     });
-  //   }
-  // }
   render() {
-    // return (
-    //   // <main>
-    //   //   <Switch>
-    //   //     <Route exact path="/" component={Dashboard} />
-    //   //   </Switch>
-    //   // </main>);
     if (this.state.isToken === false) {
       return (
         <main>
@@ -56,6 +42,7 @@ class Main extends React.Component {
 
 const App = (props, context) => (
   <div className="Main-render">
+    {context}
     <Main />
   </div>
 );
