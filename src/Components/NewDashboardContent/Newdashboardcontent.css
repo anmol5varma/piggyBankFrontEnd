@@ -6,7 +6,9 @@
   font-weight: 500;
   font-size: 20px;
 }
-
+.Error-Mesaage{
+  color: white;
+}
 .Dashboardcontent-wrapper{
   display: flex;
   margin: 50px;

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import axios from 'axios';
 import React from 'react';
 import './Signupform.css';
@@ -58,10 +60,6 @@ const userRegisterForm = state => (
           username: event.target.value,
           usernameError: '',
         });
-      } else {
-        this.setState({
-
-        });
       }
     }}
     />
@@ -92,13 +90,6 @@ const progressBar = () => (
 const progressBarHalf = () => (
   <div className="Signupform-progressbar">
     <div className="Signupform-progressbar-dot" />
-    <div className="Signupform-progressbar-bar-unfilled" />
-  </div>
-);
-
-const progressBarUnfilled = () => (
-  <div className="Signupform-progressbar">
-    <div className="Signupform-progressbar-dot-unfilled" />
     <div className="Signupform-progressbar-bar-unfilled" />
   </div>
 );
@@ -385,6 +376,7 @@ class SignupForm extends React.Component {
       notmydetailsOTPError: '',
     };
   }
+
   onRegister() {
     axios.post('/users', {
       aadhaarNo: this.state.aadhaarNo,
@@ -424,7 +416,15 @@ class SignupForm extends React.Component {
       }
     });
   }
-
+  useStateError() {
+    console.log(
+      this.state.aadhaarError,
+      this.state.otpClass,
+      this.state.passwordError,
+      this.state.otpError,
+      this.state.otpClass,
+    );
+  }
   verifyOTPButtonClicked() {
     axios.post('/otpVerify', {
       aadhaarNo: this.state.aadhaarNo,

@@ -9,6 +9,8 @@
     "prop-types": "^15.6.0",
     "query-string": "^5.1.0",
     "react": "^16.2.0",
+    "react-alert": "^3.4.0",
+    "react-alert-template-basic": "^1.0.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
