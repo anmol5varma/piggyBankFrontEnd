@@ -2,7 +2,7 @@ import React from 'react';
 import { withAlert } from 'react-alert';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import MiniStatement from '../NewMiniStatement';
+import MiniStatement from '../NewMiniStatementTable';
 import './Newdashboardcontent.css';
 
 class DashboardContent extends React.Component {
