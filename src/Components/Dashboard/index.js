@@ -36,10 +36,10 @@ const Dashboard = (props) => {
   );
 };
 export default Dashboard;
-Dashboard.propTypes = {
-  location: PropTypes.string.required(),
-};
-Dashboard.defaultProps = {
-  location: '',
-};
+// Dashboard.propTypes = {
+//   location: PropTypes.string.required(),
+// };
+// Dashboard.defaultProps = {
+//   location: '',
+// };
 

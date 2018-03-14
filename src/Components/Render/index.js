@@ -40,9 +40,8 @@ class Main extends React.Component {
   }
 }
 
-const App = (props, context) => (
+const App = () => (
   <div className="Main-render">
-    {context}
     <Main />
   </div>
 );
@@ -51,8 +50,5 @@ ReactDOM.render(
     <HashRouter>
       <App />
     </HashRouter>
-  // <BrowserRouter>
-  //   <App />
-  // </BrowserRouter>
   ), document.getElementById('root'),
 );

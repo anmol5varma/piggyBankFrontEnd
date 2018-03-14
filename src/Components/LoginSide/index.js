@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import React from 'react';
 import './Loginside.css';
 
@@ -25,7 +24,6 @@ class LoginSide extends React.Component {
       password: '',
       incorrectPasswordError: '',
       incorrectUsernameError: '',
-      balance: 0,
     };
   }
   render() {
