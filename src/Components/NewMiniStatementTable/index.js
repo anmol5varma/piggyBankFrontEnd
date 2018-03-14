@@ -14,57 +14,57 @@ class MiniStatement extends React.Component {
   }
   render() {
     const eachRecord = (sno, name, amount, balance, type, date) => (
-      <div className="Ministatement-each-row Ministatement-allRecord-entry">
-        <div className="Ministatement-record-value Ministatement-record-sno">
+      <tr className="Ministatement-each-row Ministatement-allRecord-entry">
+        <td className="Ministatement-record-value Ministatement-record-sno">
           <div className="Ministatement-record-entry">{sno}</div>
-        </div>
-        <div className="Ministatement-record-value Ministatement-record-name">
+        </td>
+        <td className="Ministatement-record-value Ministatement-record-name">
           <div className="Ministatement-record-entry">{name}</div>
-        </div>
-        <div className="Ministatement-record-value Ministatement-record-amount">
+        </td>
+        <td className="Ministatement-record-value Ministatement-record-amount">
           <div className="Ministatement-record-entry">
             <i className="fas fa-rupee-sign" /> {amount}
           </div>
-        </div>
-        <div className="Ministatement-record-value Ministatement-record-balance">
+        </td>
+        <td className="Ministatement-record-value Ministatement-record-balance">
           <div className="Ministatement-record-entry">
             <i className="fas fa-rupee-sign" /> {balance}
           </div>
-        </div>
-        <div className="Ministatement-record-value Ministatement-record-type">
+        </td>
+        <td className="Ministatement-record-value Ministatement-record-type">
           <div className="Ministatement-record-entry">{type}</div>
-        </div>
-        <div className="Ministatement-record-value Ministatement-record-date">
+        </td>
+        <td className="Ministatement-record-value Ministatement-record-date">
           <div className="Ministatement-record-entry"> {strftime('%F', new Date(date))}</div>
-        </div>
-      </div>
+        </td>
+      </tr>
     );
 
     const recordHeading = () => (
-      <div className="Ministatement-each-row Ministatement-allRecord-heading">
-        <div className="Ministatement-record-heading Ministatement-record-sno">
+      <tr className="Ministatement-each-row Ministatement-allRecord-heading">
+        <td className="Ministatement-record-heading Ministatement-record-sno">
           <div className="Ministatement-record-head">S.No.</div>
-        </div>
-        <div className="Ministatement-record-heading Ministatement-record-name">
+        </td>
+        <td className="Ministatement-record-heading Ministatement-record-name">
           <div className="Ministatement-record-head">Receipent</div>
-        </div>
-        <div className="Ministatement-record-heading Ministatement-record-amount">
+        </td>
+        <td className="Ministatement-record-heading Ministatement-record-amount">
           <div className="Ministatement-record-head">Amount</div>
-        </div>
-        <div className="Ministatement-record-heading Ministatement-record-balance">
+        </td>
+        <td className="Ministatement-record-heading Ministatement-record-balance">
           <div className="Ministatement-record-head">Balance</div>
-        </div>
-        <div className="Ministatement-record-heading Ministatement-record-type">
+        </td>
+        <td className="Ministatement-record-heading Ministatement-record-type">
           <div className="Ministatement-record-head">Type</div>
-        </div>
-        <div className="Ministatement-record-heading Ministatement-record-date">
+        </td>
+        <td className="Ministatement-record-heading Ministatement-record-date">
           <div className="Ministatement-record-head">Date</div>
-        </div>
-      </div>
+        </td>
+      </tr>
     );
 
     const allTransactions = miniStatement => (
-      <div className="Ministatement-allRecords">
+      <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => (
          eachRecord(
@@ -73,11 +73,12 @@ class MiniStatement extends React.Component {
          transaction.amount, transaction.balance,
          transaction.type,
          transaction.transactionTimestamp,
-      )
-    ))
-    }
-      </div>
+        )
+      ))
+      }
+      </table>
     );
+
     const filterButton = (title, onClickFunction, screen) => (
       <div className="Ministatement-filter-button-wrapper">
         <button
@@ -87,8 +88,9 @@ class MiniStatement extends React.Component {
         </button>
       </div>
     );
+
     const receivedTransactions = miniStatement => (
-      <div className="Ministatement-allRecords">
+      <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
             if (transaction.type === 'Credit') {
@@ -101,11 +103,12 @@ class MiniStatement extends React.Component {
               );
             }
           })
-    }
-      </div>
+        }
+      </table>
     );
+
     const sentTransactions = miniStatement => (
-      <div className="Ministatement-allRecords">
+      <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
        if (transaction.type === 'Debit') {
@@ -119,7 +122,7 @@ class MiniStatement extends React.Component {
    }
 })
   }
-      </div>
+      </table>
     );
     const setTransactionScreen = (screen) => {
       this.setState({
