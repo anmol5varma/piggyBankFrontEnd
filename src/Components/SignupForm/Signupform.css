@@ -154,11 +154,6 @@
   border: 2px solid white;
 }
 
-.Signupform-button:hover .Signupform-button-label{
-  background-color: rgb(40, 185, 133);
-  color:rgb(240, 240, 240);
-}
-
 .Signupform-button-label{
   margin: 15px;
   background-color: rgb(240,240,240);

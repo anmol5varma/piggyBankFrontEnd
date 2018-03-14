@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import MiniStatement from '../NewMiniStatement';
 import './Newdashboardcontent.css';
 
+
 class DashboardContent extends React.Component {
   constructor() {
     super();
@@ -39,29 +40,34 @@ class DashboardContent extends React.Component {
   getTransactionDetails() {
     console.log('Hello');
     const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token.token);
-    const axiosConfig = {
-      headers: {
-        Authorization: token.token,
-      },
-    };
-    axios.get('/user/miniStatement', axiosConfig)
-      .then((response) => {
-        console.log(response.data);
-        if (response.data.length === 0) {
-          this.setState({
-            showComponent: 1,
-          });
-        } else {
-          this.setState({
-            miniStatement: response.data,
-            showComponent: 1,
-          });
-        }
-      })
-      .catch((error) => {
-        alert(error);
+    if (token === null) {
+      this.setState({
+        showComponent: 3,
       });
+    } else {
+      const axiosConfig = {
+        headers: {
+          Authorization: token.token,
+        },
+      };
+      axios.get('/user/miniStatement', axiosConfig)
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.length === 0) {
+            this.setState({
+              showComponent: 1,
+            });
+          } else {
+            this.setState({
+              miniStatement: response.data,
+              showComponent: 1,
+            });
+          }
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
   }
   render() {
     // };
@@ -256,7 +262,6 @@ class DashboardContent extends React.Component {
         });
       }
     };
-    //  console.log(this.state.miniStatement);
     return (
       <div className="Dashboardcontent-container">
         <div className="Dashboardcontent-wrapper">
@@ -266,7 +271,7 @@ class DashboardContent extends React.Component {
               <div className="Dashboardcontent-header-wallet-circle">
                 <div className="Dashboardcontent-header-wallet">
                   <i className="material-icons Dashboardcontent-header-wallet-icon">
-        account_balance_wallet
+          account_balance_wallet
                   </i>
                 </div>
               </div>
@@ -289,40 +294,40 @@ class DashboardContent extends React.Component {
                   {inputField(updateUsername, 'text', 'Username', this.state.usernameError, this.state.username)}
                   {inputField(updateAmount, 'number', 'Amount', this.state.amountError, this.state.amount)}
                   {this.state.showComponent === 2 ?
-                   (inputField(updatePassword, 'password', 'Password', this.state.passwordError, this.state.password))
-                  : (<div />)
-                  }
+                     (inputField(updatePassword, 'password', 'Password', this.state.passwordError, this.state.password))
+                    : (<div />)
+                    }
                 </div>
               </div>
             </div>
             <div className="Dashboardcontent-header-transfer-button-container">
               {this.state.showComponent === 1 ?
-                (<div className="Dashboardcontent-header-transfer-button-wrapper">
-                  <button
-                    className="Dashboardcontent-header-transfer-button"
-                    onClick={() => {
-                    transferMoney();
-                 }}
-                  >
-                    <span className="Dashboardcontent-header-transfer-button-title">
-                  Transfer money
-                    </span>
-                  </button>
-                 </div>
-              ) :
-              (
-                <div className="Dashboardcontent-header-transfer-button-wrapper">
-                  <button
-                    className="Dashboardcontent-header-transfer-button"
-                    onClick={() => {
-                    confirmTransfer();
-                 }}
-                  >
-                    <span className="Dashboardcontent-header-transfer-button-title">
-                  Confirm Transfer
-                    </span>
-                  </button>
-                </div>)}
+                  (<div className="Dashboardcontent-header-transfer-button-wrapper">
+                    <button
+                      className="Dashboardcontent-header-transfer-button"
+                      onClick={() => {
+                      transferMoney();
+                   }}
+                    >
+                      <span className="Dashboardcontent-header-transfer-button-title">
+                    Transfer money
+                      </span>
+                    </button>
+                   </div>
+                ) :
+                (
+                  <div className="Dashboardcontent-header-transfer-button-wrapper">
+                    <button
+                      className="Dashboardcontent-header-transfer-button"
+                      onClick={() => {
+                      confirmTransfer();
+                   }}
+                    >
+                      <span className="Dashboardcontent-header-transfer-button-title">
+                    Confirm Transfer
+                      </span>
+                    </button>
+                  </div>)}
 
             </div>
           </div>

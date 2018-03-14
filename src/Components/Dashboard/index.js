@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import './Dashboard.css';
 import Header from '../Header';
 import DashboardContent from '../NewDashboardContent';
+import HomePage from '../HomePage';
 
 // class AlertTemplate extends React.Component {
 //   render() {
@@ -25,6 +26,12 @@ const options = {
   transition: 'scale',
 };
 const Dashboard = (props) => {
+  const token = JSON.parse(localStorage.getItem('token'));
+  if (token === null) {
+    return (
+      <HomePage />
+    );
+  }
   const params = queryString.parse(props.location.search);
   return (
     <Provider template={AlertTemplate} {...options}>

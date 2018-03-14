@@ -78,7 +78,7 @@
 }
 
 .Loginside-button{
-  border: 0px;
+  border:2px solid rgb(240, 240, 240);
   padding: 25px;
   outline: none;
   border-radius: 2px;

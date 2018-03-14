@@ -32,7 +32,7 @@ class SignUpSide extends React.Component {
                   <span className="Signupside-button-label">
             open account
                   </span>
-                                   </button>
+                </button>
                 </Link>
               </div>
             </div>
