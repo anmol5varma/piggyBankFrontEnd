@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import PropTypes from 'prop-types';
 import './Dashboard.css';
 import Header from '../Header';
-import DashboardContent from '../DashboardContent';
+import DashboardContent from '../NewDashboardContent';
 
 const Dashboard = (props, context) => {
   const params = queryString.parse(props.location.search);

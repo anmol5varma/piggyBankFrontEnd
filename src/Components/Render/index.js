@@ -14,37 +14,43 @@ class Main extends React.Component {
       isToken: false,
     };
   }
-  componentDidMount() {
-    const token = JSON.parse(localStorage.getItem('token'));
-    if (token) {
-      this.setState({
-        isToken: true,
-      });
-    }
-  }
+  // componentDidMount() {
+  //   const token = JSON.parse(localStorage.getItem('token'));
+  //   if (token) {
+  //     this.setState({
+  //       isToken: true,
+  //     });
+  //   }
+  // }
   render() {
-    if (this.state.isToken === false) {
-      return (
-        <main>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/signup" component={SignupPage} />
-            <Route path="/user" component={Dashboard} />
-            <Route path="/login" component={HomePage} />
-          </Switch>
-        </main>
-      );
-    }
     return (
       <main>
-        <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Route path="/signup" component={SignupPage} />
-          <Route path="/user" component={Dashboard} />
-          <Route path="/login" component={HomePage} />
-        </Switch>
-      </main>
-    );
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+          </Switch>
+        </main>);
+    // if (this.state.isToken === false) {
+    //   return (
+    //     <main>
+    //       <Switch>
+    //         <Route exact path="/" component={HomePage} />
+    //         <Route path="/signup" component={SignupPage} />
+    //         <Route path="/user" component={Dashboard} />
+    //         <Route path="/login" component={HomePage} />
+    //       </Switch>
+    //     </main>
+    //   );
+    // }
+    // return (
+    //   <main>
+    //     <Switch>
+    //       <Route exact path="/" component={Dashboard} />
+    //       <Route path="/signup" component={SignupPage} />
+    //       <Route path="/user" component={Dashboard} />
+    //       <Route path="/login" component={HomePage} />
+    //     </Switch>
+    //   </main>
+    // );
   }
 }
 

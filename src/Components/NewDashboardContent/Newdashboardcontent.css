@@ -1,0 +1,147 @@
+.Dashboardcontent-container{
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.Dashboardcontent-wrapper{
+  display: flex;
+  margin: 50px;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.Dashboardcontent-username{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Dashboardcontent-header{
+  display: flex;
+  color: white;
+  background-color: rgb(50, 50, 50);
+}
+
+.Dashboardcontent-statement{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Dashboardcontent-header-balance{
+  display: flex;
+  border-right: 1px solid rgb(240,240,240);
+}
+.Dashboardcontent-header-balance-amount{
+  font-size: 24px;
+}
+.Dashboardcontent-header-transfer{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Dashboardcontent-header-balance-label{
+  margin: 30px;
+}
+
+.Dashboardcontent-header-balance-title{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.Dashboardcontent-header-balance-icon{
+  margin-right: 5px;
+}
+
+.Dashboardcontent-header-transfer-box{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.Dashboardcontent-header-transfer-box-title{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.Dashboardcontent-header-transfer-box-inputs{
+  display: flex;
+}
+.Dashboardcontent-header-transfer-box-inputfield{
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.Dashboardcontent-header-transfer-box-inputfield > input{
+  background-color: rgb(50, 50, 50);
+  font-size: 17px;
+  margin: 5px;
+  padding-bottom: 5px;
+  border: 0px;
+  width: 100%;
+  color: white;
+  outline: none;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.Dashboardcontent-header-input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(240, 240, 240);
+    opacity: 1; /* Firefox */
+}
+
+.Dashboardcontent-header-input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(240, 240, 240);
+    opacity: 1; /* Firefox */
+}
+
+.Dashboardcontent-header-balance{
+  margin: auto;
+  display: flex;
+}
+
+.Dashboardcontent-header-wallet-circle{
+  display: flex;
+  margin: auto;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: 2px solid rgb(40, 185, 133);
+}
+
+.Dashboardcontent-header-wallet{
+ margin: 10px;
+}
+
+.Dashboardcontent-header-balance-value{
+  color: rgb(40, 185, 133);
+}
+
+.Dashboardcontent-header-transfer-button-container{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Dashboardcontent-header-transfer-button-wrapper{
+  display: flex;
+  background-color: rgb(40, 185, 133);
+  margin: auto;
+}
+
+.Dashboardcontent-header-transfer-button{
+  background-color: rgb(40, 185, 133);
+  border: 0px;
+  outline: none;
+  margin: 20px 40px;
+  display: flex;
+}
+
+.Dashboardcontent-header-transfer-button-title{
+  margin: auto;
+  font-size: 20px;
+  color: white;
+}
