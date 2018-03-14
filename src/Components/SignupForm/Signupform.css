@@ -135,6 +135,7 @@
 .Signupform-button-wrapper{
   display: flex;
   flex-grow: 1;
+  border: 2px solid rgb(240,240,240);;
 }
 
 .Signupform-button{
@@ -145,13 +146,20 @@
   flex: 1;
   outline: none;
   border-radius: 2px;
-  border: 2px solid rgb(40, 185, 133);
   background-color: rgb(240,240,240);
 }
 
-.Signupform-button:hover{
+.Signupform-button-wrapper:hover{
   background-color: rgb(40, 185, 133);
-  border: 2px solid white;
+  border: 2px solid rgb(240,240,240);
+}
+
+.Signupform-button-wrapper:hover .Signupform-button-label{
+  background-color: rgb(40, 185, 133);
+  color: rgb(240,240,240);
+}
+.Signupform-button-wrapper:hover .Signupform-button{
+  background-color: rgb(40, 185, 133);
 }
 
 .Signupform-button-label{
