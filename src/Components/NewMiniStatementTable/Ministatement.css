@@ -40,6 +40,7 @@
 .Ministatement-filter-button-label{
   text-transform: capitalize;
   color: rgb(140, 140, 140);
+  font-size: 15px;
   font-weight: 500;
 }
 

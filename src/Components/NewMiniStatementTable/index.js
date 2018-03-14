@@ -35,7 +35,7 @@ class MiniStatement extends React.Component {
           <div className="Ministatement-record-entry">{type}</div>
         </td>
         <td className="Ministatement-record-value Ministatement-record-date">
-          <div className="Ministatement-record-entry"> {strftime('%F', new Date(date))}</div>
+          <div className="Ministatement-record-entry"> {strftime('%H:%M %d/%m/%y', new Date(date))}</div>
         </td>
       </tr>
     );
@@ -79,15 +79,21 @@ class MiniStatement extends React.Component {
       </table>
     );
 
-    const filterButton = (title, onClickFunction, screen) => (
-      <div className="Ministatement-filter-button-wrapper">
-        <button
-          className="Ministatement-filter-button"
-          onClick={() => onClickFunction(screen)}
-        ><span className="Ministatement-filter-button-label">{title}</span>
-        </button>
-      </div>
-    );
+    const filterButton = (title, onClickFunction, screen) => {
+      let buttonClass = 'Ministatement-filter-button-label';
+      if (screen === this.state.transactionScreen) {
+        buttonClass = `${buttonClass} Ministatement-filter-button-active`;
+      }
+      return (
+        <div className="Ministatement-filter-button-wrapper">
+          <button
+            className="Ministatement-filter-button"
+            onClick={() => onClickFunction(screen)}
+          ><span className={buttonClass}>{title}</span>
+          </button>
+        </div>
+      );
+    };
 
     const receivedTransactions = miniStatement => (
       <table className="Ministatement-allRecords">
@@ -118,17 +124,19 @@ class MiniStatement extends React.Component {
           transaction.amount, transaction.balance,
           transaction.type,
           transaction.transactionTimestamp,
-    );
-   }
-})
-  }
+          );
+         }
+       })
+      }
       </table>
     );
+
     const setTransactionScreen = (screen) => {
       this.setState({
         transactionScreen: screen,
       });
     };
+
     return (
       <div className="Ministatement-container">
         <div className="Ministatement-header">
