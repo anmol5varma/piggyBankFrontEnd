@@ -13,21 +13,3 @@
   display: flex;
   flex: 2;
 }
-
-@media only screen and (max-width: 800px) {
-  .Signuppage-Container{
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-  }
-
-  .Signuppage-signup{
-    display: flex;
-    flex: 1;
-  }
-
-  .Signuppage-login{
-    display: flex;
-    flex: 1;
-  }
-}
