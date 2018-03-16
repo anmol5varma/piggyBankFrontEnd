@@ -13,3 +13,16 @@
   display: flex;
   flex: 2;
 }
+
+@media only screen and (max-width: 1000) {
+  .Signuppage-Container{
+    flex-direction: column;
+  }
+  .Signuppage-signup{
+    flex: 1;
+  }
+
+  .Signuppage-login{
+    flex: 1;
+  }
+}
