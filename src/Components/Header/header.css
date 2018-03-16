@@ -12,8 +12,8 @@ a{
 .Header-logo{
   display: flex;
   font-size: 20px;
-  margin: 15px;
-  color:
+  margin: auto;
+  margin-left: 15px;
 }
 
 .Header-user{
@@ -81,6 +81,9 @@ a{
 
 .Header-options-dropdown-icon{
   margin: auto;
+  padding: 0px;
+  margin: 0px;
+  font-size: 17px;
   color: white;
 }
 
