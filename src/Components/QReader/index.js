@@ -42,8 +42,7 @@ class QReader extends Component {
 export default QReader;
 
 QReader.propTypes = {
-  sendOTPButtonClicked: PropTypes.func.isRequired,
   setAadhaarNumber: PropTypes.func.isRequired,
-  // context:PropTypes.
+  // context: PropTypes.object.isRequired,
 };
 
