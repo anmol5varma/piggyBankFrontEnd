@@ -385,13 +385,14 @@ class SignupForm extends React.Component {
   }
   onRegister() {
     axios.post('/users', {
+    //  aadhaarNo:'123412341234',
       aadhaarNo: this.state.aadhaarNo,
       isVerified: this.state.isVerified,
       userName: this.state.username,
       password: this.state.password,
       eKYCResponse: JSON.stringify(this.state.eKYCResponse),
     }).then((response) => {
-      console.log(response);
+      console.log("Hello",response);
       if (response.data.statusCode === 200) {
         this.setState({
           usernameError: ' ',
@@ -438,8 +439,8 @@ class SignupForm extends React.Component {
   }
   verifyOTPButtonClicked() {
     axios.post('/otpVerify', {
-      //aadhaarNo: this.state.aadhaarNo,
-      aadhaarNo:'123412341234',
+      aadhaarNo: this.state.aadhaarNo,
+      //aadhaarNo:'123412341234',
       otp: this.state.otp,
     }).then((response) => {
       console.log('Hello', response.data.response, response.data.statusCode);
@@ -471,7 +472,6 @@ class SignupForm extends React.Component {
     });
   }
   setAadhaarNumber(context,result){
-    console.log("Hello");
     context.setState({
       aadhaarNo:result,
     },()=>{
@@ -489,10 +489,10 @@ class SignupForm extends React.Component {
 
 
   sendOTPButtonClicked() {
-   console.log("Hello",this.state.aadhaarNo);
+   console.log(this.state.aadhaarNo,'123412341234');
     axios.post('/otpToken', {
-     // aadhaarNo:'123412341234'
-      aadhaarNo:this.state.aadhaarNo,
+   //  aadhaarNo:'123412341234'
+     aadhaarNo:this.state.aadhaarNo,
     }).then((response) => {
       if (response.data.statusCode === 200) {
        // this.setComponent(2);

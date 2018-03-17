@@ -13,17 +13,17 @@ class QReader extends Component {
   }
   handleScan(data) {
     if (data) {
-      console.log(data);
+      const recipients = data.split(/[<>]+/);
+      const uid = recipients[3].split(' ')[1].substring(5, 17);
+      // const uidString = `${uid}'`;
       this.setState({
-        result: data,
+        result: uid,
       }, () => {
+        alert(`Your aadhaar number is ${uid}`);
         this.props.setAadhaarNumber(this.props.context, this.state.result);
       });
     }
   }
-  // handleError(err) {
-  //   console.error(err);
-  // }
   render() {
     return (
       <div>
