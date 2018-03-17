@@ -101,6 +101,7 @@ const sendOTP = state => (
     {/* <div className="Signupform-content">
       {getAadhaarForm(state)}
     </div> */}
+  
     <div className="Signupform-button-wrapper">
       <button
         onClick={() => {
@@ -113,6 +114,7 @@ const sendOTP = state => (
         </span>
       </button>
     </div>
+    <div className="Error-message">{state.state.aadhaarError}</div>
   </div>
 );
 const verifyOTP = state => (
@@ -489,8 +491,8 @@ class SignupForm extends React.Component {
   sendOTPButtonClicked() {
    console.log("Hello",this.state.aadhaarNo);
     axios.post('/otpToken', {
-      aadhaarNo:'123412341234'
-     // aadhaarNo:this.state.aadhaarNo,
+     // aadhaarNo:'123412341234'
+      aadhaarNo:this.state.aadhaarNo,
     }).then((response) => {
       if (response.data.statusCode === 200) {
        // this.setComponent(2);
@@ -519,6 +521,7 @@ class SignupForm extends React.Component {
       if (err.response.status === 400) {
         this.setState({
           aadhaarError: 'Invalid aadhaar number',
+          noOfComponent:1,
         });
       }
     });
