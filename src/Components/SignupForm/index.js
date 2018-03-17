@@ -4,6 +4,7 @@ import axios from 'axios';
 import React from 'react';
 import './Signupform.css';
 import LoginSideAfterRegister from '../LoginSideAfterRegister';
+import QReader from '../QReader';
 
 const strftime = require('strftime');
 
@@ -96,25 +97,24 @@ const progressBarHalf = () => (
 
 const sendOTP = state => (
   <div className="Signupform-welcome-message">
-    <div className="Signupform-heading">Enter your aadhaar number</div>
-    <div className="Signupform-content">
+    <div className="Signupform-heading">Give Aadhaar Number</div>
+    {/* <div className="Signupform-content">
       {getAadhaarForm(state)}
-    </div>
+    </div> */}
     <div className="Signupform-button-wrapper">
       <button
         onClick={() => {
-          state.sendOTPButtonClicked();
+        state.scanAadhaarbuttonClicked();
         }}
         className="Signupform-button"
       >
         <span className="Signupform-button-label">
-      Send otp
+      Scan Aadhaar Card
         </span>
       </button>
     </div>
   </div>
 );
-
 const verifyOTP = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">
@@ -360,8 +360,8 @@ class SignupForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      noOfComponent: 1,
-      aadhaarNo: '',
+      noOfComponent:1,
+      aadhaarNo:'123412341234',
       otp: '',
       aadhaarError: '',
       otpError: '',
@@ -376,7 +376,11 @@ class SignupForm extends React.Component {
       notmydetailsOTPError: '',
     };
   }
-
+  setComponent(component){
+    this.setState({
+      noOfComponent:component,
+    })
+  }
   onRegister() {
     axios.post('/users', {
       aadhaarNo: this.state.aadhaarNo,
@@ -390,8 +394,8 @@ class SignupForm extends React.Component {
         this.setState({
           usernameError: ' ',
           passwordError: ' ',
-          noOfComponent: 0,
         });
+        this.setComponent(0);
         console.log(`Account created${response.data}`);
       } else if (response.data.statusCode === 400) {
         this.setState({
@@ -416,6 +420,11 @@ class SignupForm extends React.Component {
       }
     });
   }
+
+ scanAadhaarbuttonClicked(){ 
+  // console.log(this.state.aadhaarNo);
+    this.setComponent(5);
+  }
   useStateError() {
     console.log(
       this.state.aadhaarError,
@@ -427,7 +436,8 @@ class SignupForm extends React.Component {
   }
   verifyOTPButtonClicked() {
     axios.post('/otpVerify', {
-      aadhaarNo: this.state.aadhaarNo,
+      //aadhaarNo: this.state.aadhaarNo,
+      aadhaarNo:'123412341234',
       otp: this.state.otp,
     }).then((response) => {
       console.log('Hello', response.data.response, response.data.statusCode);
@@ -458,25 +468,36 @@ class SignupForm extends React.Component {
       }
     });
   }
-
+  setAadhaarNumber(context,result){
+    console.log("Hello");
+    context.setState({
+      aadhaarNo:result,
+    },()=>{
+      context.sendOTPButtonClicked();
+    })
+  }
   detailsVerifiedButtonClicked() {
+    this.setComponent(4);
     this.setState({
       isVerified: 'true',
-      noOfComponent: 4,
+     // noOfComponent: 4,
       notmydetailsOTPError: '',
     });
   }
 
 
   sendOTPButtonClicked() {
+   console.log("Hello",this.state.aadhaarNo);
     axios.post('/otpToken', {
-      aadhaarNo: this.state.aadhaarNo,
+      aadhaarNo:'123412341234'
+     // aadhaarNo:this.state.aadhaarNo,
     }).then((response) => {
       if (response.data.statusCode === 200) {
+       // this.setComponent(2);
         this.setState({
-          noOfComponent: 2,
           otpError: '',
           otp: '',
+          noOfComponent:2
         });
       } else if (response.data.message === 'User already registered') {
         this.setState({
@@ -494,6 +515,7 @@ class SignupForm extends React.Component {
         });
       }
     }).catch((err) => {
+      console.log(err);
       if (err.response.status === 400) {
         this.setState({
           aadhaarError: 'Invalid aadhaar number',
@@ -503,7 +525,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    if (this.state.noOfComponent === 0) {
+     if (this.state.noOfComponent === 0) {
       return (
         <div className="Signupform-container">
           <div className="Signupform-box">
@@ -565,6 +587,11 @@ class SignupForm extends React.Component {
             </div>
           </div>
         </div>
+      );
+    }
+    else if(this.state.noOfComponent===5){
+      return (
+      <QReader context={this} setAadhaarNumber={this.setAadhaarNumber}/>
       );
     }
     return (
