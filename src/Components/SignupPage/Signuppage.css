@@ -14,20 +14,15 @@
   flex: 2;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000) {
   .Signuppage-Container{
-    display: flex;
-    flex-grow: 1;
     flex-direction: column;
   }
-
   .Signuppage-signup{
-    display: flex;
     flex: 1;
   }
 
   .Signuppage-login{
-    display: flex;
     flex: 1;
   }
 }

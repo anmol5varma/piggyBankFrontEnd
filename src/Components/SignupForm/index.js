@@ -302,7 +302,7 @@ const getDetails = state => (
         <div className="Signupform-each-entry">
           <div className="Signupform-table-label">
             <span className="Signupform-table-text">
-            State.state
+            State
             </span>
           </div>
           <div className="Signupform-table-value">
