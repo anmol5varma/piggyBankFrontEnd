@@ -82,3 +82,10 @@
   font-family: 'Roboto', sans-serif;
   color:rgb(240, 240, 240)
 }
+
+@media only screen and (max-width: 1000) {
+  .SignupContent-container{
+    background-color: red;
+    width: 100%;
+  }
+}

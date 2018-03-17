@@ -147,3 +147,33 @@
   font-size: 20px;
   color: white;
 }
+
+@media only screen and (max-width: 800px) {
+  .Dashboardcontent-wrapper{
+    display: flex;
+    margin: 0px;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  .Dashboardcontent-header{
+    flex-direction: column;
+  }
+  .Dashboardcontent-header-balance{
+    border: 0px;
+  }
+  .Dashboardcontent-header-transfer-box-inputs{
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .Dashboardcontent-header-transfer-box{
+    margin: 10px;
+  }
+  .Ministatement-header-options{
+    margin: 5px;
+  }
+  .Ministatement-record-head{
+    margin: 5px;
+  }
+}
