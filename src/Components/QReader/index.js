@@ -33,7 +33,7 @@ class QReader extends Component {
           onScan={this.handleScan}
           style={{ width: '600px', height: '300px' }}
         />
-        <p>{this.state.result}</p>
+        {/* <p>{this.state.result}</p> */}
       </div>
     );
   }

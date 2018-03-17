@@ -500,7 +500,8 @@ class SignupForm extends React.Component {
         this.setState({
           otpError: '',
           otp: '',
-          noOfComponent:2
+          noOfComponent:2,
+          aadhaarError:' ',
         });
       } else if (response.data.message === 'User already registered') {
         this.setState({
