@@ -494,6 +494,7 @@ class SignupForm extends React.Component {
    //  aadhaarNo:'123412341234'
      aadhaarNo:this.state.aadhaarNo,
     }).then((response) => {
+      console.log("Hello",response);
       if (response.data.statusCode === 200) {
        // this.setComponent(2);
         this.setState({
@@ -506,14 +507,17 @@ class SignupForm extends React.Component {
           aadhaarClass: 'error',
           aadhaarNo: '',
           aadhaarError: 'You already have an account. Try logging in',
+          noOfComponent:1
         });
       } else if (response.data.statusCode === 204) {
         this.setState({
           aadhaarError: 'This aadhaar number doesnot exists',
+          noOfComponent:1
         });
       } else {
         this.setState({
           aadhaarError: 'There is some server error. Please try after some time.',
+          noOfComponent:1
         });
       }
     }).catch((err) => {
@@ -521,6 +525,7 @@ class SignupForm extends React.Component {
       if (err.response.status === 400) {
         this.setState({
           aadhaarError: 'Invalid aadhaar number',
+          
           noOfComponent:1,
         });
       }
