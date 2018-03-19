@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import './LoginSideAfterRegister.css';
-import { Link } from 'react-router-dom';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
   <div>
@@ -25,15 +24,12 @@ class LoginSide extends React.Component {
       password: '',
       incorrectPasswordError: '',
       incorrectUsernameError: '',
-      balance: '',
     };
   }
   render() {
     const makeLoginRequest = () => {
       console.log(this.state.username);
       console.log(this.state.password);
-      console.log(this.props.history);
-
 
       axios.post('/login', {
         userName: this.state.username,

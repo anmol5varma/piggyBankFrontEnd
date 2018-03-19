@@ -1,0 +1,204 @@
+.Signupform-container{
+  display: flex;
+  flex: 1;
+  overflow-y: scroll;
+  flex-direction: column;
+  background-color: rgb(40, 185, 133);
+}
+
+.Login-input-field1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(210, 210, 210);
+    opacity: 1; /* Firefox */
+}
+
+.Login-input-field1:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field1::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(240, 240, 240);
+}
+
+.Login-input-field1{
+  -webkit-transition: all 0.50s ease-in-out;
+  -moz-transition: all 0.50s ease-in-out;
+  -ms-transition: all 0.50s ease-in-out;
+  -o-transition: all 0.50s ease-in-out;
+  outline: none;
+  width: 100%;
+  background-color: rgb(40, 185, 133);
+  border: 0px;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  padding-bottom: 7px;
+  margin-top: 10px;
+  color: rgb(240,240,240);
+  font-size: 17px;
+}
+
+.Signup-field{
+  margin-top: 30px;
+}
+
+.Login-input-field1:focus{
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-box{
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  margin: 70px;
+}
+
+.Signupform-progressbar{
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Signupform-progressbar-dot-unfilled{
+  border-radius: 50%;
+  width: 15px;
+  box-sizing: border-box;
+  height: 15px;
+  margin: 15px;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar-unfilled{
+  border-radius: 50px;
+  margin: 10px 18px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-dot{
+  border-radius: 50%;
+  width: 15px;
+  box-sizing: border-box;
+  height: 15px;
+  margin: 15px;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-progressbar-bar{
+  border-radius: 50px;
+  margin: 10px 20px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  background-color: rgb(240,240,240);
+}
+
+.Signupform-component{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Signupform-welcome-message{
+  margin: 15px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.Signupform-heading{
+  display: flex;
+  flex-grow: 1;
+  font-size: 30px;
+  font-weight: 100;
+  color: rgb(240, 240, 240);
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupform-logo{
+  color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.Signupform-content{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 20px 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signupform-button-wrapper{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Signupform-button{
+  transition: background-color 0.5s ease;
+  border: 0px;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  outline: none;
+  border-radius: 2px;
+  border: 2px solid rgb(40, 185, 133);
+  background-color: rgb(240,240,240);
+}
+
+.Signupform-button:hover{
+  background-color: rgb(40, 185, 133);
+  border: 2px solid white;
+}
+
+.Signupform-button:hover .Signupform-button-label{
+  background-color: rgb(40, 185, 133);
+  color:rgb(240, 240, 240);
+}
+
+.Signupform-button-label{
+  margin: 15px;
+  background-color: rgb(240,240,240);
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color:rgb(40, 185, 133);
+  transition: background-color 0.5s ease;
+}
+
+.Signupform-each-entry{
+  display: flex;
+  flex-grow: 1;
+}
+
+.Signupform-verify-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.Signupform-table-text{
+  margin: 10px;
+}
+
+.Signupform-table-value{
+  display: flex;
+  flex: 2;
+  background-color: rgb(240, 240, 240);
+}
+
+.Signupform-table-label{
+  display: flex;
+  flex: 1;
+  background-color: rgb(230, 230, 230);
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .Signupform-box{
+    margin: 10px;
+  }
+}

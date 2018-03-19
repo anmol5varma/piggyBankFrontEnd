@@ -14,7 +14,7 @@
   flex: 2;
 }
 
-@media only screen and (max-width: 1000) {
+@media only screen and (max-width: 1000px) {
   .Signuppage-Container{
     flex-direction: column;
   }
