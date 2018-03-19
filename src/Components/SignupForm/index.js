@@ -5,7 +5,7 @@ import React from 'react';
 import './Signupform.css';
 import LoginSideAfterRegister from '../LoginSideAfterRegister';
 import QReader from '../QReader';
-import helpers from '../../helpers/signUpFormHelpers'
+import helpers from '../../helpers/signUpFormHelpers/signUpFormHelpers'
 const strftime = require('strftime');
 
 

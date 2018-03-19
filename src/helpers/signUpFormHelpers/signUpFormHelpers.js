@@ -1,4 +1,4 @@
-import React from 'react-dom';
+import React from 'react';
 import strftime from 'strftime';
 
 const getAadhaarForm = state => (
@@ -352,7 +352,7 @@ const userRegister = state => (
 );
 
 
-module.exports = {
+export default {
   getAadhaarForm,
   userRegister,
   getDetails,

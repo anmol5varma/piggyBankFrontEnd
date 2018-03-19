@@ -13,26 +13,26 @@ class SignupContent extends React.Component {
             <div className="SignupContent-welcome-message">
               <div className="SignupContent-heading">Register</div>
               <div className="SignupContent-subbheading">
-          No need to go to the bank. We will come to you
+                No need to go to the bank. We will come to you
               </div>
               <div className="SignupContent-content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Neque convallis a cras semper. Sollicitudin ac orci
-        phasellus egestas tellus. Vel facilisis volutpat est velit egestas
-        dui id ornare arcu. Adipiscing tristique risus nec feugiat in.
-        Platea dictumst quisque sagittis purus sit amet. Nulla facilisi
-        etiam dignissim diam quis. Quam viverra orci sagittis eu volutpat
-        odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium.
-        Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum
-        nibh tellus molestie nunc.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Neque convallis a cras semper. Sollicitudin ac orci
+                phasellus egestas tellus. Vel facilisis volutpat est velit egestas
+                dui id ornare arcu. Adipiscing tristique risus nec feugiat in.
+                Platea dictumst quisque sagittis purus sit amet. Nulla facilisi
+                etiam dignissim diam quis. Quam viverra orci sagittis eu volutpat
+                odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium.
+                Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum
+                nibh tellus molestie nunc.
               </div>
               <div className="SignupContent-button-wrapper">
                 <Link to="/">
                   <button className="SignupContent-button">
 
                     <span className="SignupContent-button-label">
-          I already have an account
+                      I already have an account
                     </span>
                   </button>
                 </Link>
