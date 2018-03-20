@@ -74,8 +74,17 @@ class SignupForm extends React.Component {
     });
   }
 
- scanAadhaarbuttonClicked(){ 
+  scanAadhaarbuttonClicked(){ 
+    this.setState({
+      aadhaarNo:'',
+    })
     this.setComponent(5);
+  }
+  takeAadhaarNumberbuttonClicked(){ 
+    this.setState({
+      aadhaarNo:'',
+    })
+    this.setComponent(6);
   }
   useStateError() {
     console.log(
@@ -205,7 +214,7 @@ class SignupForm extends React.Component {
           <div className="Signupform-box">
             <div className="Signupform-component">
               {helpers.progressBarHalf()}
-              {helpers.sendOTP(this)}
+              {helpers.takeAadhaar(this)}
             </div>
           </div>
         </div>
@@ -216,7 +225,7 @@ class SignupForm extends React.Component {
           <div className="Signupform-box">
             <div className="Signupform-component">
               {helpers.progressBar()}
-              {helpers.sendOTP(this)}
+              {helpers.takeAadhaar(this)}
             </div>
             <div className="Signupform-component">
               {helpers.progressBarHalf()}
@@ -231,7 +240,7 @@ class SignupForm extends React.Component {
           <div className="Signupform-box">
             <div className="Signupform-component">
               {helpers.progressBar()}
-              {helpers.sendOTP(this)}
+              {helpers.takeAadhaar(this)}
             </div>
             <div className="Signupform-component">
               {helpers.progressBar()}
@@ -247,7 +256,18 @@ class SignupForm extends React.Component {
     }
     else if(this.state.noOfComponent===5){
       return (
+      
       <QReader context={this} setAadhaarNumber={this.setAadhaarNumber}/>
+      );
+    } else if(this.state.noOfComponent===6){
+      return(<div className="Signupform-container">
+          <div className="Signupform-box">
+            <div className="Signupform-component">
+              {helpers.progressBarHalf()}
+              {helpers.takeAadhaarNumber(this)}
+            </div>
+          </div>
+        </div>
       );
     }
     return (
@@ -255,7 +275,7 @@ class SignupForm extends React.Component {
         <div className="Signupform-box">
           <div className="Signupform-component">
             {helpers.progressBar()}
-            {helpers.sendOTP(this)}
+            {helpers.takeAadhaar(this)}
           </div>
           <div className="Signupform-component">
             {helpers.progressBar()}
