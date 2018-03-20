@@ -5,7 +5,7 @@ const getAadhaarForm = state => (
   <div>
     <input
       type="text"
-      placeholder="12-digit aadhaar number"
+      placeholder="Enter 12-digit aadhaar number"
       className="Login-input-field1"
       value={state.state.aadhaarNo}
       onChange={(event) => {
@@ -112,9 +112,9 @@ const takeAadhaarNumber = state => (
 const takeAadhaar = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">Give Aadhaar Number</div>
-    {/* <div className="Signupform-content">
+    <div className="Signupform-content">
       {getAadhaarForm(state)}
-    </div> */}
+    </div>
 
     <div className="Signupform-button-wrapper">
       <button
@@ -129,16 +129,15 @@ const takeAadhaar = state => (
       </button>
       <button
         onClick={() => {
-        state.takeAadhaarNumberbuttonClicked();
+        state.sendOTPButtonClicked();
         }}
         className="Signupform-button"
       >
         <span className="Signupform-button-label">
-       Enter Aadhaar Number
+       Send OTP
         </span>
       </button>
     </div>
-    <div className="Error-message">{state.state.aadhaarError}</div>
   </div>
 );
 const verifyOTP = state => (

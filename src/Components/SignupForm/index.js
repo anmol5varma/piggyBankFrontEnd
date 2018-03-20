@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
     super();
     this.state = {
       noOfComponent:1,
-      aadhaarNo:'123412341234',
+      aadhaarNo:'',
       otp: '',
       aadhaarError: '',
       otpError: '',
