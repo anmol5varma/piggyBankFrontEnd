@@ -7,6 +7,7 @@ import SignupPage from '../SignupPage';
 import Dashboard from '../Dashboard';
 // import history from '../../history';
 
+
 class Main extends React.Component {
   constructor() {
     super();
@@ -23,6 +24,7 @@ class Main extends React.Component {
             <Route path="/signup" component={SignupPage} />
             <Route path="/user" component={Dashboard} />
             <Route path="/login" component={HomePage} />
+            <Route path="/accountSettings" component={Dashboard} />
           </Switch>
         </main>
       );
@@ -34,6 +36,7 @@ class Main extends React.Component {
           <Route path="/signup" component={SignupPage} />
           <Route path="/user" component={Dashboard} />
           <Route path="/login" component={HomePage} />
+          <Route path="/accountSettings" component={Dashboard} />
         </Switch>
       </main>
     );

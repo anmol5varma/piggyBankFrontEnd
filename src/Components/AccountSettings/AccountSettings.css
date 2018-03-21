@@ -1,0 +1,10 @@
+.account-settings-container{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin:30px;
+}
+
+.account-vertical-tabs{
+    width: 15%
+}
