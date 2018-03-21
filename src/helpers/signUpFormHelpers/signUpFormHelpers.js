@@ -177,164 +177,164 @@ const getDetails = state => (
     Verify your details
     </div>
     <div className="Signupform-content">
-      <div className="Signupform-verify-details">
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+      <table className="Signupform-verify-details">
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Name
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poi.Name}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Gender
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poi.Gender}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             DOB
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {strftime('%F', new Date(state.state.eKYCResponse.e_Kyc.Poi.Dob))}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Contact
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poi.contact}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Guardian
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.co}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             House no.
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.house}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Street
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.street}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Locality
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.lc}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Landmark
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.landmark}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Sub district
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.subdist}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             District
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.dist}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             Pincode
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.pc}
             </span>
-          </div>
-        </div>
-        <div className="Signupform-each-entry">
-          <div className="Signupform-table-label">
+          </td>
+        </tr>
+        <tr className="Signupform-each-entry">
+          <td className="Signupform-table-label">
             <span className="Signupform-table-text">
             State
             </span>
-          </div>
-          <div className="Signupform-table-value">
+          </td>
+          <td className="Signupform-table-value">
             <span className="Signupform-table-text">
               {state.state.eKYCResponse.e_Kyc.Poa.state}
             </span>
-          </div>
-        </div>
-      </div>
+          </td>
+        </tr>
+      </table>
     </div>
     <div className="Signupform-button-wrapper">
       <button
