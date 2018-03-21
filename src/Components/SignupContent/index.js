@@ -13,7 +13,7 @@ class SignupContent extends React.Component {
             <div className="SignupContent-welcome-message">
               <div className="SignupContent-heading">Register</div>
               <div className="SignupContent-subbheading">
-                No need to go to the bank. We will come to you
+                Just four easy steps
               </div>
               <div className="SignupContent-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
