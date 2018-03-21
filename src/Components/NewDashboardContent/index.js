@@ -18,7 +18,7 @@ class DashboardContent extends React.Component {
       transactionError: '',
       amount: '',
       miniStatement: [],
-
+      suggestions: [],
     };
   }
   componentDidMount() {
@@ -64,6 +64,29 @@ class DashboardContent extends React.Component {
       });
   }
   render() {
+    const sugg = this.state.suggestions;
+    let suggestionList = '';
+    if (sugg === [] || sugg === undefined) {
+
+    } else {
+      suggestionList = sugg.map(step =>
+        (
+          <div
+            className="dropdown-suggestion-item"
+            onClick={() => setUserName(step.userName)}
+          >
+
+            <div
+              className="suggestion-dropdown-elements"
+              eventKey={step.userId}
+            >
+              <div className="Transfer-Money_User-Name">{step.userName}</div> <div className="Transfer-Money-Full-Name">{step.name}</div>
+            </div>
+          </div>
+        ));
+    }
+
+
     // };
     // const setMiniStatement = (response) => {
     //   console.log('Setting data');
@@ -116,16 +139,31 @@ class DashboardContent extends React.Component {
         password: event.target.value,
       });
     };
-    const inputField = (onChangeFunction, inputType, placeholder, error, value) => (
-      <div className="Dashboardcontent-header-transfer-box-inputfield">
-        <input
-          type={inputType}
-          placeholder={placeholder}
-          onChange={onChangeFunction}
-          value={value}
-        />
-      </div>
-    );
+    const inputField = (onChangeFunction, inputType, placeholder, error, value) => {
+      if (placeholder === 'Username') {
+        return (
+          <div className="Dashboardcontent-header-transfer-box-inputfield">
+            <input
+              type={inputType}
+              placeholder={placeholder}
+              onChange={onChangeFunction}
+              value={value}
+            />
+            <div className={(this.state.suggestions === [] || this.state.suggestions === null) ? 'displaySuggestions' : 'hideSuggestions'} >{suggestionList}</div>
+          </div>
+        );
+      }
+      return (
+        <div className="Dashboardcontent-header-transfer-box-inputfield">
+          <input
+            type={inputType}
+            placeholder={placeholder}
+            onChange={onChangeFunction}
+            value={value}
+          />
+        </div>
+      );
+    };
     const showSuccessAlert = (message) => {
       this.props.alert.success(message);
     };
@@ -250,12 +288,48 @@ class DashboardContent extends React.Component {
       });
     };
     const updateUsername = (event) => {
+      const userName = event.target.value;
       if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
         this.setState({
           username: event.target.value,
+        }, () => {
+          const token = JSON.parse(localStorage.getItem('token'));
+          const axiosConfig = {
+            headers: {
+              Authorization: token.token,
+            },
+          };
+          console.log(token.token, '88');
+
+          axios.get(`/search/${userName}`, axiosConfig)
+            .then((selectedOption) => {
+              const resultArray = selectedOption.data;
+              return resultArray;
+            })
+            .then((data) => {
+              if (data !== undefined) {
+                this.setState({
+                  suggestions: data.data,
+                });
+              }
+              return data;
+            }).catch(() => {
+              this.setState({
+                suggestions: [],
+              });
+            });
         });
       }
     };
+
+    const setUserName = (name) => {
+      this.setState({
+        username: name,
+        suggestions: [],
+      });
+    };
+
+
     //  console.log(this.state.miniStatement);
     return (
       <div className="Dashboardcontent-container">
@@ -308,7 +382,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
