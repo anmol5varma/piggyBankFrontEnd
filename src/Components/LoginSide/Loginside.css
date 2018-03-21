@@ -82,6 +82,7 @@
   padding: 20px;
   transition: background-color 0.5s ease;
   outline: none;
+  flex-grow: 1;
   border-radius: 2px;
   background-color: rgb(240,240,240);
 }
