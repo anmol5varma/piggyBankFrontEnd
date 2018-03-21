@@ -43,7 +43,12 @@
   font-size: 15px;
   font-weight: 500;
 }
-
+.Ministatement-select-options-number{
+  text-transform: capitalize;
+  color: rgb(140, 140, 140);
+  font-size: 15px;
+  font-weight: 500;
+}
 .Ministatement-filter-button-wrapper:hover .Ministatement-filter-button-label{
   color: rgb(40, 185, 133);
 }
@@ -51,8 +56,15 @@
 .Ministatement-filter-button-active{
   color: rgb(40, 185, 133);
 }
+.MiniStatement-filter-select{
+  text-transform: capitalize;
+  color: rgb(140, 140, 140);
+  font-size: 15px;
+  font-weight: 500;
 
-.Ministatement-table{
+}
+Ministatement-select-options-number{
+  margin:0px 3px 0px 0px;
 }
 
 .Ministatement-table-wrapper{
@@ -82,7 +94,7 @@
   margin-top: 30px;
   color: rgb(22, 26, 34);
 }
-
+ 
 .Ministatement-allRecord-heading{
   font-weight: 500;
   font-size: 15px;
