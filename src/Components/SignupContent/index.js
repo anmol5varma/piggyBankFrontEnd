@@ -16,16 +16,28 @@ class SignupContent extends React.Component {
                 Just four easy steps
               </div>
               <div className="SignupContent-content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Neque convallis a cras semper. Sollicitudin ac orci
-                phasellus egestas tellus. Vel facilisis volutpat est velit egestas
-                dui id ornare arcu. Adipiscing tristique risus nec feugiat in.
-                Platea dictumst quisque sagittis purus sit amet. Nulla facilisi
-                etiam dignissim diam quis. Quam viverra orci sagittis eu volutpat
-                odio facilisis mauris. Facilisi cras fermentum odio eu feugiat pretium.
-                Elementum nibh tellus molestie nunc. Tempor orci eu lobortis elementum
-                nibh tellus molestie nunc.
+                <ul className="Signup-content-checklist">
+                  <li className="Signup-content-checklist-item">
+                    <div className="font-icons">
+                      <i className="far font-icons fa-check-circle" />Scan QR or enter aadhaar number
+                    </div>
+                  </li>
+                  <li className="Signup-content-checklist-item">
+                    <div className="font-icons">
+                      <i className="far font-icons fa-check-circle" />Complete eKYC
+                    </div>
+                  </li>
+                  <li className="Signup-content-checklist-item">
+                    <div className="font-icons">
+                      <i className="far font-icons fa-check-circle" />Verify your details
+                    </div>
+                  </li>
+                  <li className="Signup-content-checklist-item">
+                    <div className="font-icons">
+                      <i className="far font-icons fa-check-circle" />Enter login credentials
+                    </div>
+                  </li>
+                </ul>
               </div>
               <div className="SignupContent-button-wrapper">
                 <Link to="/">

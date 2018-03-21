@@ -12,7 +12,9 @@ class SignUpSide extends React.Component {
             <div className="Signupside-logo">Piggy Bank</div>
             <div className="Signupside-welcome-message">
               <div className="Signupside-heading">Welcome</div>
-              <div className="Signupside-subbheading">No need to go to the bank. We will come to you</div>
+              <div className="Signupside-subbheading">
+              No need to go to the bank. We will come to you
+              </div>
               <div className="Signupside-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -30,7 +32,7 @@ class SignUpSide extends React.Component {
                 <Link to="/signup">
                   <button className="Signupside-button" >
                     <span className="Signupside-button-label">
-                      open account
+                      register here
                     </span>
                   </button>
                 </Link>
