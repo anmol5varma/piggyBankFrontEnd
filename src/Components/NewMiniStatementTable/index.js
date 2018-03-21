@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Ministatement.css';
 
-
 const strftime = require('strftime');
 
 class MiniStatement extends React.Component {
@@ -10,6 +9,7 @@ class MiniStatement extends React.Component {
     super();
     this.state = {
       transactionScreen: 1,
+      transactionsCount: 10,
     };
   }
   render() {
@@ -96,6 +96,7 @@ class MiniStatement extends React.Component {
     };
 
     const receivedTransactions = miniStatement => (
+      // this.props.setTransactionNumber(this.props.transactionsCount)
       <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
@@ -114,6 +115,7 @@ class MiniStatement extends React.Component {
     );
 
     const sentTransactions = miniStatement => (
+      // props.setTransactionNumber(this.props.transactionsCount),
       <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
@@ -136,7 +138,12 @@ class MiniStatement extends React.Component {
         transactionScreen: screen,
       });
     };
-
+    // const setTransactionNumber = (e) => {
+    //   // alert(e.target.value);
+    //   this.setState({ transactionsCount: e.target.value }, () => {
+    //     alert(this.state.transactionsCount);
+    //   });
+    // };
     return (
       <div className="Ministatement-container">
         <div className="Ministatement-header">
@@ -148,6 +155,21 @@ class MiniStatement extends React.Component {
               {filterButton('received', setTransactionScreen, 3)}
               {filterButton('sent', setTransactionScreen, 2)}
               {filterButton('all', setTransactionScreen, 1)}
+              <div className="select-options">
+                <span className="MiniStatement-filter-select">View</span>
+                <span className="Ministatement-select-options-number">
+                  <select
+                    value={this.props.transactionsCount}
+                    onChange={(event) => {
+                      this.props.setTransactionNumber(event.target.value);
+                    }}
+                  >
+                    <option value="5">5</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                  </select>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -174,3 +196,4 @@ export default MiniStatement;
 MiniStatement.propTypes = {
   miniStatement: PropTypes.string.isRequired,
 };
+
