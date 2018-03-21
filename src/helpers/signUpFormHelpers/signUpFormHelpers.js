@@ -5,7 +5,7 @@ const getAadhaarForm = state => (
   <div>
     <input
       type="text"
-      placeholder="12-digit aadhaar number"
+      placeholder="Enter 12-digit aadhaar number"
       className="Login-input-field1"
       value={state.state.aadhaarNo}
       onChange={(event) => {
@@ -87,13 +87,34 @@ const progressBarHalf = () => (
     <div className="Signupform-progressbar-bar-unfilled" />
   </div>
 );
-
-const sendOTP = state => (
+const takeAadhaarNumber = state => (
   <div className="Signupform-welcome-message">
     <div className="Signupform-heading">Give Aadhaar Number</div>
-    {/* <div className="Signupform-content">
+    <div className="Signupform-content">
       {getAadhaarForm(state)}
-    </div> */}
+    </div>
+
+    <div className="Signupform-button-wrapper">
+      <button
+        onClick={() => {
+        state.sendOTPButtonClicked();
+        }}
+        className="Signupform-button"
+      >
+        <span className="Signupform-button-label">
+      Send OTP
+        </span>
+      </button>
+    </div>
+    <div className="Error-message">{state.state.aadhaarError}</div>
+  </div>
+);
+const takeAadhaar = state => (
+  <div className="Signupform-welcome-message">
+    <div className="Signupform-heading">Give Aadhaar Number</div>
+    <div className="Signupform-content">
+      {getAadhaarForm(state)}
+    </div>
 
     <div className="Signupform-button-wrapper">
       <button
@@ -106,8 +127,17 @@ const sendOTP = state => (
       Scan Aadhaar Card
         </span>
       </button>
+      <button
+        onClick={() => {
+        state.sendOTPButtonClicked();
+        }}
+        className="Signupform-button"
+      >
+        <span className="Signupform-button-label">
+       Send OTP
+        </span>
+      </button>
     </div>
-    <div className="Error-message">{state.state.aadhaarError}</div>
   </div>
 );
 const verifyOTP = state => (
@@ -359,5 +389,6 @@ export default {
   verifyOTP,
   progressBar,
   progressBarHalf,
-  sendOTP,
+  takeAadhaarNumber,
+  takeAadhaar,
 };
