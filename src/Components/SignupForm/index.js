@@ -256,11 +256,15 @@ class SignupForm extends React.Component {
     }
     else if(this.state.noOfComponent===5){
       return (
-      
-      <QReader context={this} setAadhaarNumber={this.setAadhaarNumber}/>
+        <div className="Signupform-container">
+          <div className="Signupform-box">
+            <QReader context={this} setAadhaarNumber={this.setAadhaarNumber}/>
+          </div>
+        </div>
       );
     } else if(this.state.noOfComponent===6){
-      return(<div className="Signupform-container">
+      return(
+      <div className="Signupform-container">
           <div className="Signupform-box">
             <div className="Signupform-component">
               {helpers.progressBarHalf()}
