@@ -26,14 +26,16 @@ class QReader extends Component {
   }
   render() {
     return (
-      <div>
-        <QrReader
-          delay={this.state.delay}
-          onError={this.handleError}
-          onScan={this.handleScan}
-          style={{ width: '600px', height: '300px' }}
-        />
-        {/* <p>{this.state.result}</p> */}
+      <div className="QRcode-wrapper">
+        <div className="QRcode-camera">
+          <QrReader
+            delay={this.state.delay}
+            onError={this.handleError}
+            onScan={this.handleScan}
+            style={{ width: '100%' }}
+          />
+          {/* <p>{this.state.result}</p> */}
+        </div>
       </div>
     );
   }
