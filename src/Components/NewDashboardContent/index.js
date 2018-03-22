@@ -34,9 +34,12 @@ class DashboardContent extends React.Component {
         Authorization: token.token,
       },
     };
-    axios.post('/user/balance', null, axiosConfig).then(response => this.setState({
-      balance: response.data.currentBalance,
-    })).then(() => {
+    axios.post('/user/balance', null, axiosConfig).then((response) => {
+      this.setState({
+        balance: response.data.currentBalance,
+      });
+      return response;
+    }).then((response) => {
       this.getTransactionDetails();
       Pusher.logToConsole = true;
       const pusher = new Pusher('a96a1aff13cc3d3aa6e8', {
@@ -45,7 +48,8 @@ class DashboardContent extends React.Component {
       });
       const channel = pusher.subscribe('transfer-channel');
       channel.bind('transfer-event', (data) => {
-        alert(data.message);
+        const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
+        if (response.data.userId === data.to) { this.props.alert.success(message); }
       });
     }).catch((err) => {
       this.props.alert.error('Internal server error in fetching your balance');
@@ -352,7 +356,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
