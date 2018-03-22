@@ -177,3 +177,42 @@
     margin: 5px;
   }
 }
+
+
+/* .displaySuggestions{
+  display: block;
+  position: absolute;
+  list-style: none;
+  margin-top: 32px;
+  margin-left: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+} */
+
+.hideSuggestions{
+  display: block;
+  position: absolute;
+  list-style: none;
+  margin-top: 32px;
+  margin-left: 5px;
+  max-height: 200px;
+  overflow-y: scroll;
+  width: fit-content;
+}
+.suggestion-dropdown-elements{
+  background-color: white;
+  color:black;
+  text-decoration-line: none;
+  /* opacity:0.9 ; */
+  padding:10px;
+  border: 2px solid transparent;
+}
+
+.Transfer-Money_User-Name{
+  font-weight: 400;
+}
+
+.Transfer-Money-Full-Name{
+  font-weight: lighter;   
+}

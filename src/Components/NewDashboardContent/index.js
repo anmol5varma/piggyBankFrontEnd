@@ -18,10 +18,14 @@ class DashboardContent extends React.Component {
       transactionError: '',
       amount: '',
       miniStatement: [],
+      suggestions: [],
+      transactionsCount: 5,
 
     };
   }
+
   componentDidMount() {
+  //  alert(this.state.transactionsCount);
     const token = JSON.parse(localStorage.getItem('token'));
     const axiosConfig = {
       headers: {
@@ -33,21 +37,21 @@ class DashboardContent extends React.Component {
     })).then(() => {
       this.getTransactionDetails();
     }).catch((err) => {
-      this.props.alert.error('Internal server errorin fetching your balance');
+      this.props.alert.error('Internal server error in fetching your balance');
     });
   }
   getTransactionDetails() {
-    console.log('Hello');
     const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token.token);
+    const data = {
+      transactionsCount: this.state.transactionsCount,
+    };
     const axiosConfig = {
       headers: {
         Authorization: token.token,
       },
     };
-    axios.get('/user/miniStatement', axiosConfig)
+    axios.post('/user/miniStatement', data, axiosConfig)
       .then((response) => {
-        console.log(response.data);
         if (response.data.length === 0) {
           this.setState({
             showComponent: 1,
@@ -63,69 +67,60 @@ class DashboardContent extends React.Component {
         alert(error);
       });
   }
+
   render() {
-    // };
-    // const setMiniStatement = (response) => {
-    //   console.log('Setting data');
-    //   this.setState({
-    //     miniStatement: response.data,
-    //   });
-    // };
-    // const sendMoneyButton = () => (
-    //   <div className="Dashboardcontent-header-transfer-button-wrapper">
-    //     <button
-    //       onClick={() => {
-    //         this.setState({
-    //           showComponent: 2,
-    //         });
-    //       }}
-    //       className="Dashboardcontent-header-transfer-button"
-    //     >
-    //       <span className="Dashboardcontent-header-transfer-button-label">
-    //     Transfer money
-    //       </span>
-    //     </button>
-    //   </div>
-    // );
+    const sugg = this.state.suggestions;
+    let suggestionList = '';
+    if (sugg === [] || sugg === undefined) {
 
-    // const changeBalance = (value) => {
-    //   this.setState({
-    //     balance: value,
-    //   });
-    // };
+    } else {
+      suggestionList = sugg.map(step =>
+        (
+          <div
+            className="dropdown-suggestion-item"
+            onClick={() => setUserName(step.userName)}
+          >
 
-    // const miniStatementButton = () => (
-    //   <div className="Dashboardcontent-header-transfer-button-wrapper">
-    //     <button
-    //       onClick={() => {
-    //         getTransactionDetails();
-    //       }}
-    //       className="Dashboardcontent-header-transfer-button"
-    //     >
-    //       <span className="Dashboardcontent-header-transfer-button-label">
-    //     Account summary
-    //       </span>
-    //     </button>
-    //   </div>
-    // );
-    console.log(this.state.username);
-    console.log(this.state.amount);
-    console.log(this.state.password);
+            <div
+              className="suggestion-dropdown-elements"
+              eventKey={step.userId}
+            >
+              <div className="Transfer-Money_User-Name">{step.userName}</div> <div className="Transfer-Money-Full-Name">{step.name}</div>
+            </div>
+          </div>
+        ));
+    }
+
     const updatePassword = (event) => {
       this.setState({
         password: event.target.value,
       });
     };
-    const inputField = (onChangeFunction, inputType, placeholder, error, value) => (
-      <div className="Dashboardcontent-header-transfer-box-inputfield">
-        <input
-          type={inputType}
-          placeholder={placeholder}
-          onChange={onChangeFunction}
-          value={value}
-        />
-      </div>
-    );
+    const inputField = (onChangeFunction, inputType, placeholder, error, value) => {
+      if (placeholder === 'Username') {
+        return (
+          <div className="Dashboardcontent-header-transfer-box-inputfield">
+            <input
+              type={inputType}
+              placeholder={placeholder}
+              onChange={onChangeFunction}
+              value={value}
+            />
+            <div className={(this.state.suggestions === [] || this.state.suggestions === null) ? 'displaySuggestions' : 'hideSuggestions'} >{suggestionList}</div>
+          </div>
+        );
+      }
+      return (
+        <div className="Dashboardcontent-header-transfer-box-inputfield">
+          <input
+            type={inputType}
+            placeholder={placeholder}
+            onChange={onChangeFunction}
+            value={value}
+          />
+        </div>
+      );
+    };
     const showSuccessAlert = (message) => {
       this.props.alert.success(message);
     };
@@ -152,7 +147,11 @@ class DashboardContent extends React.Component {
         balance,
       });
     };
-
+    const setTransactionNumber = (count) => {
+      this.setState({ transactionsCount: count }, () => {
+        this.getTransactionDetails();
+      });
+    };
     const confirmPasswordAndTransfer = () => {
       const data = {
         amount: this.state.amount,
@@ -169,7 +168,7 @@ class DashboardContent extends React.Component {
       console.log(data);
       axios.post('/transfer', data, axiosConfig)
         .then((response) => {
-          console.log(response);
+        // console.log(response);
           if (response.data.status_code === 201) {
             showSuccessAlert('Transfer done');
             console.log(response.data.balance);
@@ -202,8 +201,6 @@ class DashboardContent extends React.Component {
         showComponent: 2,
       });
     };
-
-
     const showErrors = (response) => {
       if (this.state.amount < 100 || this.state.amount > 20000) {
         showErrorAlert('Please check amount, min amount amount you can transfer is 100 and maximum amount is 20,000');
@@ -250,12 +247,48 @@ class DashboardContent extends React.Component {
       });
     };
     const updateUsername = (event) => {
+      const userName = event.target.value;
       if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
         this.setState({
           username: event.target.value,
+        }, () => {
+          const token = JSON.parse(localStorage.getItem('token'));
+          const axiosConfig = {
+            headers: {
+              Authorization: token.token,
+            },
+          };
+          console.log(token.token, '88');
+
+          axios.get(`/search/${userName}`, axiosConfig)
+            .then((selectedOption) => {
+              const resultArray = selectedOption.data;
+              return resultArray;
+            })
+            .then((data) => {
+              if (data !== undefined) {
+                this.setState({
+                  suggestions: data.data,
+                });
+              }
+              return data;
+            }).catch(() => {
+              this.setState({
+                suggestions: [],
+              });
+            });
         });
       }
     };
+
+    const setUserName = (name) => {
+      this.setState({
+        username: name,
+        suggestions: [],
+      });
+    };
+
+
     //  console.log(this.state.miniStatement);
     return (
       <div className="Dashboardcontent-container">
@@ -327,7 +360,7 @@ class DashboardContent extends React.Component {
             </div>
           </div>
           <div className="Dashboardcontent-statement">
-            <MiniStatement miniStatement={this.state.miniStatement} />
+            <MiniStatement setTransactionNumber={setTransactionNumber} transactionsCount={this.state.transactionsCount} miniStatement={this.state.miniStatement} />
           </div>
         </div>
       </div>

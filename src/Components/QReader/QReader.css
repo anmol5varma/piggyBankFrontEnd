@@ -1,0 +1,14 @@
+.QRcode-wrapper{
+    display: flex;
+    flex-grow: 1;
+    height: 300px;
+    width: 300px;
+    border: 10px solid black;
+}
+
+.QRcode-camera{
+    display: flex;
+    flex-grow: 1;
+    height: 100px;
+    width: 100px;
+}
