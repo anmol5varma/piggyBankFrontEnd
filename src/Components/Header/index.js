@@ -30,13 +30,18 @@ class Header extends React.Component {
 
     const headerButtonChangePassword = headerTitle => (
       <div className="Header-dropdown-list-item">
-        <button
-          className="header-options-button"
-        >
-          <span className="Header-options-button-label">
-            {headerTitle}
-          </span>
-        </button>
+        <Link to="/accountSettings">
+          <button
+            onClick={() => {
+
+        }}
+            className="header-options-button"
+          >
+            <span className="Header-options-button-label">
+              {headerTitle}
+            </span>
+          </button>
+        </Link>
       </div>
     );
 
@@ -62,7 +67,7 @@ class Header extends React.Component {
     const dropdownList = () => (
       <div className="Header-dropdown-list">
         <div className="Header-dropdown-changepassword">
-          {headerButtonChangePassword('Change password')}
+          {headerButtonChangePassword('Settings')}
         </div>
         <div>
           {headerButtonlogout('Logout')}

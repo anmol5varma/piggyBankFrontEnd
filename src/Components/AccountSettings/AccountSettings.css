@@ -1,0 +1,17 @@
+.account-settings-container{
+    display: flex;
+    flex-direction: row;
+    
+    margin:30px;
+}
+
+.account-tab-container{
+    display: flex;
+    flex-grow: 1;
+    
+    flex-direction: column;
+}
+
+.account-vertical-tabs{
+    width: 15%
+}
