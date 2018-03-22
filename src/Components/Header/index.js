@@ -67,7 +67,7 @@ class Header extends React.Component {
     const dropdownList = () => (
       <div className="Header-dropdown-list">
         <div className="Header-dropdown-changepassword">
-          {headerButtonChangePassword('Account Settings')}
+          {headerButtonChangePassword('Settings')}
         </div>
         <div>
           {headerButtonlogout('Logout')}

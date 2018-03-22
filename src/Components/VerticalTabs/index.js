@@ -9,7 +9,7 @@ class VerticalTabs extends Component {
   render() {
     return (
       <div className={`tab-container ${this.props.className} `}>
-        <TabButton text="Change Password" />
+        <TabButton text="Account Settings" />
       </div>
     );
   }

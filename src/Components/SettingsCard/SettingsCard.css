@@ -1,0 +1,11 @@
+.settings-card{
+    flex-grow: 1;
+    border: 1px solid gray
+}
+.settings-card-title{
+    background-color: rgb(50, 50, 50);
+    color:white;
+    height: 5%;
+    padding-top: 2%;
+    padding-left: 1%;
+}
