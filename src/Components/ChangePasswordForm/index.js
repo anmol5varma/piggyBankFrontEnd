@@ -80,7 +80,19 @@ class ChangePasswordForm extends Component {
         <div className="password-message">
           {this.props.message}
         </div>
-        <FormButton buttonClassName="change-password-button" value="Change Password" disabled={this.state.disabled} onClick={onChangePassword} />
+        {/* <FormButton buttonClassName="change-password-button" value="Change Password" disabled={this.state.disabled} onClick={onChangePassword} /> */}
+        <div className="reset-password-button-container" >
+          <button
+            className="SignupContent-button"
+            onClick={onChangePassword}
+            disabled={this.state.disabled}
+          >
+
+            <span className="SignupContent-button-label">
+                      Reset Password
+            </span>
+          </button>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 .account-details-outer-container{
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: column;
     padding: 2%;
     background-color: white;
 }
@@ -33,4 +33,8 @@
 
 .account-details-detail-container{
     flex-grow: 1;
+}
+
+.change-password-button-container{
+    margin: auto;
 }

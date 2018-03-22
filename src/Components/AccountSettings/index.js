@@ -15,6 +15,7 @@ class AccountSettings extends Component {
 
     this.state = {
       passwordMessage: '',
+      noOfComponents: 0,
     };
   }
 
@@ -27,6 +28,11 @@ class AccountSettings extends Component {
         },
       };
       return Axios.get('/user/details', axiosConfig).then(response => response);
+    };
+    const changeComponent = () => {
+      this.setState({
+        noOfComponents: 1,
+      });
     };
     const onChangePassword = (currPassword, newPass1, newPass2) => {
       const token = JSON.parse(localStorage.getItem('token'));
@@ -45,17 +51,39 @@ class AccountSettings extends Component {
         });
       });
     };
+    if (this.state.noOfComponents === 0) {
+      return (
+        <div className="account-settings-container">
+          <div className="account-tab-container">
+            <SettingsCard title="Account Details" >
+              <AccountDetails
+                changeComponent={changeComponent}
+                getUserDetails={getUserDetails}
+              />
+            </SettingsCard>
+            {/* <SettingsCard title="Notification Settings">
+              <label>
+                <input type="checkbox" value="I want notifications" /> I want notifications
+              </label>
+            </SettingsCard> */}
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="account-settings-container">
         <div className="account-tab-container">
           <SettingsCard title="Account Details" >
-            <AccountDetails getUserDetails={getUserDetails} />
+            <AccountDetails
+              changeComponent={changeComponent}
+              getUserDetails={getUserDetails}
+            />
           </SettingsCard>
-          <SettingsCard title="Notification Settings">
+          {/* <SettingsCard title="Notification Settings">
             <label>
               <input type="checkbox" value="I want notifications" /> I want notifications
             </label>
-          </SettingsCard>
+          </SettingsCard> */}
           <SettingsCard title="Change Password">
             <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
           </SettingsCard>
