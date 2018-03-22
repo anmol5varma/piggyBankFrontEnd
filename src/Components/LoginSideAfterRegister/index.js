@@ -43,7 +43,8 @@ class LoginSide extends React.Component {
         // this.setState({
         //   balance: response.data.data,
         // });
-        this.props.history.push(`/user?balance=${response.data.data}&username=${this.state.username}`);
+        alert('hello');
+        this.props.history.push(`/user?&username=${this.state.username}`);
       }).catch((err) => {
         console.log(err);
 

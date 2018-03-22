@@ -1,9 +1,11 @@
 import React from 'react';
 import { withAlert } from 'react-alert';
+import Pusher from 'pusher-js';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import MiniStatement from '../NewMiniStatementTable';
 import './Newdashboardcontent.css';
+
 
 class DashboardContent extends React.Component {
   constructor() {
@@ -32,10 +34,23 @@ class DashboardContent extends React.Component {
         Authorization: token.token,
       },
     };
-    axios.post('/user/balance', null, axiosConfig).then(response => this.setState({
-      balance: response.data.currentBalance,
-    })).then(() => {
+    axios.post('/user/balance', null, axiosConfig).then((response) => {
+      this.setState({
+        balance: response.data.currentBalance,
+      });
+      return response;
+    }).then((response) => {
       this.getTransactionDetails();
+      Pusher.logToConsole = true;
+      const pusher = new Pusher('a96a1aff13cc3d3aa6e8', {
+        cluster: 'us2',
+        encrypted: true,
+      });
+      const channel = pusher.subscribe('transfer-channel');
+      channel.bind('transfer-event', (data) => {
+        const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
+        if (response.data.userId === data.to) { this.props.alert.success(message); }
+      });
     }).catch((err) => {
       this.props.alert.error('Internal server error in fetching your balance');
     });
@@ -341,7 +356,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
