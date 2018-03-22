@@ -269,7 +269,11 @@ class SignupForm extends React.Component {
       return (
         <div className="Signupform-container">
           <div className="Signupform-box">
-            <QReader context={this} setAadhaarNumber={this.setAadhaarNumber} />
+            <QReader
+              context={this}
+              setAadhaarNumber={this.setAadhaarNumber}
+              setComponent={() => this.setComponent(1)}
+            />
           </div>
         </div>
       );
