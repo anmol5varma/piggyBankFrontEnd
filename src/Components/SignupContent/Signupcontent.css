@@ -76,6 +76,15 @@
   background-color: rgb(40, 185, 133);
 }
 
+.SignupContent-button:hover{
+  transition: background-color 0.5s ease;
+  border: 2px solid rgb(40, 185, 133);
+  padding: 25px;
+  outline: none;
+  border-radius: 2px;
+  background-color: rgba(22, 26, 34, 0.8);
+}
+
 .SignupContent-button-label{
   margin: 15px;
   font-size: 13px;
@@ -96,4 +105,17 @@
   .SignupContent-box{
     height: auto;
   }
+}
+
+.Signup-content-checklist{
+  list-style-type: none;
+  padding-left:0;
+}
+
+.Signup-content-checklist-item{
+  font-size: 20px;
+}
+
+.font-icons{
+  margin-right: 15px;
 }
