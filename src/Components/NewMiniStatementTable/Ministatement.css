@@ -1,7 +1,7 @@
 .Ministatement-container{
   display: flex;
   flex-grow: 1;
-  background-color: rgb(245, 245, 245);
+  background-color: white;
   flex-direction: column;
 }
 

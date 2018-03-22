@@ -47,7 +47,6 @@ class AccountSettings extends Component {
     };
     return (
       <div className="account-settings-container">
-        <VerticalTabs className="account-vertical-tabs" />
         <div className="account-tab-container">
           <SettingsCard title="Account Details" >
             <AccountDetails getUserDetails={getUserDetails} />
