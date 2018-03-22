@@ -1,9 +1,11 @@
 import React from 'react';
 import { withAlert } from 'react-alert';
+import Pusher from 'pusher-js';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import MiniStatement from '../NewMiniStatementTable';
 import './Newdashboardcontent.css';
+
 
 class DashboardContent extends React.Component {
   constructor() {
@@ -36,6 +38,15 @@ class DashboardContent extends React.Component {
       balance: response.data.currentBalance,
     })).then(() => {
       this.getTransactionDetails();
+      Pusher.logToConsole = true;
+      const pusher = new Pusher('a96a1aff13cc3d3aa6e8', {
+        cluster: 'us2',
+        encrypted: true,
+      });
+      const channel = pusher.subscribe('transfer-channel');
+      channel.bind('transfer-event', (data) => {
+        alert(data.message);
+      });
     }).catch((err) => {
       this.props.alert.error('Internal server error in fetching your balance');
     });
