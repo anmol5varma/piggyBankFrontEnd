@@ -21,7 +21,7 @@ class DashboardContent extends React.Component {
       amount: '',
       miniStatement: [],
       suggestions: [],
-      transactionsCount: 5,
+      transactionsCount: 10,
 
     };
   }

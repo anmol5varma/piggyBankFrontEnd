@@ -159,8 +159,8 @@ class MiniStatement extends React.Component {
                     }}
                   >
                     <option value="5">5</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
                   </select>
                 </span>
               </div>
@@ -170,7 +170,7 @@ class MiniStatement extends React.Component {
         {this.state.transactionScreen === 1 ?
       (<div className="Ministatement-table">
         {allTransactions(this.props.miniStatement)}
-       </div>)
+      </div>)
       : (this.state.transactionScreen === 2 ? (
         <div className="Ministatement-table">
           {sentTransactions(this.props.miniStatement)}
