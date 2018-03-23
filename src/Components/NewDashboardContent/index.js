@@ -51,7 +51,7 @@ class DashboardContent extends React.Component {
         const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
         if (response.data.userId === data.to) { this.props.alert.success(message); }
       });
-    }).catch((err) => {
+    }).catch(() => {
       this.props.alert.error('Internal server error in fetching your balance');
     });
   }
