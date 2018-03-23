@@ -151,6 +151,7 @@ class DashboardContent extends React.Component {
       this.setState({
         username: '',
         amount: '',
+        password: '',
         usernameError: userNameError,
         amountError,
         transactionError,
@@ -182,7 +183,6 @@ class DashboardContent extends React.Component {
       console.log(data);
       axios.post('/transfer', data, axiosConfig)
         .then((response) => {
-        // console.log(response);
           if (response.data.status_code === 201) {
             showSuccessAlert('Transfer done');
             console.log(response.data.balance);
@@ -355,7 +355,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">

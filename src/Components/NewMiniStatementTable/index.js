@@ -169,7 +169,7 @@ class MiniStatement extends React.Component {
         {this.state.transactionScreen === 1 ?
       (<div className="Ministatement-table">
         {allTransactions(this.props.miniStatement)}
-       </div>)
+      </div>)
       : (this.state.transactionScreen === 2 ? (
         <div className="Ministatement-table">
           {sentTransactions(this.props.miniStatement)}
