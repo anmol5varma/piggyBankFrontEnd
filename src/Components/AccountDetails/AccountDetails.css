@@ -29,6 +29,7 @@
     padding: 30px;
     width:280px;
     height: 300px;
+    border-radius:50%; 
 }
 
 .account-details-detail-container{
