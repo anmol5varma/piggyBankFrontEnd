@@ -68,7 +68,7 @@ class MiniStatement extends React.Component {
         {recordHeading()}
         { miniStatement.map((transaction, index) => (
          eachRecord(
-         index,
+        index + 1,
          transaction.account,
          transaction.amount, transaction.balance,
          transaction.type,
@@ -96,13 +96,12 @@ class MiniStatement extends React.Component {
     };
 
     const receivedTransactions = miniStatement => (
-      // this.props.setTransactionNumber(this.props.transactionsCount)
       <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
             if (transaction.type === 'Credit') {
                 return eachRecord(
-                index,
+                index + 1,
                 transaction.account,
                 transaction.amount, transaction.balance,
                 transaction.type,
@@ -121,7 +120,7 @@ class MiniStatement extends React.Component {
         { miniStatement.map((transaction, index) => {
        if (transaction.type === 'Debit') {
           return eachRecord(
-          index,
+          index + 1,
           transaction.account,
           transaction.amount, transaction.balance,
           transaction.type,
@@ -170,7 +169,7 @@ class MiniStatement extends React.Component {
         {this.state.transactionScreen === 1 ?
       (<div className="Ministatement-table">
         {allTransactions(this.props.miniStatement)}
-      </div>)
+       </div>)
       : (this.state.transactionScreen === 2 ? (
         <div className="Ministatement-table">
           {sentTransactions(this.props.miniStatement)}

@@ -27,7 +27,6 @@ class DashboardContent extends React.Component {
   }
 
   componentDidMount() {
-  //  alert(this.state.transactionsCount);
     const token = JSON.parse(localStorage.getItem('token'));
     const axiosConfig = {
       headers: {
@@ -356,7 +355,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                </div>
+                 </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
