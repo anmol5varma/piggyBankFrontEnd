@@ -9,7 +9,7 @@ class SignupContent extends React.Component {
       <div className="SignupContent-container">
         <div className="SignupContent-color-div">
           <div className="SignupContent-box">
-            <div className="SignupContent-logo">DigiBank</div>
+            <div className="SignupContent-logo">Credence Bank</div>
             <div className="SignupContent-welcome-message">
               <div className="SignupContent-heading">Register</div>
               <div className="SignupContent-subbheading">

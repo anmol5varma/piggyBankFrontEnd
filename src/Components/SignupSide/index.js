@@ -9,15 +9,26 @@ class SignUpSide extends React.Component {
       <div className="Signupside-container">
         <div className="Signupside-color-div">
           <div className="Signupside-box">
-            <div className="Signupside-logo">DigiBank</div>
+            <div className="Signupside-logo">Credence Bank</div>
             <div className="Signupside-welcome-message">
               <div className="Signupside-heading">Welcome</div>
               <div className="Signupside-subbheading">
-              No need to go to the bank. We will come to you
+             Let's make money simple and digitize your banking experience
               </div>
               <div className="Signupside-content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do dhgf dhjfgejh dfjhgsdjf
+                {/* Wealth management in an easy way-
+              because your interest comes first */}
+                {/* <i className="fa fa-id-badge" />Helloo
+                {/* <i className="far font-icons fa-check-circle" />D */}
+
+                {/* <ul>
+                  <li>
+                    Digitize your banking experience
+                  </li>
+                  <li>
+                   Save Time
+                  </li>
+                </ul> */}
               </div>
               <div className="Signupside-button-wrapper">
 
