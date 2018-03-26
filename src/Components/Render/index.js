@@ -5,6 +5,8 @@ import HomePage from '../HomePage';
 import './render.css';
 import SignupPage from '../SignupPage';
 import Dashboard from '../Dashboard';
+import ForgotPassword from '../ForgotPassword';
+import ResetPassword from '../ResetPassword';
 // import history from '../../history';
 
 
@@ -25,6 +27,8 @@ class Main extends React.Component {
             <Route path="/user" component={Dashboard} />
             <Route path="/login" component={HomePage} />
             <Route path="/accountSettings" component={Dashboard} />
+            <Route path="/ForgotPassword" component={ForgotPassword} />
+            <Route path="/resetPassword/:token" component={ResetPassword} />
           </Switch>
         </main>
       );
