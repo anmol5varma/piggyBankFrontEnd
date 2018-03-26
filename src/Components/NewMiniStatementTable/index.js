@@ -68,7 +68,7 @@ class MiniStatement extends React.Component {
         {recordHeading()}
         { miniStatement.map((transaction, index) => (
          eachRecord(
-         index,
+        index + 1,
          transaction.account,
          transaction.amount, transaction.balance,
          transaction.type,
@@ -96,13 +96,12 @@ class MiniStatement extends React.Component {
     };
 
     const receivedTransactions = miniStatement => (
-      // this.props.setTransactionNumber(this.props.transactionsCount)
       <table className="Ministatement-allRecords">
         {recordHeading()}
         { miniStatement.map((transaction, index) => {
             if (transaction.type === 'Credit') {
                 return eachRecord(
-                index,
+                index + 1,
                 transaction.account,
                 transaction.amount, transaction.balance,
                 transaction.type,
@@ -121,7 +120,7 @@ class MiniStatement extends React.Component {
         { miniStatement.map((transaction, index) => {
        if (transaction.type === 'Debit') {
           return eachRecord(
-          index,
+          index + 1,
           transaction.account,
           transaction.amount, transaction.balance,
           transaction.type,
@@ -138,12 +137,6 @@ class MiniStatement extends React.Component {
         transactionScreen: screen,
       });
     };
-    // const setTransactionNumber = (e) => {
-    //   // alert(e.target.value);
-    //   this.setState({ transactionsCount: e.target.value }, () => {
-    //     alert(this.state.transactionsCount);
-    //   });
-    // };
     return (
       <div className="Ministatement-container">
         <div className="Ministatement-header">
@@ -156,7 +149,7 @@ class MiniStatement extends React.Component {
               {filterButton('sent', setTransactionScreen, 2)}
               {filterButton('all', setTransactionScreen, 1)}
               <div className="select-options">
-                <span className="MiniStatement-filter-select">View</span>
+                <span className="MiniStatement-filter-select">View&nbsp;</span>
                 <span className="Ministatement-select-options-number">
                   <select
                     value={this.props.transactionsCount}
@@ -165,8 +158,8 @@ class MiniStatement extends React.Component {
                     }}
                   >
                     <option value="5">5</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
                   </select>
                 </span>
               </div>
@@ -176,7 +169,7 @@ class MiniStatement extends React.Component {
         {this.state.transactionScreen === 1 ?
       (<div className="Ministatement-table">
         {allTransactions(this.props.miniStatement)}
-       </div>)
+      </div>)
       : (this.state.transactionScreen === 2 ? (
         <div className="Ministatement-table">
           {sentTransactions(this.props.miniStatement)}

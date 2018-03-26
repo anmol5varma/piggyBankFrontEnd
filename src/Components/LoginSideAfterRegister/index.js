@@ -28,9 +28,6 @@ class LoginSide extends React.Component {
   }
   render() {
     const makeLoginRequest = () => {
-      console.log(this.state.username);
-      console.log(this.state.password);
-
       axios.post('/login', {
         userName: this.state.username,
         password: this.state.password,
@@ -39,12 +36,7 @@ class LoginSide extends React.Component {
         if (window.localStorage) {
           localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
         }
-        console.log('Hello', response.data.data);
-        // this.setState({
-        //   balance: response.data.data,
-        // });
-        alert('hello');
-        this.props.history.push(`/user?&username=${this.state.username}`);
+        this.props.history.push('/user');
       }).catch((err) => {
         console.log(err);
 

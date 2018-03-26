@@ -21,13 +21,12 @@ class DashboardContent extends React.Component {
       amount: '',
       miniStatement: [],
       suggestions: [],
-      transactionsCount: 5,
+      transactionsCount: 10,
 
     };
   }
 
   componentDidMount() {
-  //  alert(this.state.transactionsCount);
     const token = JSON.parse(localStorage.getItem('token'));
     const axiosConfig = {
       headers: {
@@ -51,7 +50,7 @@ class DashboardContent extends React.Component {
         const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
         if (response.data.userId === data.to) { this.props.alert.success(message); }
       });
-    }).catch((err) => {
+    }).catch(() => {
       this.props.alert.error('Internal server error in fetching your balance');
     });
   }
@@ -152,6 +151,7 @@ class DashboardContent extends React.Component {
       this.setState({
         username: '',
         amount: '',
+        password: '',
         usernameError: userNameError,
         amountError,
         transactionError,
@@ -183,7 +183,6 @@ class DashboardContent extends React.Component {
       console.log(data);
       axios.post('/transfer', data, axiosConfig)
         .then((response) => {
-        // console.log(response);
           if (response.data.status_code === 201) {
             showSuccessAlert('Transfer done');
             console.log(response.data.balance);

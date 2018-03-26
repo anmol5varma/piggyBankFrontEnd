@@ -46,7 +46,9 @@ a{
 .Header-hello-user{
 
 }
-
+a {
+  color:rgb(250,250,250)
+}
 .header-options-button{
   border: 0px;
   display: flex;
