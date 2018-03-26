@@ -6,7 +6,7 @@ class QReader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      delay: 300,
+      delay: 0,
       result: 'No result',
     };
     this.handleScan = this.handleScan.bind(this);
@@ -35,6 +35,18 @@ class QReader extends Component {
             style={{ width: '100%' }}
           />
           {/* <p>{this.state.result}</p> */}
+        </div>
+        <div className="Signupform-button-wrapper">
+          <button
+            className="Signupform-button"
+            onClick={() => {
+              this.props.setComponent(1);
+            }}
+          >
+            <span className="Signupform-button-label">
+              Go back
+            </span>
+          </button>
         </div>
       </div>
     );
