@@ -13,6 +13,7 @@ class AccountDetails extends Component {
 
   componentDidMount() {
     this.props.getUserDetails().then((response) => {
+      console.log(response);
       this.setState({
         details: response.data.detailsObject,
       });
@@ -39,7 +40,7 @@ class AccountDetails extends Component {
         </div>
         <div className="change-password-button-container" >
           <button
-            className="SignupContent-button"
+            className={this.props.noOfComponents === 0 ? 'SignupContent-button' : 'SignupContent-button-none'}
             onClick={this.props.changeComponent}
           >
 

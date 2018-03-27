@@ -69,6 +69,12 @@ class ChangePasswordForm extends Component {
 
     const onChangePassword = () => {
       this.props.onSubmit(this.state.currentPassword, this.state.newPass1, this.state.newPass2);
+      this.setState({
+        currentPassword: '',
+        newPass1: '',
+        newPass2: '',
+        disabled: true,
+      });
     };
 
 
@@ -89,7 +95,7 @@ class ChangePasswordForm extends Component {
           >
 
             <span className="SignupContent-button-label">
-                      Reset Password
+                      Change Password
             </span>
           </button>
         </div>

@@ -8,10 +8,12 @@
 .account-tab-container{
     display: flex;
     flex-grow: 1;
-    
     flex-direction: column;
 }
 
 .account-vertical-tabs{
-    width: 15%
+    width: 15%;
+}
+.SignupContent-button-none{
+    display:none;
 }

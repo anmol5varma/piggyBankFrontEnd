@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 
 import './AccountSettings.css';
-
-import VerticalTabs from '../VerticalTabs';
 import ChangePasswordForm from '../ChangePasswordForm';
 import SettingsCard from '../SettingsCard';
 import AccountDetails from '../AccountDetails';
@@ -57,15 +55,11 @@ class AccountSettings extends Component {
           <div className="account-tab-container">
             <SettingsCard title="Account Details" >
               <AccountDetails
+                noOfComponents={this.state.noOfComponents}
                 changeComponent={changeComponent}
                 getUserDetails={getUserDetails}
               />
             </SettingsCard>
-            {/* <SettingsCard title="Notification Settings">
-              <label>
-                <input type="checkbox" value="I want notifications" /> I want notifications
-              </label>
-            </SettingsCard> */}
           </div>
         </div>
       );
@@ -79,11 +73,6 @@ class AccountSettings extends Component {
               getUserDetails={getUserDetails}
             />
           </SettingsCard>
-          {/* <SettingsCard title="Notification Settings">
-            <label>
-              <input type="checkbox" value="I want notifications" /> I want notifications
-            </label>
-          </SettingsCard> */}
           <SettingsCard title="Change Password">
             <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
           </SettingsCard>
@@ -92,11 +81,6 @@ class AccountSettings extends Component {
     );
   }
 }
-
-// AccountSettings.propTypes = {
-//   username: PropTypes.string.isRequired,
-
-// };
 
 
 export default AccountSettings;
