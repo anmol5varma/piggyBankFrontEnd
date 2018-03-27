@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { withAlert } from 'react-alert';
 import './ResetPassword.css';
-import TransparentInputField from '../TransparentInputField';
+// import TransparentInputField from '../TransparentInputField';
 
 const Axios = require('axios');
 
@@ -39,6 +40,8 @@ class ResetPassword extends React.Component {
     const onResetPassword = () => {
       Axios.post('/reset/password', { resetCode: this.state.code, newPassword: this.state.newPass1 }).then(() => {
         console.log('Password Reset successfull');
+        const message1 = 'Password Reset successfull';
+        this.props.alert.success(message1, { onClose: () => this.props.history.push('/login') });
       });
     };
 
@@ -56,32 +59,36 @@ class ResetPassword extends React.Component {
     };
 
     return (
-      <div className="change-password-container" >
-        <TransparentInputField
-          className="change-password-input-field-container"
-          type="password"
-          placeholder="Enter new password"
-          value={this.state.newPass1}
-          onChange={updateNewPassword1}
-        />
-        <TransparentInputField
-          className="change-password-input-field-container"
-          type="password"
-          placeholder="Re-enter new password"
-          value={this.state.newPass2}
-          onChange={updateNewPassword2}
-        />
-        <div className="reset-password-button-container" >
-          <button
-            className="SignupContent-button"
-            onClick={onResetPassword}
-            disabled={this.state.disabled}
-          >
+      <div className="Reset-Password-Outer-Container">
+        <div className="Reset-Password-Inner-Container">
+          <div className="Reset-Password-Box">
+            <input
+              className="change-password-input-field-container"
+              type="password"
+              placeholder="Enter new password"
+              value={this.state.newPass1}
+              onChange={updateNewPassword1}
+            />
+            <input
+              className="change-password-input-field-container"
+              type="password"
+              placeholder="Re-enter new password"
+              value={this.state.newPass2}
+              onChange={updateNewPassword2}
+            />
+            <div className="reset-password-button-container" >
+              <button
+                className="SignupContent-button"
+                onClick={onResetPassword}
+                disabled={this.state.disabled}
+              >
 
-            <span className="SignupContent-button-label">
+                <span className="SignupContent-button-label">
                       Reset Password
-            </span>
-          </button>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -89,4 +96,4 @@ class ResetPassword extends React.Component {
 }
 
 
-export default ResetPassword;
+export default withAlert(ResetPassword);
