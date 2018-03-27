@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { withAlert } from 'react-alert';
 import './ForgotPassword.css';
-import TransparentInputField from '../TransparentInputField';
+// import TransparentInputField from '../TransparentInputField';
 
 const Axios = require('axios');
 
@@ -31,7 +31,7 @@ class ResetPassword extends React.Component {
     const onForgotPassword = () => {
       Axios.post('/forgot/password', { username: this.state.userName }).then(() => {
         changeComponent();
-        const message = 'An email has been sent to your Registered Email Id';
+        const message = 'An email has been sent to your Registered Email Id.Please visit your inbox to reset your password.';
         // .Please visit your inbox to reset your password';
         const promise = Promise.resolve(message);
         promise.then((message1) => {
@@ -43,9 +43,14 @@ class ResetPassword extends React.Component {
       return (
         <div className="Reset-Password-Outer-Container">
           <div className="Reset-Password-Inner-Container">
+            <div className="Signupside-logo">DigiBank</div>
+            <div className="Reset-Password-Content">
+            Please Enter Your User Name.
+            An Email will be sent to your registered Email Id with a link to reset your password.
+            </div>
             <div className="Reset-Password-Box">
               <div className="username-container">
-                <TransparentInputField
+                <input
                   className="change-password-input-field-container"
                   type="text"
                   placeholder="Enter your userName"
@@ -61,7 +66,7 @@ class ResetPassword extends React.Component {
                 >
 
                   <span className="SignupContent-button-label">
-                    Send E-Mail with Reset Password Link
+                    Send E-Mail
                   </span>
                 </button>
               </div>
@@ -75,7 +80,7 @@ class ResetPassword extends React.Component {
         <div className="Reset-Password-Inner-Container">
           <div className="Reset-Password-Box">
             <div className="username-container">
-              <TransparentInputField
+              <input
                 className="input-username"
                 type="text"
                 placeholder="Enter your userName"

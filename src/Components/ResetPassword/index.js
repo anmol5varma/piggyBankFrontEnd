@@ -61,6 +61,10 @@ class ResetPassword extends React.Component {
     return (
       <div className="Reset-Password-Outer-Container">
         <div className="Reset-Password-Inner-Container">
+          <div className="Signupside-logo">DigiBank</div>
+          <div className="Reset-Password-Content">
+            Please Enter Your Current Password and Your New Password.
+          </div>
           <div className="Reset-Password-Box">
             <input
               className="change-password-input-field-container"
