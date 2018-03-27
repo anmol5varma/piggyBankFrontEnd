@@ -210,7 +210,7 @@ const getDetails = state => (
           </td>
           <td className="Signupform-table-value">
             <span className="Signupform-table-text">
-              {strftime('%d/%m/%y', new Date(state.state.eKYCResponse.e_Kyc.Poi.Dob))}
+              {strftime('%d/%m/%Y', new Date(state.state.eKYCResponse.e_Kyc.Poi.Dob))}
             </span>
           </td>
         </tr>
