@@ -21,9 +21,9 @@
 }
 
 .Account-Profile{
-    /* background-color: rgb(40, 185, 133); */
+    background-color: rgb(40, 185, 133);
     height: 200px;
-    background: linear-gradient(rgb(40, 185, 133),white);
+    /* background: linear-gradient(rgb(40, 185, 133),white); */
     position: relative;
 }
 
@@ -53,12 +53,13 @@
 .Account-setting-change-password-show{
     display: flex;
     flex: 1;
-    margin-left: 20px;
+    border-left: 10px solid rgb(200,200,200);
     background-color: white;
 }
 
 .Account-setting-change-password{
     display: flex;
     flex: 1;
+    border-left: 10px solid white;
     background-color: white;
 }
