@@ -43,3 +43,22 @@
     justify-content: space-around;
     margin-top:70px;
 }
+
+.Account-setting-details{
+    display: flex;
+    flex: 1;
+}
+
+
+.Account-setting-change-password-show{
+    display: flex;
+    flex: 1;
+    margin-left: 20px;
+    background-color: white;
+}
+
+.Account-setting-change-password{
+    display: flex;
+    flex: 1;
+    background-color: white;
+}

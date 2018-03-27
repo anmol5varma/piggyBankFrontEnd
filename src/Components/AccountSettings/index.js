@@ -58,13 +58,16 @@ class AccountSettings extends Component {
             </div>
           </div>
           <div className="account-tab-container">
-            <SettingsCard title="Account Details" >
-              <AccountDetails
-                noOfComponents={this.state.noOfComponents}
-                changeComponent={changeComponent}
-                getUserDetails={getUserDetails}
-              />
-            </SettingsCard>
+            <div className="Account-setting-details">
+              <SettingsCard title="Account Details" >
+                <AccountDetails
+                  noOfComponents={this.state.noOfComponents}
+                  changeComponent={changeComponent}
+                  getUserDetails={getUserDetails}
+                />
+              </SettingsCard>
+            </div>
+            <div className="Account-setting-change-password" />
           </div>
         </div>
       );
@@ -77,16 +80,20 @@ class AccountSettings extends Component {
           </div>
         </div>
         <div className="account-tab-container">
-          <SettingsCard title="Account Details" >
-            <AccountDetails
-              noOfComponents={this.state.noOfComponents}
-              changeComponent={changeComponent}
-              getUserDetails={getUserDetails}
-            />
-          </SettingsCard>
-          <SettingsCard title="Change Password">
-            <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
-          </SettingsCard>
+          <div className="Account-setting-details">
+            <SettingsCard title="Account Details" >
+              <AccountDetails
+                noOfComponents={this.state.noOfComponents}
+                changeComponent={changeComponent}
+                getUserDetails={getUserDetails}
+              />
+            </SettingsCard>
+          </div>
+          <div className="Account-setting-change-password-show">
+            <SettingsCard title="Change Password">
+              <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
+            </SettingsCard>
+          </div>
         </div>
       </div>
     );

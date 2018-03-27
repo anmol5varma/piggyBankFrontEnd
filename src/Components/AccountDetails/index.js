@@ -39,9 +39,8 @@ class AccountDetails extends Component {
           className={this.props.noOfComponents === 0 ? 'ChangePass-Content-button' : 'ChangePass-button-none'}
           onClick={this.props.changeComponent}
         >
-
           <span className="ChangePass-button-label">
-                      Change Password
+            Change Password
           </span>
         </button>
       </div>

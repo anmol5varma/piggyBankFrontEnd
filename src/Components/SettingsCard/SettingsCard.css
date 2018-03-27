@@ -7,7 +7,12 @@
     color:rgb(50,50,50);
     height: 5%;
     padding: 2%;
+    display: flex;
+    flex-grow: 1;
     font-weight: 600;
     font-size: 30px;
-    /* padding-left: 1%; */
+}
+
+.settings-card-title > span{
+    margin: auto;
 }
