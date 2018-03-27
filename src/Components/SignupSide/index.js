@@ -15,21 +15,7 @@ class SignUpSide extends React.Component {
               <div className="Signupside-subbheading">
              Let's make money simple and digitize your banking experience
               </div>
-              <div className="Signupside-content">
-                {/* Wealth management in an easy way-
-              because your interest comes first */}
-                {/* <i className="fa fa-id-badge" />Helloo
-                {/* <i className="far font-icons fa-check-circle" />D */}
-
-                {/* <ul>
-                  <li>
-                    Digitize your banking experience
-                  </li>
-                  <li>
-                   Save Time
-                  </li>
-                </ul> */}
-              </div>
+              <div className="Signupside-content" />
               <div className="Signupside-button-wrapper">
 
                 <Link to="/signup">
