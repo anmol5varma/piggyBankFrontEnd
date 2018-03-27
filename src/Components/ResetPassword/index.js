@@ -103,7 +103,6 @@ class ResetPassword extends React.Component {
               <button
                 className="SignupContent-button"
                 onClick={onResetPassword}
-                // disabled={this.state.disabled}
               >
 
                 <span className="SignupContent-button-label">

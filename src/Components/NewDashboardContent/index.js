@@ -3,7 +3,7 @@ import { withAlert } from 'react-alert';
 import Pusher from 'pusher-js';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import MiniStatement from '../NewMiniStatementTable';
+import MiniStatement from '../MiniStatement';
 import './Newdashboardcontent.css';
 
 
@@ -355,7 +355,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                </div>
+                 </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">

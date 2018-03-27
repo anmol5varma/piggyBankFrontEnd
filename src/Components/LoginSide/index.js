@@ -4,7 +4,7 @@ import React from 'react';
 import './Loginside.css';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
-  <div>
+  <div className="cont">
     <input
       type="text"
       placeholder="Username"
