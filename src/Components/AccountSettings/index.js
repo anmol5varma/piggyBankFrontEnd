@@ -52,6 +52,11 @@ class AccountSettings extends Component {
     if (this.state.noOfComponents === 0) {
       return (
         <div className="account-settings-container">
+          <div className="Account-Profile" >
+            <div className="account-details-image-container">
+              <img className="BankUser-image" src="/images/bankUser.png" alt="" />
+            </div>
+          </div>
           <div className="account-tab-container">
             <SettingsCard title="Account Details" >
               <AccountDetails
@@ -66,9 +71,15 @@ class AccountSettings extends Component {
     }
     return (
       <div className="account-settings-container">
+        <div className="Account-Profile" >
+          <div className="account-details-image-container">
+            <img className="BankUser-image" src="/images/bankUser.png" alt="" />
+          </div>
+        </div>
         <div className="account-tab-container">
           <SettingsCard title="Account Details" >
             <AccountDetails
+              noOfComponents={this.state.noOfComponents}
               changeComponent={changeComponent}
               getUserDetails={getUserDetails}
             />

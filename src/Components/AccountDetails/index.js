@@ -24,9 +24,6 @@ class AccountDetails extends Component {
     return (
       <div className="account-details-outer-container">
         <div className="account-details-inner-container">
-          <div className="account-details-image-container">
-            <img className="bankUser-image" src="/images/bankUser.png" alt="" />
-          </div>
           <div className="account-details-detail-container">
             <table className="account-details-table">
               <tr> <td><b>NAME</b></td>      <td> {this.state.details.name}</td></tr>
@@ -38,17 +35,15 @@ class AccountDetails extends Component {
             </table>
           </div>
         </div>
-        <div className="change-password-button-container" >
-          <button
-            className={this.props.noOfComponents === 0 ? 'SignupContent-button' : 'SignupContent-button-none'}
-            onClick={this.props.changeComponent}
-          >
+        <button
+          className={this.props.noOfComponents === 0 ? 'ChangePass-Content-button' : 'ChangePass-button-none'}
+          onClick={this.props.changeComponent}
+        >
 
-            <span className="SignupContent-button-label">
+          <span className="ChangePass-button-label">
                       Change Password
-            </span>
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
     );
   }

@@ -1,19 +1,45 @@
 .account-settings-container{
     display: flex;
-    flex-direction: row;
-    margin:30px;
+    flex-direction: column;
+    /* margin:30px; */
     font-family: 'Roboto', sans-serif;
+    padding:0;
+    margin:0;
+    flex-grow: 1;
 }
 
 .account-tab-container{
     display: flex;
     flex-grow: 1;
-    flex-direction: column;
+    flex-direction: row;
+    /* margin-right:50px;
+    margin-left:50px; */
 }
 
 .account-vertical-tabs{
     width: 15%;
 }
-.SignupContent-button-none{
-    display:none;
+
+.Account-Profile{
+    /* background-color: rgb(40, 185, 133); */
+    height: 200px;
+    background: linear-gradient(rgb(40, 185, 133),white);
+    position: relative;
+}
+
+.BankUser-image{
+    width:250px;
+    height: 250px;
+    border:5px solid white;
+    border-radius:50%;
+    position: relative;
+    padding:0;
+    /* position:absolute; */
+}
+.account-details-image-container{
+    display: flex;
+    bottom:-75px;
+    height:500px;
+    justify-content: space-around;
+    margin-top:70px;
 }
