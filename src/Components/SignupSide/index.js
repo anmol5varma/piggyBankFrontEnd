@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import Language from '../Language';
+// import googleInit from '../../helpers/googleTranslate';
 import './Signupside.css';
 
 
 class SignUpSide extends React.Component {
   render() {
+    // googleInit.googleTranslateElementInit();
     return (
       <div className="Signupside-container">
         <div className="Signupside-color-div">

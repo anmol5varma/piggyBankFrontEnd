@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+// import googleInit from '../../helpers/googleTranslate';
 import Language from '../Language';
 import './Signupcontent.css';
 
 
 class SignupContent extends React.Component {
   render() {
+    // googleInit.googleTranslateElementInit();
     return (
       <div className="SignupContent-container">
         <div className="SignupContent-color-div">
@@ -23,7 +25,9 @@ class SignupContent extends React.Component {
                 <ul className="Signup-content-checklist">
                   <li className="Signup-content-checklist-item">
                     <div className="font-icons">
-                      <i className="far font-icons fa-check-circle" />Scan QR or enter aadhaar number
+                      <i
+                        className="far font-icons fa-check-circle"
+                      />Scan QR or enter aadhaar number
                     </div>
                   </li>
                   <li className="Signup-content-checklist-item">
