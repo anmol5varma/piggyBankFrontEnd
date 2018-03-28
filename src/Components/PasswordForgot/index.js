@@ -1,20 +1,20 @@
 import React from 'react';
 import './PasswordForgot.css';
-import LoginSide from '../LoginSide';
-import SignupSide from '../SignupSide';
+import PasswordForgotForm from '../PasswordForgotForm';
+import PasswordForgotContent from '../PasswordForgotContent';
 import PropTypes from 'prop-types';
 
-class HomePage extends React.Component {
+class PasswordForgot extends React.Component {
   render() {
     const { history } = this.props;
     return (
-      <div className="HomePage-Container">
-        <div className="HomePage-signup"><SignupSide history={history} /></div>
-        <div className="HomePage-login"><LoginSide history={history} /></div>
+      <div className="PasswordForgot-Container">
+        <div className="PasswordForgot-signup"><PasswordForgotContent history={history} /></div>
+        <div className="PasswordForgot-login"><PasswordForgotForm history={history} /></div>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default PasswordForgot;
 

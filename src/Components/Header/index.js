@@ -110,6 +110,7 @@ class Header extends React.Component {
         <div className="Header-logo">  <Link to="/login"><a>DigiBank</a></Link></div>
         <div className="Header-user">
           {dropdown()}
+          {/* Anmol Varma */}
           {userCircle()}
         </div>
       </div>

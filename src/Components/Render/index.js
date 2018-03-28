@@ -7,7 +7,7 @@ import HomePage from '../HomePage';
 import './render.css';
 import SignupPage from '../SignupPage';
 import Dashboard from '../Dashboard';
-import ForgotPassword from '../ForgotPassword';
+import ForgotPassword from '../PasswordForgot';
 import ResetPassword from '../ResetPassword';
 
 // import history from '../../history';
