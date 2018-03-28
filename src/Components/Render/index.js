@@ -8,12 +8,12 @@ import './render.css';
 import SignupPage from '../SignupPage';
 import Dashboard from '../Dashboard';
 import ForgotPassword from '../PasswordForgot';
-import ResetPassword from '../ResetPassword';
+import ResetPassword from '../PasswordReset';
 
 // import history from '../../history';
 const options = {
-  timeout: 4000,
-  position: 'top center',
+  timeout: 10000,
+  position: 'bottom right',
   offset: '10px',
   transition: 'scale',
 };
