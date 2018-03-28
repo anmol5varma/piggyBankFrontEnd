@@ -12,7 +12,7 @@ import ResetPassword from '../ResetPassword';
 
 // import history from '../../history';
 const options = {
-  timeout: 4000,
+  timeout: 10000,
   position: 'top center',
   offset: '10px',
   transition: 'scale',
