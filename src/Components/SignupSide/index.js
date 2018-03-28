@@ -9,11 +9,11 @@ class SignUpSide extends React.Component {
       <div className="Signupside-container">
         <div className="Signupside-color-div">
           <div className="Signupside-box">
-            <div className="Signupside-logo">Credence Bank</div>
+            <div className="Signupside-logo"><img src="/images/logo.png" className="Main-logo" alt="logo" /></div>
             <div className="Signupside-welcome-message">
               <div className="Signupside-heading">Welcome</div>
               <div className="Signupside-subbheading">
-             Let's make money simple and digitize your banking experience
+                Let's make money simple and digitize your banking experience
               </div>
               <div className="Signupside-content" />
               <div className="Signupside-button-wrapper">
