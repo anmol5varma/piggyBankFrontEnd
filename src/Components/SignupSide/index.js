@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import Language from '../Language';
 import './Signupside.css';
 
 
@@ -9,7 +10,10 @@ class SignUpSide extends React.Component {
       <div className="Signupside-container">
         <div className="Signupside-color-div">
           <div className="Signupside-box">
-            <div className="Signupside-logo"><img src="/images/logo.png" className="Main-logo" alt="logo" /></div>
+            <div className="Signupside-logo">
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+              <div className="Signupside-language"><Language /></div>
+            </div>
             <div className="Signupside-welcome-message">
               <div className="Signupside-heading">Welcome</div>
               <div className="Signupside-subbheading">

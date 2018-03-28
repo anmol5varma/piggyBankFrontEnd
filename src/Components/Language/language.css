@@ -3,11 +3,20 @@
 }
 
 .goog-te-gadget{
-    color: white;
+    color: rgb(22, 26, 34, 0);
 }
 
 #google_translate_element span{
     display: none;
 }
 
-
+.goog-te-combo{
+    border: 0px;
+    margin: 0px!important;
+    background-color: rgb(22, 26, 34, 0);
+    color: white;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border-radius: 0px !important;
+}
