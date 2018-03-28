@@ -60,7 +60,7 @@ class Header extends React.Component {
             onClick={showDropDown}
             className="Header-options-dropdown-button"
           >
-            <i className="fas fa-bars header-dropdown" />
+            {/* <i className="fas fa-bars header-dropdown" /> */}
             {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
           </button>
         </div>
@@ -87,31 +87,18 @@ class Header extends React.Component {
 
     const userCircle = () => (
       <div className="Header-options">
-        <div className="Header-user-icon-box">
+        <div className="Header-user-icon-box" onClick={showDropDown}>
           <i className="fas fa-user Header-user-icon" />
         </div>
       </div>
     );
-
-    if (this.state.showDropDown) {
-      return (
-        <div className="Header-main">
-          <div className="Header-logo">Credence Bank</div>
-          <div className="Header-user">
-            {dropdown()}
-            {userCircle()}
-            {dropdownList()}
-          </div>
-        </div>
-      );
-    }
     return (
       <div className="Header-main">
         <div className="Header-logo">  <Link to="/login"><a>Credence Bank</a></Link></div>
         <div className="Header-user">
-          {dropdown()}
-          {/* Anmol Varma */}
+          <p>Hello {this.props.username}</p>
           {userCircle()}
+          {this.state.showDropDown ? dropdownList() : ''}
         </div>
       </div>
     );
