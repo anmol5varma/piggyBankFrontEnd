@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import Language from '../Language';
 import './Signupcontent.css';
 
 
@@ -9,7 +10,10 @@ class SignupContent extends React.Component {
       <div className="SignupContent-container">
         <div className="SignupContent-color-div">
           <div className="SignupContent-box">
-            <div className="SignupContent-logo"><img src="/images/logo.png" className="Main-logo" alt="logo" /></div>
+            <div className="SignupContent-logo">
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+              <div className="SignupContent-language"><Language /></div>
+            </div>
             <div className="SignupContent-welcome-message">
               <div className="SignupContent-heading">Register</div>
               <div className="SignupContent-subbheading">
