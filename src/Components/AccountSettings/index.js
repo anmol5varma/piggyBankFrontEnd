@@ -39,7 +39,7 @@ class AccountSettings extends Component {
           Authorization: token.token,
         },
       };
-      Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
+      return Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
         this.setState({
           passwordMessage: response.data.message,
         });
@@ -91,7 +91,10 @@ class AccountSettings extends Component {
           </div>
           <div className="Account-setting-change-password-show">
             <SettingsCard title="Change Password">
-              <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
+              <ChangePasswordForm
+                onSubmit={onChangePassword}
+                message={this.state.passwordMessage}
+              />
             </SettingsCard>
           </div>
         </div>

@@ -21,7 +21,6 @@ class DashboardContent extends React.Component {
       amount: '',
       miniStatement: [],
       suggestions: [],
-      transactionsCount: 10,
 
     };
   }
@@ -354,7 +353,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">

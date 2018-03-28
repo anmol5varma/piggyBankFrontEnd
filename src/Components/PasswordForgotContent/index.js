@@ -9,7 +9,7 @@ class ForgotPasswordContent extends React.Component {
       <div className="ForgotPasswordContent-container">
         <div className="ForgotPasswordContent-color-div">
           <div className="ForgotPasswordContent-box">
-            <div className="ForgotPasswordContent-logo">DigiBank</div>
+            <div className="ForgotPasswordContent-logo">Credence Bank</div>
             <div className="ForgotPasswordContent-welcome-message">
               <div className="ForgotPasswordContent-heading">Forgot your password?</div>
               <div className="ForgotPasswordContent-subbheading">
