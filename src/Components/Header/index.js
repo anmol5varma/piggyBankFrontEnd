@@ -96,7 +96,7 @@ class Header extends React.Component {
     if (this.state.showDropDown) {
       return (
         <div className="Header-main">
-          <div className="Header-logo">DigiBank</div>
+          <div className="Header-logo">Credence Bank</div>
           <div className="Header-user">
             {dropdown()}
             {userCircle()}
@@ -107,7 +107,7 @@ class Header extends React.Component {
     }
     return (
       <div className="Header-main">
-        <div className="Header-logo">  <Link to="/login"><a>DigiBank</a></Link></div>
+        <div className="Header-logo">  <Link to="/login"><a>Credence Bank</a></Link></div>
         <div className="Header-user">
           {dropdown()}
           {/* Anmol Varma */}
