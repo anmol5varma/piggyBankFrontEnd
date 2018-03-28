@@ -39,7 +39,7 @@ class AccountSettings extends Component {
           Authorization: token.token,
         },
       };
-      Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
+      return Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
         this.setState({
           passwordMessage: response.data.message,
         });
