@@ -60,7 +60,7 @@ class Header extends React.Component {
             onClick={showDropDown}
             className="Header-options-dropdown-button"
           >
-            <i className="fas fa-bars header-dropdown" />
+            {/* <i className="fas fa-bars header-dropdown" /> */}
             {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
           </button>
         </div>
@@ -86,25 +86,12 @@ class Header extends React.Component {
     );
 
     const userCircle = () => (
-      <div className="Header-options">
-        <div className="Header-user-icon-box">
-          <i className="fas fa-user Header-user-icon" />
+      <div className="Header-options" onMouseOver={showDropDown}>
+        <div className="Header-user-icon-box" onMouseOver={showDropDown}>
+          <i className="fas fa-user Header-user-icon" onMouseOver={showDropDown} />
         </div>
       </div>
     );
-
-    if (this.state.showDropDown) {
-      return (
-        <div className="Header-main">
-          <div className="Header-logo">Credence Bank</div>
-          <div className="Header-user">
-            {dropdown()}
-            {userCircle()}
-            {dropdownList()}
-          </div>
-        </div>
-      );
-    }
     return (
       <div className="Header-main">
         <div className="Header-logo">
@@ -115,9 +102,31 @@ class Header extends React.Component {
           </Link>
         </div>
         <div className="Header-user">
-          {dropdown()}
-          {/* Anmol Varma */}
+          <div className="Header-wallet">
+            <div className="Header-wallet-icon">
+              <i className="material-icons Dashboardcontent-header-wallet-icon Wallet-icon-name">
+             account_balance_wallet
+              </i>&nbsp;
+            </div>
+            <div className="Header-balance-info">
+              <div className="Header-statement" >
+                <span>Your balance</span>
+              </div>
+              <div className="Header-show-balance">
+                <div className="Header-rupee">
+                  <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon Wallet-icon-size" />
+                </div>
+                <div className="Header-balance">
+                  <span>{this.props.balance}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <p>Hello {this.props.username}</p>
+
           {userCircle()}
+          {this.state.showDropDown ? dropdownList() : ''}
         </div>
       </div>
     );

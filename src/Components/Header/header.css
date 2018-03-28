@@ -20,16 +20,44 @@ a{
 .Header-user{
   display: flex;
   flex-grow: 1;
-  font-size: 17px;
-  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
 }
+.Header-statement{
+  font-size:12px;
+  margin-bottom:0;
+}
+.Header-wallet{
+  flex-direction:row;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Header-balance-info{
+  flex-direction: column;
+}
+.Wallet-icon-size{
+  size:30px;
 
+}
+.Header-show-balance{
+  /* flex-direction:row; */
+}
+.Header-wallet-icon-container{
+  font-size:20px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin-top:0;
+}
+.Header-wallet-icon{
+justify-content: flex-end;
+}
 .Header-dropdown-icon{
   padding: 0px;
   margin: 0px;
   font-size: 17px;
 }
-
 .Header-logout{
 
 }
@@ -43,7 +71,9 @@ a{
   margin: 15px 20px;
   display: flex;
 }
-
+.Wallet-icon-name{
+  font-size: 43px;
+}
 .Header-hello-user{
 
 }
@@ -128,6 +158,15 @@ a {
   font-size: 20px;
 }
 
+
+.Header-rupee{
+  display: inline;
+}
+
+
+.Header-balance{
+  display: inline;
+}
 .Main-logo{
   height: 50px;
 }

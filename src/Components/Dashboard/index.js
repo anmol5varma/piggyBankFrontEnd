@@ -22,6 +22,7 @@ class Dashboard extends React.Component {
     super();
     this.state = {
       userName: 'User',
+      currentBalance: 0,
     };
   }
 
@@ -35,6 +36,7 @@ class Dashboard extends React.Component {
     axios.post('/user/balance', null, axiosConfig).then((response) => {
       this.setState({
         userName: response.data.userName,
+        currentBalance: response.data.currentBalance,
       });
       return response;
     });
@@ -43,9 +45,12 @@ class Dashboard extends React.Component {
     return (
       <Provider template={AlertTemplate} {...options}>
         <div className="Dashboard-container">
-          <Header username={this.state.userName} />
+          <Header
+            username={this.state.userName}
+            balance={this.state.currentBalance}
+          />
           <Switch>
-            <Route path="/user" render={() => <DashboardContent username={this.state.userName} />} />
+            <Route path="/user" render={() => <DashboardContent username={this.state.userName} balance={this.state.currentBalance} />} />
             <Route path="/accountSettings" render={() => <AccountSettings username={this.state.userName} />} />
           </Switch>
         </div>

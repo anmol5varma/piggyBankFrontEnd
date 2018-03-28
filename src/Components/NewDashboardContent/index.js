@@ -306,7 +306,6 @@ class DashboardContent extends React.Component {
     return (
       <div className="Dashboardcontent-container">
         <div className="Dashboardcontent-wrapper">
-          <div className="Dashboardcontent-username">Hello {this.props.username}</div>
           <div className="Dashboardcontent-header">
             <div className="Dashboardcontent-header-balance">
               <div className="Dashboardcontent-header-wallet-circle">
