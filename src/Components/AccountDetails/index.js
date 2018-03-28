@@ -13,35 +13,40 @@ class AccountDetails extends Component {
 
   componentDidMount() {
     this.props.getUserDetails().then((response) => {
+      console.log(response);
       this.setState({
         details: response.data.detailsObject,
       });
     });
   }
   render() {
+    // if (this.state.noOfComponent === 0) {
     return (
-      <div className="account-details-container">
-        <div className="account-detail">
-          <b>Name:</b> {this.state.details.name}
+      <div className="account-details-outer-container">
+        <div className="account-details-inner-container">
+          <div className="account-details-detail-container">
+            <table className="account-details-table">
+              <tr> <td><b>NAME</b></td>      <td> {this.state.details.name}</td></tr>
+              <tr> <td><b>GENDER</b></td>    <td> {this.state.details.gender}</td></tr>
+              <tr> <td><b>ADDRESS</b></td>   <td> {this.state.details.address}</td></tr>
+              <tr> <td><b>AADHAR</b></td>    <td> {this.state.details.aadharNumber}</td></tr>
+              <tr> <td><b>CONTACT</b></td>   <td> {this.state.details.contact}</td></tr>
+              <tr> <td><b>GUARDIAN</b></td>  <td> {this.state.details.guardian}</td></tr>
+            </table>
+          </div>
         </div>
-        <div className="account-detail">
-          <b>Gender:</b> {this.state.details.gender}
-        </div>
-        <div className="account-detail">
-          <b>Address:</b> {this.state.details.address}
-        </div>
-        <div className="account-detail">
-          <b>Aadhar Number:</b> {this.state.details.aadharNumber}
-        </div>
-        <div className="account-detail">
-          <b>Contact:</b> {this.state.details.contact}
-        </div>
-        <div className="account-detail">
-          <b>Guardian:</b> {this.state.details.guardian}
-        </div>
+        <button
+          className={this.props.noOfComponents === 0 ? 'ChangePass-Content-button' : 'ChangePass-button-none'}
+          onClick={this.props.changeComponent}
+        >
+          <span className="ChangePass-button-label">
+            Change Password
+          </span>
+        </button>
       </div>
     );
   }
+  // }
 }
 
 AccountDetails.propTypes = {

@@ -8,7 +8,7 @@ class SettingsCard extends Component {
     return (
       <div className="settings-card">
         <div className="settings-card-title">
-          {this.props.title}
+          <span>{this.props.title}</span>
         </div>
         {this.props.children}
       </div>

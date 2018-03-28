@@ -8,6 +8,7 @@ class Header extends React.Component {
     super();
     this.state = {
       showDropDown: false,
+      mouseLeave: false,
     };
   }
   render() {
@@ -48,6 +49,7 @@ class Header extends React.Component {
     const showDropDown = () => {
       this.setState({
         showDropDown: !this.state.showDropDown,
+        mouseLeave: false,
       });
     };
 
@@ -58,14 +60,22 @@ class Header extends React.Component {
             onClick={showDropDown}
             className="Header-options-dropdown-button"
           >
-            <i className="fas fa-caret-down Header-options-dropdown-icon" />
+            <i className="fas fa-bars header-dropdown" />
+            {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
           </button>
         </div>
       </div>
     );
 
+    const mouseLeaving = () => {
+      this.setState({
+        mouseLeave: true,
+        showDropDown: !this.state.showDropDown,
+      });
+    };
+
     const dropdownList = () => (
-      <div className="Header-dropdown-list">
+      <div className={this.state.mouseLeave ? 'Header-dropdown-list-none' : 'Header-dropdown-list'} onMouseLeave={mouseLeaving}>
         <div className="Header-dropdown-changepassword">
           {headerButtonChangePassword('Settings')}
         </div>
@@ -106,6 +116,7 @@ class Header extends React.Component {
         </div>
         <div className="Header-user">
           {dropdown()}
+          {/* Anmol Varma */}
           {userCircle()}
         </div>
       </div>

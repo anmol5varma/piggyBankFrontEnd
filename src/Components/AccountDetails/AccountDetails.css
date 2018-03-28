@@ -1,10 +1,71 @@
-.account-details-container{
+.account-details-outer-container{
     display: flex;
     flex-direction: column;
-    padding-left: 2%;
+    padding: 2%;
+    background-color: white;
+    /* flex-grow: 1; */
+    height: 100%;
+}
+.account-details-inner-container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
 }
 
 .account-detail{
-    margin-bottom: 3%;
     font-size: 22px;
+}
+
+.account-details-table{
+    border-collapse:separate; 
+    border-spacing:2em;
+}
+
+.account-details-detail-container{
+    flex-grow: 1;
+}
+
+.ChangePass-Content-button{
+    transition: background-color 0.5s ease;
+    border: 2px solid rgb(40, 185, 133);
+    padding: 25px;
+    outline: none;
+    border-radius: 2px;
+    background-color: rgb(40, 185, 133);
+    width:13%;
+    position: absolute;
+    right: 7%;
+    top:300px;
+  }
+  
+  .ChangePass-Content-button:hover{
+    transition: background-color 0.5s ease;
+    border: 2px solid rgb(40, 185, 133);
+    padding: 25px;
+    outline: none;
+    border-radius: 2px;
+    background-color: rgba(22, 26, 34, 0.8);
+  }
+  
+  .ChangePass-button-label{
+    margin: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color:rgb(240, 240, 240)
+  }
+
+.ChangePass-button-none{
+    display:none;
+}
+
+.account-details-table{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.account-details-table td{
+    word-wrap: normal;
 }

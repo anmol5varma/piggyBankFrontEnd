@@ -8,8 +8,6 @@ class MiniStatement extends React.Component {
   constructor() {
     super();
     this.state = {
-      transactionScreen: 1,
-      transactionsCount: 10,
     };
   }
   render() {
@@ -148,15 +146,16 @@ class MiniStatement extends React.Component {
               {filterButton('received', setTransactionScreen, 3)}
               {filterButton('sent', setTransactionScreen, 2)}
               {filterButton('all', setTransactionScreen, 1)}
-              <div className="select-options">
+              <div className="select-options-div">
                 <span className="MiniStatement-filter-select">View&nbsp;</span>
                 <span className="Ministatement-select-options-number">
                   <select
-                    value={this.props.transactionsCount}
+                    className="select-options"
                     onChange={(event) => {
                       this.props.setTransactionNumber(event.target.value);
                     }}
                   >
+                    <option value="5" selected="selected">Select Number</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
@@ -169,7 +168,7 @@ class MiniStatement extends React.Component {
         {this.state.transactionScreen === 1 ?
       (<div className="Ministatement-table">
         {allTransactions(this.props.miniStatement)}
-      </div>)
+       </div>)
       : (this.state.transactionScreen === 2 ? (
         <div className="Ministatement-table">
           {sentTransactions(this.props.miniStatement)}

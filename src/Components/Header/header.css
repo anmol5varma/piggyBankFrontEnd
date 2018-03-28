@@ -14,6 +14,7 @@ a{
   font-size: 20px;
   margin: auto;
   margin-left: 15px;
+  padding-right: 150px;
 }
 
 .Header-user{
@@ -39,7 +40,7 @@ a{
 }
 
 .Header-options{
-  margin: 15px 10px;
+  margin: 15px 20px;
   display: flex;
 }
 
@@ -102,6 +103,7 @@ a {
 .Header-dropdown-list{
   position: absolute;
   top: 62px;
+  z-index: 100;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-top: 0px;
   border-bottom: 0px;
@@ -111,10 +113,19 @@ a {
 
 .Header-dropdown-list-item{
   padding: 5px;
+  background-color: white;
 }
 
 .Header-dropdown-changepassword{
   border-bottom: 1px solid rgba(50,50,50,0.3);
+}
+.Header-dropdown-list-none{
+  display:none;
+}
+
+.header-dropdown{
+  color: white;
+  font-size: 20px;
 }
 
 .Main-logo{

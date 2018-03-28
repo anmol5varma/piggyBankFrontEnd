@@ -1,7 +1,7 @@
 .Ministatement-container{
   display: flex;
   flex-grow: 1;
-  background-color: rgb(245, 245, 245);
+  background-color: white;
   flex-direction: column;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .Ministatement-filter-button{
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
     border: 0px;
     outline: none;
 }
@@ -61,7 +61,7 @@
   color: rgb(140, 140, 140);
   font-size: 15px;
   font-weight: 500;
-
+  
 }
 Ministatement-select-options-number{
   margin:0px 3px 0px 0px;
@@ -143,4 +143,13 @@ Ministatement-select-options-number{
 .Ministatement-allRecord-entry:hover{
   background-color: rgb(210, 210, 210);
   border-left: 3px solid rgb(40, 185, 133);
+}
+
+.select-options{
+  width: 100px;
+  /* align-items: center; */
+  appearance: none; 
+  text-align-last:center;
+  margin-left: 3px;
+  padding: 2px;
 }
