@@ -97,7 +97,13 @@ class Header extends React.Component {
     }
     return (
       <div className="Header-main">
-        <div className="Header-logo">  <Link to="/login"><a>Credence Bank</a></Link></div>
+        <div className="Header-logo">
+          <Link to="/login">
+            <a>
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+            </a>
+          </Link>
+        </div>
         <div className="Header-user">
           {dropdown()}
           {userCircle()}
