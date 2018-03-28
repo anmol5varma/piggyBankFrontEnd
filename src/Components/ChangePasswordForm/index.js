@@ -15,7 +15,7 @@ class ChangePasswordForm extends Component {
       currentPassword: '',
       newPass1: '',
       newPass2: '',
-      disabled: true,
+      disabled: false,
     };
   }
 
@@ -80,9 +80,27 @@ class ChangePasswordForm extends Component {
 
     return (
       <div className="change-password-container" >
-        <TransparentInputField className="change-password-input-field-container" type="password" placeholder="Enter current password" value={this.state.currentPassword} onChange={updateCurrentPassword} />
-        <TransparentInputField className="change-password-input-field-container" type="password" placeholder="Enter new password" value={this.state.newPass1} onChange={updateNewPassword1} />
-        <TransparentInputField className="change-password-input-field-container" type="password" placeholder="Re-enter new password" value={this.state.newPass2} onChange={updateNewPassword2} />
+        <TransparentInputField
+          className="change-password-input-field-container"
+          type="password"
+          placeholder="Enter current password"
+          value={this.state.currentPassword}
+          onChange={updateCurrentPassword}
+        />
+        <TransparentInputField
+          className="change-password-input-field-container"
+          type="password"
+          placeholder="Enter new password"
+          value={this.state.newPass1}
+          onChange={updateNewPassword1}
+        />
+        <TransparentInputField
+          className="change-password-input-field-container"
+          type="password"
+          placeholder="Re-enter new password"
+          value={this.state.newPass2}
+          onChange={updateNewPassword2}
+        />
         <div className="password-message">
           {this.props.message}
         </div>
