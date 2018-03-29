@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from '../HeaderPageNotFound';
 
 class PageNotFound extends React.Component {
   render() {
     return (
       <div>
-       Page Not Found
+        <Header />
       </div>
     );
   }

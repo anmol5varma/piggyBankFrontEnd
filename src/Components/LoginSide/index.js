@@ -33,6 +33,7 @@ class LoginSide extends React.Component {
     };
   }
 
+
   makeLoginRequest = () => {
     axios.post('/login', {
       userName: this.state.username,
@@ -41,30 +42,9 @@ class LoginSide extends React.Component {
       if (window.localStorage) {
         localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
       }
-      console.log('Hello', response.data.data);
-      this.props.history.push(`/user?username=${this.state.username}`);
+      this.props.history.push('/user');
     }).catch((err) => {
       if (err.response.data.message === 'Please check password') {
-        this.setState({
-          incorrectPasswordError: 'Please enter correct password',
-        });
-      } else if (err.response.data.message === 'Please check user name') {
-        this.setState({ incorrectUsernameError: 'Incorrect Username' });
-      } else {
-        this.setState({ incorrectUsernameError: 'Invaid Username' });
-      }
-    });
-  };
-
-  _handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.makeLoginRequest()
-    }
-  }
-
-  render() {
-    const updateUsername = (event) => {
-      if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
         this.setState({
           incorrectPasswordError: 'Please enter correct password',
         });
@@ -126,10 +106,6 @@ class LoginSide extends React.Component {
 
 LoginSide.propTypes = {
   message: PropTypes.string,
-};
-
-LoginSide.defaultProps = {
-  message: '',
 };
 
 export default LoginSide;
