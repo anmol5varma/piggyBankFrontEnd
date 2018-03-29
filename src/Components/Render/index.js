@@ -6,7 +6,7 @@ import SignupPage from '../SignupPage';
 import Dashboard from '../Dashboard';
 import ForgotPassword from '../PasswordForgot';
 import ResetPassword from '../PasswordReset';
-
+import PageNotFound from '../PageNotFound';
 
 class App extends React.Component {
   render() {
@@ -20,6 +20,7 @@ class App extends React.Component {
           <Route path="/accountSettings" component={Dashboard} />
           <Route path="/ForgotPassword" component={ForgotPassword} />
           <Route path="/resetPassword/:token" component={ResetPassword} />
+          <Route path="*" component={PageNotFound} />
         </Switch>
       </main>
     );
