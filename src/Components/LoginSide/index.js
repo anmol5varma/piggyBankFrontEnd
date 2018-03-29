@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Loginside.css';
 
 const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectUsernameError) => (
@@ -35,45 +36,46 @@ class LoginSide extends React.Component {
       incorrectUsernameError: '',
     };
   }
-  render() {
-    const makeLoginRequest = () => {
-      axios.post('/login', {
-        userName: this.state.username,
-        password: this.state.password,
-      }).then((response) => {
-        if (window.localStorage) {
-          localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
-        }
-        this.props.history.push('/user');
-      }).catch((err) => {
-        if (err.response.data.message === 'Please check password') {
-          this.setState({
-            incorrectPasswordError: 'Please enter correct password',
-          });
-        } else if (err.response.data.message === 'Please check user name') {
-          this.setState({ incorrectUsernameError: 'Incorrect Username' });
-        } else {
-          this.setState({ incorrectUsernameError: 'Invaid Username' });
-        }
-      });
-    };
-    const updateUsername = (event) => {
-      if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
-        this.setState({
-          username: event.target.value,
-          incorrectPasswordError: '',
-          incorrectUsernameError: '',
-        });
+ 
+  makeLoginRequest = () => {
+    axios.post('/login', {
+      userName: this.state.username,
+      password: this.state.password,
+    }).then((response) => {
+      if (window.localStorage) {
+        localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
       }
-    };
-
-    const updatePassword = (event) => {
+      this.props.history.push('/user');
+    }).catch((err) => {
+      if (err.response.data.message === 'Please check password') {
+        this.setState({
+          incorrectPasswordError: 'Please enter correct password',
+        });
+      } else if (err.response.data.message === 'Please check user name') {
+        this.setState({ incorrectUsernameError: 'Incorrect Username' });
+      } else {
+        this.setState({ incorrectUsernameError: 'Invaid Username' });
+      }
+    });
+  };
+  updateUsername = (event) => {
+    if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
       this.setState({
-        password: event.target.value,
+        username: event.target.value,
         incorrectPasswordError: '',
         incorrectUsernameError: '',
       });
-    };
+    }
+  };
+
+  updatePassword = (event) => {
+    this.setState({
+      password: event.target.value,
+      incorrectPasswordError: '',
+      incorrectUsernameError: '',
+    });
+  };
+  render() {
     return (
       <div className="Loginside-container">
         <div className="Loginside-box">
@@ -81,15 +83,15 @@ class LoginSide extends React.Component {
             <div className="Loginside-heading">Or login into your account</div>
             <div className="Loginside-content">
               {form(
-               updateUsername,
-                updatePassword,
+               this.updateUsername,
+                this.updatePassword,
                 this.state.incorrectPasswordError,
                 this.state.incorrectUsernameError,
               )}
             </div>
             <div className="Loginside-button-wrapper">
               {/* <Link to={{ pathname: '/user', search: `?balance=${this.state.balance}` }}> */}
-              <button className="Loginside-button" onClick={() => makeLoginRequest()}>
+              <button className="Loginside-button" onClick={() => this.makeLoginRequest()}>
                 <span className="Loginside-button-label">
           login
                 </span>
@@ -103,3 +105,6 @@ class LoginSide extends React.Component {
   }
 }
 export default LoginSide;
+LoginSide.propTypes = {
+  history: PropTypes.shape.isRequired,
+};
