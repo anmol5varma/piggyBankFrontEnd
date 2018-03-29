@@ -1,13 +1,11 @@
 import React from 'react';
+import gTranslate from './util';
 import './language.css';
 
 
 class Language extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-
-    };
+  componentDidMount() {
+    gTranslate();
   }
   render() {
     return (
