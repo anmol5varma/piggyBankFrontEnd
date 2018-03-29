@@ -2,7 +2,6 @@ import React from 'react';
 import './Homepage.css';
 import LoginSide from '../LoginSide';
 import SignupSide from '../SignupSide';
-import PropTypes from 'prop-types';
 
 class HomePage extends React.Component {
   render() {
