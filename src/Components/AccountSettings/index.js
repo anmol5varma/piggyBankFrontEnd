@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 
 import './AccountSettings.css';
-
-import VerticalTabs from '../VerticalTabs';
 import ChangePasswordForm from '../ChangePasswordForm';
 import SettingsCard from '../SettingsCard';
 import AccountDetails from '../AccountDetails';
@@ -15,6 +13,7 @@ class AccountSettings extends Component {
 
     this.state = {
       passwordMessage: '',
+      noOfComponents: 0,
     };
   }
 
@@ -28,6 +27,11 @@ class AccountSettings extends Component {
       };
       return Axios.get('/user/details', axiosConfig).then(response => response);
     };
+    const changeComponent = () => {
+      this.setState({
+        noOfComponents: 1,
+      });
+    };
     const onChangePassword = (currPassword, newPass1, newPass2) => {
       const token = JSON.parse(localStorage.getItem('token'));
       const axiosConfig = {
@@ -35,7 +39,7 @@ class AccountSettings extends Component {
           Authorization: token.token,
         },
       };
-      Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
+      return Axios.post('/users/password', { currentpassword: currPassword, newpassword: newPass1, retypepassword: newPass2 }, axiosConfig).then((response) => {
         this.setState({
           passwordMessage: response.data.message,
         });
@@ -45,31 +49,59 @@ class AccountSettings extends Component {
         });
       });
     };
+    if (this.state.noOfComponents === 0) {
+      return (
+        <div className="account-settings-container">
+          <div className="Account-Profile" >
+            <div className="account-details-image-container">
+              <img className="BankUser-image" src="/images/bankUser.png" alt="" />
+            </div>
+          </div>
+          <div className="account-tab-container">
+            <div className="Account-setting-details">
+              <SettingsCard title="Account Details" >
+                <AccountDetails
+                  noOfComponents={this.state.noOfComponents}
+                  changeComponent={changeComponent}
+                  getUserDetails={getUserDetails}
+                />
+              </SettingsCard>
+            </div>
+            <div className="Account-setting-change-password" />
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="account-settings-container">
-        <VerticalTabs className="account-vertical-tabs" />
+        <div className="Account-Profile" >
+          <div className="account-details-image-container">
+            <img className="BankUser-image" src="/images/bankUser.png" alt="" />
+          </div>
+        </div>
         <div className="account-tab-container">
-          <SettingsCard title="Account Details" >
-            <AccountDetails getUserDetails={getUserDetails} />
-          </SettingsCard>
-          <SettingsCard title="Notification Settings">
-            <label>
-              <input type="checkbox" value="I want notifications" /> I want notifications
-            </label>
-          </SettingsCard>
-          <SettingsCard title="Change Password">
-            <ChangePasswordForm onSubmit={onChangePassword} message={this.state.passwordMessage} />
-          </SettingsCard>
+          <div className="Account-setting-details">
+            <SettingsCard title="Account Details" >
+              <AccountDetails
+                noOfComponents={this.state.noOfComponents}
+                changeComponent={changeComponent}
+                getUserDetails={getUserDetails}
+              />
+            </SettingsCard>
+          </div>
+          <div className="Account-setting-change-password-show">
+            <SettingsCard title="Change Password">
+              <ChangePasswordForm
+                onSubmit={onChangePassword}
+                message={this.state.passwordMessage}
+              />
+            </SettingsCard>
+          </div>
         </div>
       </div>
     );
   }
 }
-
-// AccountSettings.propTypes = {
-//   username: PropTypes.string.isRequired,
-
-// };
 
 
 export default AccountSettings;

@@ -8,6 +8,7 @@ class Header extends React.Component {
     super();
     this.state = {
       showDropDown: false,
+      mouseLeave: false,
     };
   }
   render() {
@@ -48,6 +49,7 @@ class Header extends React.Component {
     const showDropDown = () => {
       this.setState({
         showDropDown: !this.state.showDropDown,
+        mouseLeave: false,
       });
     };
 
@@ -58,14 +60,22 @@ class Header extends React.Component {
             onClick={showDropDown}
             className="Header-options-dropdown-button"
           >
-            <i className="fas fa-caret-down Header-options-dropdown-icon" />
+            {/* <i className="fas fa-bars header-dropdown" /> */}
+            {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
           </button>
         </div>
       </div>
     );
 
+    const mouseLeaving = () => {
+      this.setState({
+        mouseLeave: true,
+        showDropDown: !this.state.showDropDown,
+      });
+    };
+
     const dropdownList = () => (
-      <div className="Header-dropdown-list">
+      <div className={this.state.mouseLeave ? 'Header-dropdown-list-none' : 'Header-dropdown-list'} onMouseLeave={mouseLeaving}>
         <div className="Header-dropdown-changepassword">
           {headerButtonChangePassword('Settings')}
         </div>
@@ -76,31 +86,47 @@ class Header extends React.Component {
     );
 
     const userCircle = () => (
-      <div className="Header-options">
-        <div className="Header-user-icon-box">
-          <i className="fas fa-user Header-user-icon" />
+      <div className="Header-options" onMouseOver={showDropDown}>
+        <div className="Header-user-icon-box" onMouseOver={showDropDown}>
+          <i className="fas fa-user Header-user-icon" onMouseOver={showDropDown} />
         </div>
       </div>
     );
-
-    if (this.state.showDropDown) {
-      return (
-        <div className="Header-main">
-          <div className="Header-logo">Piggy Bank</div>
-          <div className="Header-user">
-            {dropdown()}
-            {userCircle()}
-            {dropdownList()}
-          </div>
-        </div>
-      );
-    }
     return (
       <div className="Header-main">
-        <div className="Header-logo">Piggy Bank</div>
+        <div className="Header-logo">
+          <Link to="/login">
+            <a>
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+            </a>
+          </Link>
+        </div>
         <div className="Header-user">
-          {dropdown()}
+          <div className="Header-wallet">
+            <div className="Header-wallet-icon">
+              <i className="material-icons Dashboardcontent-header-wallet-icon Wallet-icon-name">
+             account_balance_wallet
+              </i>&nbsp;
+            </div>
+            <div className="Header-balance-info">
+              <div className="Header-statement" >
+                <span>Your balance</span>
+              </div>
+              <div className="Header-show-balance">
+                <div className="Header-rupee">
+                  <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon Wallet-icon-size" />
+                </div>
+                <div className="Header-balance">
+                  <span>{this.props.balance}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <p>Hello {this.props.username}</p>
+
           {userCircle()}
+          {this.state.showDropDown ? dropdownList() : ''}
         </div>
       </div>
     );

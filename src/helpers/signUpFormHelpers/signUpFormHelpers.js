@@ -210,7 +210,7 @@ const getDetails = state => (
           </td>
           <td className="Signupform-table-value">
             <span className="Signupform-table-text">
-              {strftime('%F', new Date(state.state.eKYCResponse.e_Kyc.Poi.Dob))}
+              {strftime('%d/%m/%Y', new Date(state.state.eKYCResponse.e_Kyc.Poi.Dob))}
             </span>
           </td>
         </tr>
@@ -222,7 +222,8 @@ const getDetails = state => (
           </td>
           <td className="Signupform-table-value">
             <span className="Signupform-table-text">
-              {state.state.eKYCResponse.e_Kyc.Poi.contact}
+              {
+              state.state.eKYCResponse.e_Kyc.Poi.contact}
             </span>
           </td>
         </tr>

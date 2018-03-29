@@ -6,8 +6,6 @@ import LoginSide from '../LoginSide';
 import QReader from '../QReader';
 import helpers from '../../helpers/signUpFormHelpers/signUpFormHelpers';
 
-const strftime = require('strftime');
-
 
 class SignupForm extends React.Component {
   constructor() {
@@ -29,11 +27,7 @@ class SignupForm extends React.Component {
       notmydetailsOTPError: '',
     };
   }
-  setComponent(component) {
-    this.setState({
-      noOfComponent: component,
-    });
-  }
+
   onRegister() {
     axios.post('/users', {
       aadhaarNo: this.state.aadhaarNo,
@@ -73,13 +67,12 @@ class SignupForm extends React.Component {
       }
     });
   }
-
-  scanAadhaarbuttonClicked() {
+  setComponent(component) {
     this.setState({
-      aadhaarNo: '',
+      noOfComponent: component,
     });
-    this.setComponent(5);
   }
+
   takeAadhaarNumberbuttonClicked() {
     this.setState({
       aadhaarNo: '',
@@ -139,6 +132,12 @@ class SignupForm extends React.Component {
     }, () => {
       context.sendOTPButtonClicked();
     });
+  }
+  scanAadhaarbuttonClicked() {
+    this.setState({
+      aadhaarNo: '',
+    });
+    this.setComponent(5);
   }
   detailsVerifiedButtonClicked() {
     this.setComponent(4);

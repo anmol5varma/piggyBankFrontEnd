@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Loginside.css';
@@ -15,6 +16,9 @@ const form = (updateUsername, updatePassword, incorrectPasswordError, incorrectU
     <div className="Error-message">{incorrectUsernameError}</div>
     <input type="password" placeholder="Password" className="Login-input-field" onChange={updatePassword} onKeyPress={_handleKeyPress}/>
     <div className="Error-message">{incorrectPasswordError}</div>
+    <div className="Forgot-Password">
+      <Link to="/forgotPassword"><a>Forgot password?</a></Link>
+    </div>
   </div>
 );
 

@@ -1,7 +1,7 @@
 .Ministatement-container{
   display: flex;
   flex-grow: 1;
-  background-color: rgb(245, 245, 245);
+  background-color: white;
   flex-direction: column;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .Ministatement-filter-button{
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
     border: 0px;
     outline: none;
 }
@@ -40,9 +40,15 @@
 .Ministatement-filter-button-label{
   text-transform: capitalize;
   color: rgb(140, 140, 140);
+  font-size: 15px;
   font-weight: 500;
 }
-
+.Ministatement-select-options-number{
+  text-transform: capitalize;
+  color: rgb(140, 140, 140);
+  font-size: 15px;
+  font-weight: 500;
+}
 .Ministatement-filter-button-wrapper:hover .Ministatement-filter-button-label{
   color: rgb(40, 185, 133);
 }
@@ -50,8 +56,15 @@
 .Ministatement-filter-button-active{
   color: rgb(40, 185, 133);
 }
-
-.Ministatement-table{
+.MiniStatement-filter-select{
+  text-transform: capitalize;
+  color: rgb(140, 140, 140);
+  font-size: 15px;
+  font-weight: 500;
+  
+}
+Ministatement-select-options-number{
+  margin:0px 3px 0px 0px;
 }
 
 .Ministatement-table-wrapper{
@@ -81,7 +94,7 @@
   margin-top: 30px;
   color: rgb(22, 26, 34);
 }
-
+ 
 .Ministatement-allRecord-heading{
   font-weight: 500;
   font-size: 15px;
@@ -132,26 +145,11 @@
   border-left: 3px solid rgb(40, 185, 133);
 }
 
-.Ministatement-record-sno{
-  flex: 1;
-}
-
-.Ministatement-record-name{
-  flex: 3;
-}
-
-.Ministatement-record-date{
-  flex: 3;
-}
-
-.Ministatement-record-amount{
-  flex: 3;
-}
-
-.Ministatement-record-balance{
-  flex: 3;
-}
-
-.Ministatement-record-type{
-  flex: 3;
+.select-options{
+  width: 100px;
+  /* align-items: center; */
+  appearance: none; 
+  text-align-last:center;
+  margin-left: 3px;
+  padding: 2px;
 }

@@ -3,7 +3,7 @@ import { withAlert } from 'react-alert';
 import Pusher from 'pusher-js';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import MiniStatement from '../NewMiniStatementTable';
+import MiniStatement from '../MiniStatement';
 import './Newdashboardcontent.css';
 
 
@@ -21,13 +21,11 @@ class DashboardContent extends React.Component {
       amount: '',
       miniStatement: [],
       suggestions: [],
-      transactionsCount: 5,
 
     };
   }
 
   componentDidMount() {
-  //  alert(this.state.transactionsCount);
     const token = JSON.parse(localStorage.getItem('token'));
     const axiosConfig = {
       headers: {
@@ -51,7 +49,7 @@ class DashboardContent extends React.Component {
         const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
         if (response.data.userId === data.to) { this.props.alert.success(message); }
       });
-    }).catch((err) => {
+    }).catch(() => {
       this.props.alert.error('Internal server error in fetching your balance');
     });
   }
@@ -152,6 +150,7 @@ class DashboardContent extends React.Component {
       this.setState({
         username: '',
         amount: '',
+        password: '',
         usernameError: userNameError,
         amountError,
         transactionError,
@@ -183,7 +182,6 @@ class DashboardContent extends React.Component {
       console.log(data);
       axios.post('/transfer', data, axiosConfig)
         .then((response) => {
-        // console.log(response);
           if (response.data.status_code === 201) {
             showSuccessAlert('Transfer done');
             console.log(response.data.balance);
@@ -308,7 +306,6 @@ class DashboardContent extends React.Component {
     return (
       <div className="Dashboardcontent-container">
         <div className="Dashboardcontent-wrapper">
-          <div className="Dashboardcontent-username">Hello {this.props.username}</div>
           <div className="Dashboardcontent-header">
             <div className="Dashboardcontent-header-balance">
               <div className="Dashboardcontent-header-wallet-circle">
