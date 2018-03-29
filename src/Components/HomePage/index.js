@@ -2,7 +2,6 @@ import React from 'react';
 import './Homepage.css';
 import LoginSide from '../LoginSide';
 import SignupSide from '../SignupSide';
-import PropTypes from 'prop-types';
 
 class HomePage extends React.Component {
   render() {
@@ -10,7 +9,7 @@ class HomePage extends React.Component {
     return (
       <div className="HomePage-Container">
         <div className="HomePage-signup"><SignupSide history={history} /></div>
-        <div className="HomePage-login"><LoginSide history={history} /></div>
+        <div className="HomePage-login"><LoginSide history={history} message="Or login into your account" /></div>
       </div>
     );
   }

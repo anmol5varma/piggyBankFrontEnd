@@ -39,6 +39,7 @@
 .Signupside-logo{
   color: rgb(240, 240, 240);
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
@@ -94,6 +95,13 @@
   color:rgb(40, 185, 133);
 }
 
+.translate-button{
+  background-color: transparent;
+  padding-left: 68%;
+}
 .Main-logo{
   height: 50px;
+}
+.Signupside-language{
+  margin-top: 5px;
 }
