@@ -2,11 +2,9 @@ import axios from 'axios';
 import React from 'react';
 import scrollToComponent from 'react-scroll-to-component';
 import './Signupform.css';
-import LoginSideAfterRegister from '../LoginSideAfterRegister';
+import LoginSide from '../LoginSide';
 import QReader from '../QReader';
 import helpers from '../../helpers/signUpFormHelpers/signUpFormHelpers';
-
-const strftime = require('strftime');
 
 
 class SignupForm extends React.Component {
@@ -213,7 +211,7 @@ class SignupForm extends React.Component {
                 You are successfully registered!!!
                 </div>
                 <div className="Signupform-content">
-                  <LoginSideAfterRegister history={this.props.history} />
+                  <LoginSide history={this.props.history} message="Please, login to use your money safely." />
                 </div>
               </div>
             </div>
