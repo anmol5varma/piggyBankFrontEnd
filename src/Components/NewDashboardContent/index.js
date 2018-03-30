@@ -188,7 +188,6 @@ class DashboardContent extends React.Component {
         .then((response) => {
           if (response.data.status_code === 201) {
             showSuccessAlert('Transfer Done');
-            console.log(response.data.balance);
             updateBalance(response.data.balance);
             setComponent(1);
             setUserNameAndAmount('', '', '');
@@ -356,7 +355,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                </div>
+                 </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
