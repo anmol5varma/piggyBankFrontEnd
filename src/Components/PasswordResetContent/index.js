@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './PasswordResetContent.css';
+import Language from '../Language';
 
 
 class PasswordResetContent extends React.Component {
@@ -9,7 +10,10 @@ class PasswordResetContent extends React.Component {
       <div className="PasswordResetContent-container">
         <div className="PasswordResetContent-color-div">
           <div className="PasswordResetContent-box">
-            <div className="PasswordResetContent-logo">Credence Bank</div>
+            <div className="Signupside-logo">
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+              {/* <div className="Signupside-language"><Language /></div> */}
+            </div>
             <div className="PasswordResetContent-welcome-message">
               <div className="PasswordResetContent-heading">Reset your password</div>
               <div className="PasswordResetContent-subbheading">

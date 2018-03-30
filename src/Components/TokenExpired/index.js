@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './TokenExpired.css';
+import Language from '../Language';
 
 
 class TokenExpired extends React.Component {
@@ -9,7 +10,8 @@ class TokenExpired extends React.Component {
       <div className="TokenExpired-container">
         <div className="TokenExpired-color-div">
           <div className="TokenExpired-box">
-            <div className="TokenExpired-logo">Credence Bank</div>
+            <img src="/images/logo.png" className="Main-logo token-logo" alt="logo" />
+            <div className="Signupside-language token-lang"><Language /></div>
             <div className="TokenExpired-welcome-message">
               <div className="TokenExpired-heading">Token Expired!!</div>
               <div className="TokenExpired-subbheading">

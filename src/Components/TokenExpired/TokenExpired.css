@@ -93,3 +93,12 @@
   background-color: rgb(22, 26, 34);
   color:rgb(40, 185, 133);
 }
+
+.token-logo{
+  width:10%;
+  height: 10%;
+}
+
+.token-lang{
+  display: inline;
+}
