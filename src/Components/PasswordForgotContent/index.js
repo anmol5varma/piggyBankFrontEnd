@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import './ForgotPasswordContent.css';
 
-
 class ForgotPasswordContent extends React.Component {
   render() {
     return (

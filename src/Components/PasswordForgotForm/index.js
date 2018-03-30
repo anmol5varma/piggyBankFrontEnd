@@ -29,17 +29,19 @@ class PasswordForgotForm extends React.Component {
       </div>
     );
     const onForgotPassword = () => {
-      Axios.post('/forgot/password', { username: this.state.userName }).then(() => {
+      this.props.onShowLoader(this.state.userName).then(() => {
         const message = 'An email has been sent to your Registered Email Id.Please visit your inbox to reset your password.';
         const promise = Promise.resolve(message);
         promise.then((message1) => {
-          this.props.alert.success(message1, { onClose: () => this.props.history.push('/login') });
+          this.props.alert.success(message1, { onOpen: () => this.props.onHideLoader(), onClose: () => this.props.history.push('/login') });
         });
       }).catch((err) => {
         if (err.response.data.message === 'Please enter correct UserName as no such User Exists!') {
           this.setState({
-            incorrectUsernameError: 'Please enter correct UserName as no such User Exists!',
+            incorrectUsernameError: 'No such User Exists!',
           });
+          const message1 = 'Please enter correct UserName as no such User Exists!';
+          this.props.alert.error(message1, { onOpen: () => this.props.onHideLoader(), onClose: () => this.props.history.push('/login') });
         }
       });
     };
