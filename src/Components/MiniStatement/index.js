@@ -8,6 +8,7 @@ class MiniStatement extends React.Component {
   constructor() {
     super();
     this.state = {
+      transactionScreen: 1,
     };
   }
   render() {
