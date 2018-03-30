@@ -104,11 +104,8 @@ class LoginSide extends React.Component {
   }
 }
 
-LoginSide.propTypes = {
-  message: PropTypes.string,
-};
-
 export default LoginSide;
 LoginSide.propTypes = {
   history: PropTypes.shape.isRequired,
+  message: PropTypes.string,
 };

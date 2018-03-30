@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Language from '../Language';
-// import googleInit from '../../helpers/googleTranslate';
 import './Signupside.css';
 
 
 class SignUpSide extends React.Component {
   render() {
-    // googleInit.googleTranslateElementInit();
     return (
       <div className="Signupside-container">
         <div className="Signupside-color-div">
@@ -17,17 +16,16 @@ class SignUpSide extends React.Component {
               <div className="Signupside-language"><Language /></div>
             </div>
             <div className="Signupside-welcome-message">
-              <div className="Signupside-heading">Welcome</div>
+              <div className="Signupside-heading">{this.props.welcomeMessage}</div>
               <div className="Signupside-subbheading">
-                Let's make money simple and digitize your banking experience
+                {this.props.tagLine}
               </div>
               <div className="Signupside-content" />
               <div className="Signupside-button-wrapper">
-
                 <Link to="/signup">
                   <button className="Signupside-button" >
                     <span className="Signupside-button-label">
-                      register here
+                      {this.props.buttonMessage}
                     </span>
                   </button>
                 </Link>
@@ -43,3 +41,9 @@ class SignUpSide extends React.Component {
 }
 
 export default SignUpSide;
+SignUpSide.propTypes = {
+  welcomeMessage: PropTypes.string.isRequired,
+  tagLine: PropTypes.string.isRequired,
+  buttonMessage: PropTypes.string.isRequired,
+};
+

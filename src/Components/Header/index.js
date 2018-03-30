@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import React from 'react';
 import './header.css';
-
 
 class Header extends React.Component {
   constructor() {
@@ -52,21 +52,6 @@ class Header extends React.Component {
         mouseLeave: false,
       });
     };
-
-    const dropdown = () => (
-      <div className="Header-options">
-        <div className="Header-options-dropdown">
-          <button
-            onClick={showDropDown}
-            className="Header-options-dropdown-button"
-          >
-            {/* <i className="fas fa-bars header-dropdown" /> */}
-            {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
-          </button>
-        </div>
-      </div>
-    );
-
     const mouseLeaving = () => {
       this.setState({
         mouseLeave: true,
@@ -135,3 +120,7 @@ class Header extends React.Component {
 
 
 export default Header;
+Header.propTypes = {
+  username: PropTypes.string.isRequired,
+  balance: PropTypes.string.isRequired,
+};
