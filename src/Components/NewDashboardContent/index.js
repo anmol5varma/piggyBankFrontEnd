@@ -139,7 +139,15 @@ class DashboardContent extends React.Component {
     };
     const showSuccessAlert = (message) => {
       this.props.alert.success(message, {
-        onClose: () => { this.getTransactionDetails(); },
+        onClose: () => {
+          this.getTransactionDetails();
+          this.props.updateHeaderBalance(this.state.amount);
+          this.setState({
+            amount: '',
+            username: '',
+            password: '',
+          });
+        },
       });
     };
     const setComponent = (component) => {
@@ -153,9 +161,6 @@ class DashboardContent extends React.Component {
 
     const setUserNameAndAmount = (userNameError, amountError, transactionError) => {
       this.setState({
-        username: '',
-        amount: '',
-        password: '',
         usernameError: userNameError,
         amountError,
         transactionError,
@@ -355,7 +360,7 @@ class DashboardContent extends React.Component {
                   Transfer money
                     </span>
                   </button>
-                 </div>
+                </div>
               ) :
               (
                 <div className="Dashboardcontent-header-transfer-button-wrapper">
@@ -386,4 +391,5 @@ export default withAlert(DashboardContent);
 
 DashboardContent.propTypes = {
   username: PropTypes.string.isRequired,
+  updateHeaderBalance: PropTypes.func.isRequired,
 };

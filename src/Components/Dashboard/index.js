@@ -34,7 +34,19 @@ class Dashboard extends React.Component {
     });
     return 0;
   }
+
   render() {
+    const updateHeaderBalance = (amountSend) => {
+      alert(amountSend);
+      const newBalance = this.state.currentBalance - amountSend;
+      alert(newBalance);
+      this.setState({
+        currentBalance: newBalance,
+      }, () => {
+        alert('Hello I am updating balance', this.state.currentBalance);
+      });
+    };
+
     return (
       <div className="Dashboard-container">
         <Header
@@ -48,6 +60,7 @@ class Dashboard extends React.Component {
               history={this.props}
               username={this.state.userName}
               balance={this.state.currentBalance}
+              updateHeaderBalance={updateHeaderBalance}
             />)}
           />
           <Route
