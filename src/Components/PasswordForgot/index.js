@@ -1,9 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import Axios from 'axios';
-=======
 import PropTypes from 'prop-types';
->>>>>>> master
 import './PasswordForgot.css';
 import PasswordForgotForm from '../PasswordForgotForm';
 import PasswordForgotContent from '../PasswordForgotContent';
