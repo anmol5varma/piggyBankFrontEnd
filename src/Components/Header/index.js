@@ -71,9 +71,9 @@ class Header extends React.Component {
     );
 
     const userCircle = () => (
-      <div className="Header-options" onMouseOver={showDropDown} onFocus={showDropDown}>
-        <div className="Header-user-icon-box" onMouseOver={showDropDown} onFocus={showDropDown}>
-          <i className="fas fa-user Header-user-icon" onMouseOver={showDropDown} onFocus={showDropDown} />
+      <div className="Header-options" onClick={showDropDown} onFocus={showDropDown}>
+        <div className="Header-user-icon-box" onClick={showDropDown} onFocus={showDropDown}>
+          <i className="fas fa-user Header-user-icon" onClick={showDropDown} onFocus={showDropDown} />
         </div>
       </div>
     );
