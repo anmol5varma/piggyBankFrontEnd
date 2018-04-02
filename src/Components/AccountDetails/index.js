@@ -30,8 +30,12 @@ class AccountDetails extends Component {
               <tr> <td><b>GENDER</b></td>    <td> {this.state.details.gender}</td></tr>
               <tr> <td><b>ADDRESS</b></td>   <td> {this.state.details.address}</td></tr>
               <tr> <td><b>AADHAR</b></td>    <td> {this.state.details.aadharNumber}</td></tr>
+              <tr> <td><b>DATE OF BIRTH</b></td>  <td> {this.state.details.dob}</td></tr>
               <tr> <td><b>CONTACT</b></td>   <td> {this.state.details.contact}</td></tr>
+              <tr> <td><b>EMAIL</b></td>  <td> {this.state.details.email}</td></tr>
               <tr> <td><b>GUARDIAN</b></td>  <td> {this.state.details.guardian}</td></tr>
+              <tr> <td><b>ACCOUNT OPENED ON</b></td>  <td> {this.state.details.accountOpen}</td></tr>
+              <tr> <td><b>LAST TRANSACTION ON</b></td>  <td> {this.state.details.lastTransaction}</td></tr>
             </table>
           </div>
         </div>

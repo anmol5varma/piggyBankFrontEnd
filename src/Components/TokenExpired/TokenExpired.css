@@ -1,33 +1,33 @@
-.PasswordResetContent-container{
+.TokenExpired-container{
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   background-repeat:no-repeat;
   background-size:cover;
-  background-image: url('/images/reset.png');
+  background-image: url('/images/signupResized.jpg');
 }
 
-.PasswordResetContent-color-div{
+.TokenExpired-color-div{
   background-color: rgba(22, 26, 34, 0.8);
   display: flex;
   flex-grow: 1;
   flex-direction: column;
 }
 
-.PasswordResetContent-box{
+.TokenExpired-box{
   display: flex;
   flex-direction: column;
   margin: 70px;
   flex-grow: 1;
 }
 
-.PasswordResetContent-welcome-message{
+.TokenExpired-welcome-message{
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 
-.PasswordResetContent-heading{
+.TokenExpired-heading{
   display: flex;
   flex-grow: 1;
   font-size: 60px;
@@ -36,7 +36,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.PasswordResetContent-logo{
+.TokenExpired-logo{
   color: rgb(240, 240, 240);
   display: flex;
   flex-direction: row;
@@ -44,7 +44,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.PasswordResetContent-subbheading{
+.TokenExpired-subbheading{
   display: flex;
   flex-grow: 1;
   margin-top: 15px;
@@ -54,7 +54,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.PasswordResetContent-content{
+.TokenExpired-content{
   display: flex;
   line-height: 30px;
   flex-grow: 1;
@@ -65,7 +65,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.PasswordResetContent-button{
+.TokenExpired-button{
   transition: background-color 0.5s ease;
   border: 2px solid rgb(40, 185, 133);
   padding: 25px;
@@ -74,7 +74,7 @@
   background-color: rgb(40, 185, 133);
 }
 
-.PasswordResetContent-button-label{
+.TokenExpired-button-label{
   margin: 15px;
   transition: background-color 0.5s ease;
   background-color: rgb(40, 185, 133);
@@ -85,11 +85,20 @@
   color:rgb(240, 240, 240)
 }
 
-.PasswordResetContent-button:hover{
+.TokenExpired-button:hover{
   background-color: rgb(22, 26, 34);
 }
 
-.PasswordResetContent-button:hover .PasswordResetContent-button-label{
+.TokenExpired-button:hover .TokenExpired-button-label{
   background-color: rgb(22, 26, 34);
   color:rgb(40, 185, 133);
+}
+
+.token-logo{
+  width:10%;
+  height: 10%;
+}
+
+.token-lang{
+  display: inline;
 }

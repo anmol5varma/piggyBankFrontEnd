@@ -37,13 +37,13 @@ class Dashboard extends React.Component {
 
   render() {
     const updateHeaderBalance = (amountSend) => {
-      alert(amountSend);
+      // alert(amountSend);
       const newBalance = this.state.currentBalance - amountSend;
-      alert(newBalance);
+      // alert(newBalance);
       this.setState({
         currentBalance: newBalance,
       }, () => {
-        alert('Hello I am updating balance', this.state.currentBalance);
+        // alert('Hello I am updating balance', this.state.currentBalance);
       });
     };
 

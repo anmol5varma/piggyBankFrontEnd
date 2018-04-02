@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './ForgotPasswordContent.css';
-
+import Language from '../Language';
 
 class ForgotPasswordContent extends React.Component {
   render() {
@@ -9,7 +9,10 @@ class ForgotPasswordContent extends React.Component {
       <div className="ForgotPasswordContent-container">
         <div className="ForgotPasswordContent-color-div">
           <div className="ForgotPasswordContent-box">
-            <div className="ForgotPasswordContent-logo">Credence Bank</div>
+            <div className="Signupside-logo">
+              <img src="/images/logo.png" className="Main-logo" alt="logo" />
+              <div className="Signupside-language"><Language /></div>
+            </div>
             <div className="ForgotPasswordContent-welcome-message">
               <div className="ForgotPasswordContent-heading">Forgot your password?</div>
               <div className="ForgotPasswordContent-subbheading">
