@@ -1,9 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import Axios from 'axios';
+=======
+import PropTypes from 'prop-types';
+>>>>>>> master
 import './PasswordForgot.css';
 import PasswordForgotForm from '../PasswordForgotForm';
 import PasswordForgotContent from '../PasswordForgotContent';
-import PropTypes from 'prop-types';
+
 
 class PasswordForgot extends React.Component {
   constructor(props) {
@@ -57,3 +61,6 @@ class PasswordForgot extends React.Component {
 
 export default PasswordForgot;
 
+PasswordForgot.propTypes = {
+  history: PropTypes.shape.isRequired,
+};

@@ -33,7 +33,6 @@ class LoginSide extends React.Component {
     };
   }
 
- 
 
   makeLoginRequest = () => {
     axios.post('/login', {
@@ -43,8 +42,7 @@ class LoginSide extends React.Component {
       if (window.localStorage) {
         localStorage.setItem('token', JSON.stringify({ token: response.headers.token }));
       }
-      console.log('Hello', response.data.data);
-      this.props.history.push(`/user?username=${this.state.username}`);
+      this.props.history.push('/user');
     }).catch((err) => {
       if (err.response.data.message === 'Please check password') {
         this.setState({
@@ -57,31 +55,24 @@ class LoginSide extends React.Component {
       }
     });
   };
-
-  _handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.makeLoginRequest()
-    }
-  }
-
-  render() {
-    const updateUsername = (event) => {
-      if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
-        this.setState({
-          username: event.target.value,
-          incorrectPasswordError: '',
-          incorrectUsernameError: '',
-        });
-      }
-    };
-
-    const updatePassword = (event) => {
+  updateUsername = (event) => {
+    if (event.target.value.match(/^[a-zA-Z0-9_.-]*$/)) {
       this.setState({
-        password: event.target.value,
+        username: event.target.value,
         incorrectPasswordError: '',
         incorrectUsernameError: '',
       });
-    };
+    }
+  };
+
+  updatePassword = (event) => {
+    this.setState({
+      password: event.target.value,
+      incorrectPasswordError: '',
+      incorrectUsernameError: '',
+    });
+  };
+  render() {
     return (
       <div className="Loginside-container">
         <div className="Loginside-box">
@@ -89,8 +80,8 @@ class LoginSide extends React.Component {
             <div className="Loginside-heading">{this.props.message}</div>
             <div className="Loginside-content">
               {form(
-               updateUsername,
-                updatePassword,
+               this.updateUsername,
+                this.updatePassword,
                 this.state.incorrectPasswordError,
                 this.state.incorrectUsernameError,
                 this._handleKeyPress,
@@ -113,12 +104,8 @@ class LoginSide extends React.Component {
   }
 }
 
+export default LoginSide;
 LoginSide.propTypes = {
+  history: PropTypes.shape.isRequired,
   message: PropTypes.string,
 };
-
-LoginSide.defaultProps = {
-  message: '',
-};
-
-export default LoginSide;

@@ -13,12 +13,13 @@
 .Ministatement-header-options{
   display: flex;
   flex-grow: 1;
-  margin: 20px;
+  margin: 10px;
 }
 
 .Ministatement-header-option-title{
     color: rgb(100, 100, 100);
     text-transform: capitalize;
+    margin-left:1px;
 }
 
 .Ministatement-header-option-filter{
