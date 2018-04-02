@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import React from 'react';
-import './header.css';
+import './render.css';
+
 
 class Header extends React.Component {
   constructor() {
@@ -52,6 +52,21 @@ class Header extends React.Component {
         mouseLeave: false,
       });
     };
+
+    const dropdown = () => (
+      <div className="Header-options">
+        <div className="Header-options-dropdown">
+          <button
+            onClick={showDropDown}
+            className="Header-options-dropdown-button"
+          >
+            {/* <i className="fas fa-bars header-dropdown" /> */}
+            {/* <i className="fas fa-caret-down Header-options-dropdown-icon" /> */}
+          </button>
+        </div>
+      </div>
+    );
+
     const mouseLeaving = () => {
       this.setState({
         mouseLeave: true,
@@ -71,9 +86,9 @@ class Header extends React.Component {
     );
 
     const userCircle = () => (
-      <div className="Header-options" onClick={showDropDown} onFocus={showDropDown}>
-        <div className="Header-user-icon-box" onClick={showDropDown} onFocus={showDropDown}>
-          <i className="fas fa-user Header-user-icon" onClick={showDropDown} onFocus={showDropDown} />
+      <div className="Header-options" onMouseOver={showDropDown} onFocus={showDropDown}>
+        <div className="Header-user-icon-box" onMouseOver={showDropDown} onFocus={showDropDown}>
+          <i className="fas fa-user Header-user-icon" onMouseOver={showDropDown} onFocus={showDropDown} />
         </div>
       </div>
     );
@@ -86,33 +101,6 @@ class Header extends React.Component {
             </a>
           </Link>
         </div>
-        <div className="Header-user">
-          <div className="Header-wallet">
-            <div className="Header-wallet-icon">
-              <i className="material-icons Dashboardcontent-header-wallet-icon Wallet-icon-name">
-             account_balance_wallet
-              </i>&nbsp;
-            </div>
-            <div className="Header-balance-info">
-              <div className="Header-statement" >
-                <span>Your balance</span>
-              </div>
-              <div className="Header-show-balance">
-                <div className="Header-rupee">
-                  <i className="fas fa-rupee-sign Dashboardcontent-header-balance-icon Wallet-icon-size" />
-                </div>
-                <div className="Header-balance">
-                  <span>{this.props.balance}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <p>Hello {this.props.username}</p>
-
-          {userCircle()}
-          {this.state.showDropDown ? dropdownList() : ''}
-        </div>
       </div>
     );
   }
@@ -120,7 +108,3 @@ class Header extends React.Component {
 
 
 export default Header;
-Header.propTypes = {
-  username: PropTypes.string.isRequired,
-  balance: PropTypes.string.isRequired,
-};

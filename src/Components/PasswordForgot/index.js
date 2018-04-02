@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PasswordForgot.css';
 import PasswordForgotForm from '../PasswordForgotForm';
 import PasswordForgotContent from '../PasswordForgotContent';
-import PropTypes from 'prop-types';
+
 
 class PasswordForgot extends React.Component {
   render() {
@@ -18,3 +19,6 @@ class PasswordForgot extends React.Component {
 
 export default PasswordForgot;
 
+PasswordForgot.propTypes = {
+  history: PropTypes.shape.isRequired,
+};

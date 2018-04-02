@@ -47,7 +47,11 @@ class DashboardContent extends React.Component {
       const channel = pusher.subscribe('transfer-channel');
       channel.bind('transfer-event', (data) => {
         const message = `Congratulations! ${data.name} sent you ${data.amount} rupees`;
-        if (response.data.userId === data.to) { this.props.alert.success(message); }
+        if (response.data.userId === data.to) {
+          this.props.alert.success(message, {
+            onClose: () => { this.getTransactionDetails(); },
+          });
+        }
       });
     }).catch(() => {
       this.props.alert.error('Internal server error in fetching your balance');
@@ -85,7 +89,6 @@ class DashboardContent extends React.Component {
     const sugg = this.state.suggestions;
     let suggestionList = '';
     if (sugg === [] || sugg === undefined) {
-
     } else {
       suggestionList = sugg.map(step =>
         (
@@ -135,7 +138,17 @@ class DashboardContent extends React.Component {
       );
     };
     const showSuccessAlert = (message) => {
-      this.props.alert.success(message);
+      this.props.alert.success(message, {
+        onClose: () => {
+          this.getTransactionDetails();
+          this.props.updateHeaderBalance(this.state.amount);
+          this.setState({
+            amount: '',
+            username: '',
+            password: '',
+          });
+        },
+      });
     };
     const setComponent = (component) => {
       this.setState({
@@ -148,9 +161,6 @@ class DashboardContent extends React.Component {
 
     const setUserNameAndAmount = (userNameError, amountError, transactionError) => {
       this.setState({
-        username: '',
-        amount: '',
-        password: '',
         usernameError: userNameError,
         amountError,
         transactionError,
@@ -179,15 +189,12 @@ class DashboardContent extends React.Component {
           Authorization: token.token,
         },
       };
-      console.log(data);
       axios.post('/transfer', data, axiosConfig)
         .then((response) => {
           if (response.data.status_code === 201) {
-            showSuccessAlert('Transfer done');
-            console.log(response.data.balance);
+            showSuccessAlert('Transfer Done');
             updateBalance(response.data.balance);
             setComponent(1);
-            this.getTransactionDetails();
             setUserNameAndAmount('', '', '');
           } else if (response.data.status_code === 500) {
             showErrorAlert('Transaction failed due to internal server error!');
@@ -384,4 +391,5 @@ export default withAlert(DashboardContent);
 
 DashboardContent.propTypes = {
   username: PropTypes.string.isRequired,
+  updateHeaderBalance: PropTypes.func.isRequired,
 };

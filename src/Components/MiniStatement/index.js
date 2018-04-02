@@ -8,6 +8,7 @@ class MiniStatement extends React.Component {
   constructor() {
     super();
     this.state = {
+      transactionScreen: 1,
     };
   }
   render() {
@@ -140,7 +141,7 @@ class MiniStatement extends React.Component {
         <div className="Ministatement-header">
           <div className="Ministatement-header-options">
             <div className="Ministatement-header-option-title">
-          Recent transactions
+              Recent transactions
             </div>
             <div className="Ministatement-header-option-filter">
               {filterButton('received', setTransactionScreen, 3)}

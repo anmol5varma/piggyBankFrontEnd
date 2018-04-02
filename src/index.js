@@ -1,1 +1,1 @@
-require('./Components/Render');
+require('./render.jsx');

@@ -1,22 +1,12 @@
 import React from 'react';
-import { Provider } from 'react-alert';
 import { Switch, Route } from 'react-router-dom';
-import AlertTemplate from 'react-alert-template-basic';
-import queryString from 'query-string';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import './Dashboard.css';
-import axios from 'axios';
 import Header from '../Header';
 import DashboardContent from '../NewDashboardContent';
 import AccountSettings from '../AccountSettings';
 
-
-const options = {
-  timeout: 100000,
-  position: 'top center',
-  offset: '10px',
-  transition: 'scale',
-};
 class Dashboard extends React.Component {
   constructor() {
     super();
@@ -25,9 +15,11 @@ class Dashboard extends React.Component {
       currentBalance: 0,
     };
   }
-
-  componentDidMount() {
+  componentWillMount() {
     const token = JSON.parse(localStorage.getItem('token'));
+    if (token === null) {
+      return this.props.history.push('/login');
+    }
     const axiosConfig = {
       headers: {
         Authorization: token.token,
@@ -40,29 +32,48 @@ class Dashboard extends React.Component {
       });
       return response;
     });
+    return 0;
   }
+
   render() {
+    const updateHeaderBalance = (amountSend) => {
+      alert(amountSend);
+      const newBalance = this.state.currentBalance - amountSend;
+      alert(newBalance);
+      this.setState({
+        currentBalance: newBalance,
+      }, () => {
+        alert('Hello I am updating balance', this.state.currentBalance);
+      });
+    };
+
     return (
-      <Provider template={AlertTemplate} {...options}>
-        <div className="Dashboard-container">
-          <Header
-            username={this.state.userName}
-            balance={this.state.currentBalance}
+      <div className="Dashboard-container">
+        <Header
+          username={this.state.userName}
+          balance={this.state.currentBalance}
+        />
+        <Switch>
+          <Route
+            path="/user"
+            render={() => (<DashboardContent
+              history={this.props}
+              username={this.state.userName}
+              balance={this.state.currentBalance}
+              updateHeaderBalance={updateHeaderBalance}
+            />)}
           />
-          <Switch>
-            <Route path="/user" render={() => <DashboardContent username={this.state.userName} balance={this.state.currentBalance} />} />
-            <Route path="/accountSettings" render={() => <AccountSettings username={this.state.userName} />} />
-          </Switch>
-        </div>
-      </Provider>
+          <Route
+            path="/accountSettings"
+            render={() => <AccountSettings username={this.state.userName} />}
+          />
+        </Switch>
+      </div>
     );
   }
 }
 export default Dashboard;
-// Dashboard.propTypes = {
-//   location: PropTypes.string.required(),
-// };
-// Dashboard.defaultProps = {
-//   location: '',
-// };
+Dashboard.propTypes = {
+  history: PropTypes.shape.isRequired,
+};
 
